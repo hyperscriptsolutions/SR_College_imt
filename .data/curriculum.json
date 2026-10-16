@@ -1,0 +1,178 @@
+[
+  {
+    "id": 1,
+    "name": "Semester 1",
+    "tagline": "Foundations of Communication, Speech Anatomy, Language Expression & Assessment",
+    "subjects": [
+      {
+        "id": "s1-1",
+        "code": "DHLS-101",
+        "title": "Personality Development and Communication Skills",
+        "category": "Personal & Interpersonal Growth",
+        "description": "Self-confidence, voice modulation, interpersonal communication, and active listening.",
+        "isPublished": true,
+        "sortOrder": 1
+      },
+      {
+        "id": "s1-2",
+        "code": "DHLS-102",
+        "title": "Communication Theories",
+        "category": "Theoretical Linguistics",
+        "description": "Classical and modern communication models, encoding, decoding, and feedback mechanisms.",
+        "isPublished": true,
+        "sortOrder": 2
+      },
+      {
+        "id": "s1-3",
+        "code": "DHLS-103",
+        "title": "Expressionism of the Language",
+        "category": "Language Articulation",
+        "description": "Emotional tonality, syntax structure, and conveying communicative intent.",
+        "isPublished": true,
+        "sortOrder": 3
+      },
+      {
+        "id": "s1-4",
+        "code": "DHLS-104",
+        "title": "Developing Language Oral and Written Skills",
+        "category": "Core Skills Development",
+        "description": "Pronunciation clarity, syntactic sentence construction, and structured writing.",
+        "isPublished": true,
+        "sortOrder": 4
+      },
+      {
+        "id": "s1-5",
+        "code": "DHLS-105",
+        "title": "Command Over Targeted Language",
+        "category": "Linguistic Fluency",
+        "description": "Grammatical mastery, idiomatic comprehension, and fluency in primary language.",
+        "isPublished": true,
+        "sortOrder": 5
+      },
+      {
+        "id": "s1-6",
+        "code": "DHLS-106",
+        "title": "Language Interpreting",
+        "category": "Applied Translation",
+        "description": "Real-time message interpretation, cross-lingual accuracy, and assistive conversion.",
+        "isPublished": true,
+        "sortOrder": 6
+      },
+      {
+        "id": "s1-7",
+        "code": "DHLS-107",
+        "title": "Communication, Language and Speech",
+        "category": "Core Foundations",
+        "description": "Triad connecting cognition, acoustic speech generation, and listener comprehension.",
+        "isPublished": true,
+        "sortOrder": 7
+      },
+      {
+        "id": "s1-8",
+        "code": "DHLS-108",
+        "title": "Anatomy and Physiology of the Speech Mechanism",
+        "category": "Biological Foundations",
+        "description": "Respiratory apparatus, laryngeal vocal folds, resonation, and articulators.",
+        "isPublished": true,
+        "sortOrder": 8
+      },
+      {
+        "id": "s1-9",
+        "code": "DHLS-109",
+        "title": "Internal Assessment",
+        "category": "Academic Evaluation",
+        "description": "Continuous coursework evaluation, quizzes, presentations, and periodic midterm reviews.",
+        "isPublished": true,
+        "sortOrder": 9
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Semester 2",
+    "tagline": "Audiology, Indian Sign Language (ISL), Speech Pathology & Rehabilitation",
+    "subjects": [
+      {
+        "id": "s2-1",
+        "code": "DHLS-201",
+        "title": "Oral Expression of the Language",
+        "category": "Speech Articulation",
+        "description": "Spoken fluency, pronunciation accuracy, pitch variation, and conversational spontaneity.",
+        "isPublished": true,
+        "sortOrder": 1
+      },
+      {
+        "id": "s2-2",
+        "code": "DHLS-202",
+        "title": "Indian Sign Language (ISL) as a Language",
+        "category": "Visual-Gestural Language",
+        "description": "ISL grammar, manual alphabet finger-spelling, facial expressions, and spatial syntax.",
+        "isPublished": true,
+        "sortOrder": 2
+      },
+      {
+        "id": "s2-3",
+        "code": "DHLS-203",
+        "title": "Communicative English and Computer Fundamentals",
+        "category": "Digital & Language Tools",
+        "description": "Computer literacy, documentation processing, and English comprehension for educational setups.",
+        "isPublished": true,
+        "sortOrder": 3
+      },
+      {
+        "id": "s2-4",
+        "code": "DHLS-204",
+        "title": "Audiology (Sound and Hearing)",
+        "category": "Auditory Science",
+        "description": "Sound physics, ear anatomy, decibel calibration, and introductory audiometric assessments.",
+        "isPublished": true,
+        "sortOrder": 4
+      },
+      {
+        "id": "s2-5",
+        "code": "DHLS-205",
+        "title": "Speech and Language Pathology",
+        "category": "Clinical Overview",
+        "description": "Introduction to speech variations, voice characteristics, and rehabilitation concepts.",
+        "isPublished": true,
+        "sortOrder": 5
+      },
+      {
+        "id": "s2-6",
+        "code": "DHLS-206",
+        "title": "Community-Based Rehabilitation",
+        "category": "Social Integration",
+        "description": "Inclusive education, community awareness, and support systems for diverse individuals.",
+        "isPublished": true,
+        "sortOrder": 6
+      },
+      {
+        "id": "s2-7",
+        "code": "DHLS-207",
+        "title": "Legal Language and Legal Writing",
+        "category": "Legal Frameworks",
+        "description": "Disability rights legislation, documentation norms, record keeping, and ethical standards.",
+        "isPublished": true,
+        "sortOrder": 7
+      },
+      {
+        "id": "s2-8",
+        "code": "DHLS-208",
+        "title": "Internal Assessment and Project",
+        "category": "Practical Submission",
+        "description": "Coursework portfolio, project assignment submission, and internal appraisals.",
+        "isPublished": true,
+        "sortOrder": 8
+      },
+      {
+        "id": "s2-9",
+        "code": "DHLS-209",
+        "title": "Viva",
+        "category": "Comprehensive Oral Exam",
+        "description": "Summative oral examination assessing comprehensive understanding of DHLS fundamentals.",
+        "isPublished": true,
+        "sortOrder": 9
+      }
+    ]
+  }
+]
