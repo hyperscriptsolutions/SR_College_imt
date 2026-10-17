@@ -112,33 +112,31 @@ export default function AdmissionEnquiry() {
   };
 
   return (
-    <section id="enquiry" className="py-20 sm:py-28 bg-white relative">
+    <section id="enquiry" className="py-20 sm:py-28 bg-[#FFFCF6] relative border-t border-[#E8E2D8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#367BFF]/10 border border-[#367BFF]/20 text-xs font-bold text-[#367BFF] uppercase tracking-wider mb-3">
-            <Send className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#D9AD54]/10 border border-[#D9AD54]/30 text-xs font-bold text-[#B88B2E] uppercase tracking-wider mb-3">
+            <Send className="w-3.5 h-3.5 text-[#D9AD54]" />
             Admissions Desk
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#10264A] tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#172A50] tracking-tight mb-4">
             Ready to Explore DHLS?
           </h2>
-          <p className="text-base sm:text-lg text-[#586885] leading-relaxed">
+          <p className="text-base sm:text-lg text-[#718096] leading-relaxed">
             Have questions about eligibility, course details or admission availability? Get in touch with SR College of Education.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start max-w-6xl mx-auto">
           
           {/* Left Column: Direct College Helplines & Guidance */}
-          <div className="lg:col-span-5 flex flex-col gap-6">
+          <div className="lg:col-span-5 flex flex-col gap-5">
             
-            <div className="p-8 rounded-3xl bg-[#10264A] text-white shadow-xl border border-[#367BFF]/20 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-48 h-48 bg-[#367BFF]/15 rounded-full blur-2xl pointer-events-none" />
-
-              <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#A99BFF] mb-3">
-                <ShieldCheck className="w-4 h-4 text-[#367BFF]" />
+            <div className="p-7 sm:p-8 rounded-3xl bg-[#172A50] text-white shadow-xl border border-[#26345B] relative overflow-hidden">
+              <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#D9AD54] mb-3">
+                <ShieldCheck className="w-4 h-4 text-[#D9AD54]" />
                 Direct College Contact
               </div>
 
@@ -146,7 +144,7 @@ export default function AdmissionEnquiry() {
                 Speak With Admissions
               </h3>
 
-              <p className="text-sm text-slate-300 leading-relaxed mb-6">
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
                 Prefer immediate guidance? Call the official college desk to discuss current batch status, verification of documents, or visiting the campus in Rohtak.
               </p>
 
@@ -154,82 +152,82 @@ export default function AdmissionEnquiry() {
               <div className="space-y-3 mb-6">
                 <a
                   href="tel:9416968076"
-                  className="flex items-center justify-between p-4 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/10 transition-colors group"
+                  className="flex items-center justify-between p-3.5 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/10 transition-colors group cursor-pointer"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-[#367BFF] flex items-center justify-center text-white">
+                    <div className="w-10 h-10 rounded-xl bg-[#D9AD54] flex items-center justify-center text-[#172A50]">
                       <Phone className="w-5 h-5" />
                     </div>
                     <div>
-                      <div className="text-xs text-slate-300 font-medium">Primary Admissions Line</div>
-                      <div className="text-base font-bold text-white tracking-wide">9416968076</div>
+                      <div className="text-[11px] text-slate-300 font-medium">Primary Admissions Line</div>
+                      <div className="text-base font-bold text-white tracking-wide font-mono">9416968076</div>
                     </div>
                   </div>
-                  <span className="text-xs font-semibold text-[#A99BFF] group-hover:underline">Call Now</span>
+                  <span className="text-xs font-semibold text-[#D9AD54] group-hover:underline">Call Now</span>
                 </a>
 
                 <a
-                  href="tel:9896302035"
-                  className="flex items-center justify-between p-4 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/10 transition-colors group"
+                  href="tel:9052002305"
+                  className="flex items-center justify-between p-3.5 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/10 transition-colors group cursor-pointer"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-[#A99BFF]/20 text-[#A99BFF] flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-xl bg-white/20 text-[#D9AD54] flex items-center justify-center">
                       <Phone className="w-5 h-5" />
                     </div>
                     <div>
-                      <div className="text-xs text-slate-300 font-medium">Secondary Admissions Desk</div>
-                      <div className="text-base font-bold text-white tracking-wide">9896302035</div>
+                      <div className="text-[11px] text-slate-300 font-medium">Secondary Admissions Desk</div>
+                      <div className="text-base font-bold text-white tracking-wide font-mono">9052002305</div>
                     </div>
                   </div>
-                  <span className="text-xs font-semibold text-[#A99BFF] group-hover:underline">Call Now</span>
+                  <span className="text-xs font-semibold text-[#D9AD54] group-hover:underline">Call Now</span>
                 </a>
               </div>
 
               {/* Email link */}
               <div className="pt-4 border-t border-white/10 flex items-center gap-3 text-xs text-slate-300">
-                <Mail className="w-4 h-4 text-[#367BFF]" />
+                <Mail className="w-4 h-4 text-[#D9AD54]" />
                 <span>Email:</span>
                 <a
-                  href="mailto:srcollegeeducation@gmail.com"
-                  className="text-white font-medium hover:underline"
+                  href="mailto:srcollegeofeducation@gmail.com"
+                  className="text-white font-medium hover:text-[#D9AD54] transition-colors hover:underline"
                 >
-                  srcollegeeducation@gmail.com
+                  srcollegeofeducation@gmail.com
                 </a>
               </div>
             </div>
 
             {/* Privacy Assurance Box */}
-            <div className="p-6 rounded-2xl bg-[#F5F7FC] border border-slate-200/80 flex items-start gap-3.5">
-              <Lock className="w-5 h-5 text-[#367BFF] flex-shrink-0 mt-0.5" />
-              <div className="text-xs text-[#586885] leading-relaxed">
-                <strong className="text-[#10264A] font-semibold">Privacy Commitment:</strong> Your contact information is never shared with third parties or external marketing agencies. It is used exclusively by the SR College of Education admissions desk to provide verified information regarding the DHLS course.
+            <div className="p-5 rounded-2xl bg-white border border-[#E8E2D8] shadow-2xs flex items-start gap-3.5">
+              <Lock className="w-5 h-5 text-[#8B1745] flex-shrink-0 mt-0.5" />
+              <div className="text-xs text-[#718096] leading-relaxed">
+                <strong className="text-[#172A50] font-semibold">Privacy Commitment:</strong> Your contact information is never shared with third parties. It is used exclusively by the SR College of Education admissions desk to provide verified information regarding the DHLS course.
               </div>
             </div>
 
           </div>
 
-          {/* Right Column: High Conversion Enquiry Form */}
+          {/* Right Column: Enquiry Form */}
           <div className="lg:col-span-7">
-            <div className="bg-[#F5F7FC] rounded-3xl p-8 sm:p-10 border border-slate-200/80 shadow-lg relative">
+            <div className="bg-white rounded-3xl p-7 sm:p-9 border border-[#E8E2D8] shadow-sm relative">
               
               {submitSuccess ? (
                 /* Success State */
                 <div className="text-center py-10 px-4">
-                  <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-5 animate-bounce">
+                  <div className="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto mb-5">
                     <CheckCircle className="w-10 h-10" />
                   </div>
-                  <h3 className="text-2xl font-extrabold text-[#10264A] mb-2">
+                  <h3 className="text-2xl font-extrabold text-[#172A50] mb-2">
                     Enquiry Submitted Successfully!
                   </h3>
                   <div className="inline-block px-3.5 py-1.5 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold border border-emerald-200 mb-4">
                     Reference ID: {submitSuccess.enquiryId}
                   </div>
-                  <p className="text-sm text-[#586885] leading-relaxed max-w-md mx-auto mb-8">
+                  <p className="text-sm text-[#718096] leading-relaxed max-w-md mx-auto mb-8">
                     {submitSuccess.message}
                   </p>
                   <button
                     onClick={() => setSubmitSuccess(null)}
-                    className="px-6 py-2.5 rounded-full text-xs font-bold text-[#10264A] bg-white border border-slate-300 hover:bg-slate-50 transition-colors shadow-sm"
+                    className="px-6 py-2.5 rounded-full text-xs font-bold text-[#172A50] bg-[#FFFCF6] border border-[#E8E2D8] hover:bg-stone-100 transition-colors shadow-2xs cursor-pointer"
                   >
                     Submit Another Inquiry
                   </button>
@@ -238,10 +236,10 @@ export default function AdmissionEnquiry() {
                 /* Interactive Form */
                 <form onSubmit={handleSubmit} noValidate>
                   <div className="mb-6">
-                    <h3 className="text-xl font-bold text-[#10264A] mb-1">
+                    <h3 className="text-xl font-bold text-[#172A50] mb-1">
                       DHLS Course Enquiry Form
                     </h3>
-                    <p className="text-xs text-[#586885]">
+                    <p className="text-xs text-[#718096]">
                       Fill out this brief form to receive official course guidance and seat availability updates.
                     </p>
                   </div>
@@ -256,11 +254,11 @@ export default function AdmissionEnquiry() {
                   <div className="space-y-4">
                     {/* Full Name */}
                     <div>
-                      <label htmlFor="fullName" className="block text-xs font-bold text-[#10264A] mb-1.5 uppercase tracking-wider">
+                      <label htmlFor="fullName" className="block text-xs font-bold text-[#172A50] mb-1.5 uppercase tracking-wider">
                         Full Name <span className="text-rose-500">*</span>
                       </label>
                       <div className="relative">
-                        <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                        <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-stone-400">
                           <User className="w-4 h-4" />
                         </div>
                         <input
@@ -270,10 +268,10 @@ export default function AdmissionEnquiry() {
                           value={formData.fullName}
                           onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                           placeholder="e.g. Ramesh Kumar"
-                          className={`w-full pl-10 pr-4 py-3 rounded-xl bg-white border text-sm text-[#17233C] focus:outline-none focus:ring-2 transition-all ${
+                          className={`w-full pl-10 pr-4 py-3 rounded-xl bg-[#FFFCF6] border text-sm text-[#263238] focus:outline-none focus:ring-2 transition-all ${
                             errors.fullName
                               ? "border-rose-400 focus:ring-rose-200"
-                              : "border-slate-300 focus:border-[#367BFF] focus:ring-[#367BFF]/20"
+                              : "border-[#E8E2D8] focus:border-[#172A50] focus:ring-[#172A50]/20"
                           }`}
                         />
                       </div>
@@ -287,11 +285,11 @@ export default function AdmissionEnquiry() {
                       
                       {/* Mobile Number */}
                       <div>
-                        <label htmlFor="mobile" className="block text-xs font-bold text-[#10264A] mb-1.5 uppercase tracking-wider">
+                        <label htmlFor="mobile" className="block text-xs font-bold text-[#172A50] mb-1.5 uppercase tracking-wider">
                           Mobile Number <span className="text-rose-500">*</span>
                         </label>
                         <div className="relative">
-                          <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500 text-xs font-semibold">
+                          <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-stone-500 text-xs font-semibold">
                             +91
                           </div>
                           <input
@@ -302,10 +300,10 @@ export default function AdmissionEnquiry() {
                             value={formData.mobile}
                             onChange={(e) => setFormData({ ...formData, mobile: e.target.value.replace(/\D/g, "") })}
                             placeholder="10-digit number"
-                            className={`w-full pl-12 pr-4 py-3 rounded-xl bg-white border text-sm text-[#17233C] focus:outline-none focus:ring-2 transition-all ${
+                            className={`w-full pl-12 pr-4 py-3 rounded-xl bg-[#FFFCF6] border text-sm text-[#263238] focus:outline-none focus:ring-2 transition-all ${
                               errors.mobile
                                 ? "border-rose-400 focus:ring-rose-200"
-                                : "border-slate-300 focus:border-[#367BFF] focus:ring-[#367BFF]/20"
+                                : "border-[#E8E2D8] focus:border-[#172A50] focus:ring-[#172A50]/20"
                             }`}
                           />
                         </div>
@@ -316,11 +314,11 @@ export default function AdmissionEnquiry() {
 
                       {/* Email Address (Optional) */}
                       <div>
-                        <label htmlFor="email" className="block text-xs font-bold text-[#10264A] mb-1.5 uppercase tracking-wider">
-                          Email Address <span className="text-slate-400 font-normal">(Optional)</span>
+                        <label htmlFor="email" className="block text-xs font-bold text-[#172A50] mb-1.5 uppercase tracking-wider">
+                          Email Address <span className="text-[#718096] font-normal">(Optional)</span>
                         </label>
                         <div className="relative">
-                          <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                          <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-stone-400">
                             <Mail className="w-4 h-4" />
                           </div>
                           <input
@@ -329,10 +327,10 @@ export default function AdmissionEnquiry() {
                             value={formData.email}
                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                             placeholder="name@example.com"
-                            className={`w-full pl-10 pr-4 py-3 rounded-xl bg-white border text-sm text-[#17233C] focus:outline-none focus:ring-2 transition-all ${
+                            className={`w-full pl-10 pr-4 py-3 rounded-xl bg-[#FFFCF6] border text-sm text-[#263238] focus:outline-none focus:ring-2 transition-all ${
                               errors.email
                                 ? "border-rose-400 focus:ring-rose-200"
-                                : "border-slate-300 focus:border-[#367BFF] focus:ring-[#367BFF]/20"
+                                : "border-[#E8E2D8] focus:border-[#172A50] focus:ring-[#172A50]/20"
                             }`}
                           />
                         </div>
@@ -345,11 +343,11 @@ export default function AdmissionEnquiry() {
 
                     {/* Highest Educational Qualification */}
                     <div>
-                      <label htmlFor="qualification" className="block text-xs font-bold text-[#10264A] mb-1.5 uppercase tracking-wider">
+                      <label htmlFor="qualification" className="block text-xs font-bold text-[#172A50] mb-1.5 uppercase tracking-wider">
                         Highest Educational Qualification <span className="text-rose-500">*</span>
                       </label>
                       <div className="relative">
-                        <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                        <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-stone-400">
                           <GraduationCap className="w-4 h-4" />
                         </div>
                         <select
@@ -357,10 +355,10 @@ export default function AdmissionEnquiry() {
                           required
                           value={formData.qualification}
                           onChange={(e) => setFormData({ ...formData, qualification: e.target.value })}
-                          className={`w-full pl-10 pr-4 py-3 rounded-xl bg-white border text-sm text-[#17233C] focus:outline-none focus:ring-2 transition-all appearance-none cursor-pointer ${
+                          className={`w-full pl-10 pr-4 py-3 rounded-xl bg-[#FFFCF6] border text-sm text-[#263238] focus:outline-none focus:ring-2 transition-all appearance-none cursor-pointer ${
                             errors.qualification
                               ? "border-rose-400 focus:ring-rose-200"
-                              : "border-slate-300 focus:border-[#367BFF] focus:ring-[#367BFF]/20"
+                              : "border-[#E8E2D8] focus:border-[#172A50] focus:ring-[#172A50]/20"
                           }`}
                         >
                           <option value="">Select your qualification...</option>
@@ -379,11 +377,11 @@ export default function AdmissionEnquiry() {
 
                     {/* Message / Query */}
                     <div>
-                      <label htmlFor="message" className="block text-xs font-bold text-[#10264A] mb-1.5 uppercase tracking-wider">
-                        Questions or Remarks <span className="text-slate-400 font-normal">(Optional)</span>
+                      <label htmlFor="message" className="block text-xs font-bold text-[#172A50] mb-1.5 uppercase tracking-wider">
+                        Questions or Remarks <span className="text-[#718096] font-normal">(Optional)</span>
                       </label>
                       <div className="relative">
-                        <div className="absolute top-3 left-3.5 pointer-events-none text-slate-400">
+                        <div className="absolute top-3 left-3.5 pointer-events-none text-stone-400">
                           <MessageSquare className="w-4 h-4" />
                         </div>
                         <textarea
@@ -392,21 +390,21 @@ export default function AdmissionEnquiry() {
                           value={formData.message}
                           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                           placeholder="Tell us what you would like to know about DHLS admissions or batch schedules..."
-                          className="w-full pl-10 pr-4 py-3 rounded-xl bg-white border border-slate-300 text-sm text-[#17233C] focus:outline-none focus:border-[#367BFF] focus:ring-2 focus:ring-[#367BFF]/20 transition-all resize-none"
+                          className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#FFFCF6] border border-[#E8E2D8] text-sm text-[#263238] focus:outline-none focus:border-[#172A50] focus:ring-2 focus:ring-[#172A50]/20 transition-all resize-none"
                         />
                       </div>
                     </div>
 
-                    {/* Privacy notice banner */}
-                    <p className="text-[11px] text-[#586885] leading-relaxed pt-1">
-                      By submitting this form, you acknowledge that your details will be utilized solely by SR College of Education to communicate DHLS course information. No spam or commercial resale.
+                    {/* Privacy notice */}
+                    <p className="text-[11px] text-[#718096] leading-relaxed pt-1">
+                      By submitting this form, you acknowledge that your details will be utilized solely by SR College of Education to communicate DHLS course information. No commercial marketing resale.
                     </p>
 
-                    {/* Submit Button */}
+                    {/* Submit Button in Burgundy #8B1745 */}
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full py-3.5 px-6 rounded-xl font-bold text-white bg-gradient-to-r from-[#367BFF] to-[#1A54D6] hover:from-[#4585FF] hover:to-[#2161E8] shadow-lg shadow-[#367BFF]/25 hover:shadow-xl hover:shadow-[#367BFF]/40 transition-all duration-200 active:scale-[0.99] flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                      className="w-full py-3.5 px-6 rounded-full font-bold text-white bg-[#8B1745] hover:bg-[#721238] shadow-md hover:shadow-lg transition-all duration-150 active:scale-[0.99] flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
                     >
                       {isSubmitting ? (
                         <>
@@ -416,7 +414,7 @@ export default function AdmissionEnquiry() {
                       ) : (
                         <>
                           <span>Submit DHLS Admission Enquiry</span>
-                          <Send className="w-4 h-4" />
+                          <Send className="w-4 h-4 text-[#D9AD54]" />
                         </>
                       )}
                     </button>

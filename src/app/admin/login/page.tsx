@@ -45,10 +45,10 @@ export default function AdminLoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-b from-[#071B3D] via-[#0A224D] to-[#071B3D] text-white relative overflow-hidden">
-      {/* Decorative ambient background glows */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#2684FF]/15 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-64 h-64 bg-[#9B6DFF]/15 rounded-full blur-3xl pointer-events-none" />
+    <div className="min-h-screen flex items-center justify-center p-4 bg-[#172A50] text-white relative overflow-hidden">
+      {/* Decorative ambient background accents */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#D9AD54]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-64 h-64 bg-[#8B1745]/15 rounded-full blur-3xl pointer-events-none" />
 
       <div className="w-full max-w-md relative z-10">
         
@@ -60,15 +60,15 @@ export default function AdminLoginPage() {
           <h1 className="text-2xl font-extrabold tracking-tight text-white mb-1">
             SR COLLEGE OF EDUCATION
           </h1>
-          <p className="text-xs text-[#29D7FF] font-semibold uppercase tracking-wider">
+          <p className="text-xs text-[#D9AD54] font-semibold uppercase tracking-wider">
             DHLS Administration Portal
           </p>
         </div>
 
         {/* Login Card */}
-        <div className="rounded-3xl bg-[#0A1E3D]/95 border border-[#29D7FF]/20 shadow-2xl p-8 backdrop-blur-xl">
+        <div className="rounded-3xl bg-[#26345B] border border-white/10 shadow-2xl p-8 backdrop-blur-xl">
           <div className="flex items-center gap-2 mb-6 pb-4 border-b border-white/10 text-xs text-slate-300">
-            <ShieldCheck className="w-4 h-4 text-[#2684FF]" />
+            <ShieldCheck className="w-4 h-4 text-[#D9AD54]" />
             <span>Authorized Personnel Only</span>
           </div>
 
@@ -95,7 +95,7 @@ export default function AdminLoginPage() {
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   placeholder="admin"
-                  className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/10 border border-white/15 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-[#29D7FF] focus:ring-2 focus:ring-[#29D7FF]/20 transition-all"
+                  className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/10 border border-white/15 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-[#D9AD54] focus:ring-2 focus:ring-[#D9AD54]/20 transition-all"
                 />
               </div>
             </div>
@@ -115,7 +115,7 @@ export default function AdminLoginPage() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••••••"
-                  className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/10 border border-white/15 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-[#29D7FF] focus:ring-2 focus:ring-[#29D7FF]/20 transition-all"
+                  className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/10 border border-white/15 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-[#D9AD54] focus:ring-2 focus:ring-[#D9AD54]/20 transition-all"
                 />
               </div>
             </div>
@@ -124,7 +124,7 @@ export default function AdminLoginPage() {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full py-3.5 px-6 rounded-xl font-bold text-white bg-gradient-to-r from-[#2684FF] to-[#102B58] hover:from-[#3B92FF] hover:to-[#173A75] shadow-lg shadow-[#2684FF]/25 hover:shadow-xl transition-all duration-200 active:scale-[0.99] flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed mt-2"
+              className="w-full py-3.5 px-6 rounded-full font-bold text-white bg-[#8B1745] hover:bg-[#721238] shadow-md transition-all duration-150 active:scale-[0.99] flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed mt-2 cursor-pointer"
             >
               {isLoading ? (
                 <>
@@ -134,7 +134,7 @@ export default function AdminLoginPage() {
               ) : (
                 <>
                   <span>Sign In to Admin Panel</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4 text-[#D9AD54]" />
                 </>
               )}
             </button>
@@ -143,7 +143,7 @@ export default function AdminLoginPage() {
           {/* Secure Default Hint for Authorized Staff */}
           <div className="mt-6 pt-5 border-t border-white/10 text-center">
             <p className="text-[11px] text-slate-400 leading-relaxed">
-              Default system administrator account: <code className="text-[#29D7FF] font-mono">admin</code> / <code className="text-[#29D7FF] font-mono">Admin@SRCollege2026</code>.
+              Default system administrator account: <code className="text-[#D9AD54] font-mono">admin</code> / <code className="text-[#D9AD54] font-mono">Admin@SRCollege2026</code>.
               <br />
               (Password can be changed inside Admin Settings).
             </p>

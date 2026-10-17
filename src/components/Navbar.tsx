@@ -13,7 +13,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 15);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -47,35 +47,38 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
           isScrolled
-            ? "bg-[#071B3D]/95 backdrop-blur-md shadow-lg shadow-[#071B3D]/25 py-2.5 border-b border-[#2684FF]/25"
-            : "bg-[#071B3D]/85 backdrop-blur-sm py-3.5 border-b border-white/10"
+            ? "bg-[#FFFCF6]/95 backdrop-blur-md shadow-xs border-b border-[#E8E2D8] py-2"
+            : "bg-[#FFFCF6] border-b border-[#E8E2D8] py-2.5 sm:py-3"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between">
-            {/* Logo and College Brand */}
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
+          <div className="flex items-center justify-between gap-3 xl:gap-6">
+            {/* Logo and College Brand (Left) */}
             <Link
               href="/"
-              className="flex items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2684FF] rounded-lg"
+              className="flex items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#172A50] rounded-lg flex-shrink-0"
               aria-label="SR College of Education Homepage"
             >
-              <CollegeLogo variant="light" className="h-10 w-10 sm:h-11 sm:w-11" />
+              <CollegeLogo variant="navy" className="h-8 w-8 sm:h-9 sm:w-9 xl:h-10 xl:w-10" />
             </Link>
 
-            {/* Desktop Navigation Links */}
-            <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5" aria-label="Main Navigation">
+            {/* Desktop Navigation Links (Center) */}
+            <nav
+              className="hidden lg:flex items-center justify-center gap-1 xl:gap-2 flex-1 mx-2"
+              aria-label="Main Navigation"
+            >
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
                 return (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`px-3.5 py-1.5 rounded-full text-xs xl:text-sm font-semibold transition-all duration-200 ${
+                    className={`px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-sm font-semibold whitespace-nowrap transition-all duration-150 ${
                       isActive
-                        ? "text-white bg-[#2684FF]/30 border border-[#29D7FF]/50 shadow-sm shadow-[#2684FF]/25"
-                        : "text-slate-200 hover:text-white hover:bg-white/10"
+                        ? "text-white bg-[#172A50] shadow-sm"
+                        : "text-[#263238] hover:text-[#8B1745] hover:bg-stone-100/70"
                     }`}
                   >
                     {link.label}
@@ -84,43 +87,43 @@ export default function Navbar() {
               })}
             </nav>
 
-            {/* Actions: Direct Call & Primary CTA */}
-            <div className="hidden md:flex items-center gap-2.5 xl:gap-3">
+            {/* Actions: Direct Call & Enquire Now (Right) */}
+            <div className="hidden md:flex items-center gap-2.5 xl:gap-3 flex-shrink-0">
               <a
                 href="tel:9416968076"
-                className="flex items-center gap-2 text-xs font-semibold text-slate-200 hover:text-white px-3 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition-colors"
+                className="flex items-center gap-1.5 text-xs xl:text-sm font-semibold text-[#172A50] hover:text-[#8B1745] px-3 xl:px-3.5 py-1.5 rounded-full bg-white border border-[#E8E2D8] hover:border-[#D9AD54] transition-all shadow-2xs whitespace-nowrap"
                 title="Call SR College Admissions Desk"
               >
-                <Phone className="w-3.5 h-3.5 text-[#29D7FF]" />
-                <span className="font-mono">9416968076</span>
+                <Phone className="w-3.5 h-3.5 text-[#172A50]" />
+                <span className="font-mono tracking-tight font-bold">9416968076</span>
               </a>
 
               <Link
                 href="/eligibility-admission#enquiry"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs xl:text-sm font-bold text-white bg-gradient-to-r from-[#2684FF] via-[#3B82F6] to-[#9B6DFF] hover:brightness-110 shadow-md shadow-[#2684FF]/30 hover:shadow-lg hover:shadow-[#2684FF]/45 transition-all duration-200 active:scale-95"
+                className="inline-flex items-center gap-1.5 px-4 xl:px-5 py-2 rounded-full text-xs xl:text-sm font-bold text-white bg-[#172A50] hover:bg-[#26345B] shadow-sm transition-all duration-150 active:scale-95 whitespace-nowrap"
               >
                 <span>Enquire Now</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-3.5 h-3.5 text-[#D9AD54]" />
               </Link>
             </div>
 
-            {/* Mobile Hamburger Button */}
+            {/* Mobile Actions & Hamburger */}
             <div className="flex items-center gap-2 lg:hidden">
               <a
                 href="tel:9416968076"
-                className="p-2 rounded-xl bg-white/10 text-white md:hidden"
+                className="p-2 rounded-full bg-white border border-[#E8E2D8] text-[#172A50] md:hidden"
                 aria-label="Call Admissions Desk"
               >
-                <Phone className="w-4 h-4 text-[#29D7FF]" />
+                <Phone className="w-4 h-4 text-[#172A50]" />
               </a>
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2.5 rounded-xl text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-[#2684FF]"
+                className="p-2 rounded-xl text-[#172A50] hover:bg-stone-100 border border-[#E8E2D8] focus:outline-none focus:ring-2 focus:ring-[#172A50]"
                 aria-expanded={mobileMenuOpen}
                 aria-label={mobileMenuOpen ? "Close menu" : "Open navigation menu"}
               >
-                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
             </div>
           </div>
@@ -132,17 +135,17 @@ export default function Navbar() {
         <div className="fixed inset-0 z-40 lg:hidden">
           {/* Backdrop overlay */}
           <div
-            className="fixed inset-0 bg-black/70 backdrop-blur-sm transition-opacity"
+            className="fixed inset-0 bg-[#172A50]/40 backdrop-blur-xs transition-opacity"
             onClick={() => setMobileMenuOpen(false)}
             aria-hidden="true"
           />
 
           {/* Drawer container */}
-          <div className="fixed top-[60px] right-0 bottom-0 w-full max-w-xs bg-[#071B3D] border-l border-[#2684FF]/25 shadow-2xl p-6 flex flex-col justify-between overflow-y-auto">
+          <div className="fixed top-[58px] right-0 bottom-0 w-full max-w-xs bg-[#FFFCF6] border-l border-[#E8E2D8] shadow-2xl p-6 flex flex-col justify-between overflow-y-auto">
             <div>
-              <div className="flex items-center justify-between text-xs uppercase font-bold text-[#29D7FF] tracking-wider mb-4">
+              <div className="flex items-center justify-between text-xs uppercase font-bold text-[#172A50] tracking-wider mb-4 pb-3 border-b border-[#E8E2D8]">
                 <span>DHLS Navigation</span>
-                <ShieldCheck className="w-4 h-4 text-[#9B6DFF]" />
+                <ShieldCheck className="w-4 h-4 text-[#D9AD54]" />
               </div>
               <nav className="flex flex-col gap-1.5">
                 {navLinks.map((link) => {
@@ -154,35 +157,35 @@ export default function Navbar() {
                       onClick={() => setMobileMenuOpen(false)}
                       className={`flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-semibold transition-all ${
                         isActive
-                          ? "bg-[#2684FF]/25 border border-[#29D7FF]/40 text-white shadow-sm"
-                          : "text-slate-200 hover:bg-white/10 hover:text-white"
+                          ? "bg-[#172A50] text-white shadow-xs"
+                          : "text-[#263238] hover:bg-stone-100 hover:text-[#8B1745]"
                       }`}
                     >
                       <span>{link.label}</span>
-                      <ArrowRight className={`w-3.5 h-3.5 ${isActive ? "text-[#29D7FF]" : "text-slate-400"}`} />
+                      <ArrowRight className={`w-3.5 h-3.5 ${isActive ? "text-[#D9AD54]" : "text-stone-400"}`} />
                     </Link>
                   );
                 })}
               </nav>
             </div>
 
-            <div className="pt-6 border-t border-white/10 flex flex-col gap-3">
+            <div className="pt-6 border-t border-[#E8E2D8] flex flex-col gap-3">
               <Link
                 href="/eligibility-admission#enquiry"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full text-center py-3 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-[#2684FF] to-[#9B6DFF] shadow-lg shadow-[#2684FF]/30 hover:brightness-110 transition-all"
+                className="w-full text-center py-3 rounded-full font-bold text-sm text-white bg-[#8B1745] hover:bg-[#721238] shadow-sm transition-all"
               >
                 Enquire About DHLS
               </Link>
 
-              <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 text-xs text-slate-300">
-                <div className="font-semibold text-white mb-1.5">Admissions Helpline:</div>
-                <div className="flex flex-col gap-1 font-mono">
-                  <a href="tel:9416968076" className="text-[#29D7FF] hover:underline flex items-center gap-1.5">
-                    <Phone className="w-3 h-3" /> 9416968076
+              <div className="p-3.5 rounded-xl bg-white border border-[#E8E2D8] text-xs text-[#263238]">
+                <div className="font-bold text-[#172A50] mb-1.5">Admissions Helpline:</div>
+                <div className="flex flex-col gap-1 font-mono font-semibold">
+                  <a href="tel:9416968076" className="text-[#172A50] hover:text-[#8B1745] flex items-center gap-1.5">
+                    <Phone className="w-3 h-3 text-[#D9AD54]" /> 9416968076
                   </a>
-                  <a href="tel:9896302035" className="text-[#29D7FF] hover:underline flex items-center gap-1.5">
-                    <Phone className="w-3 h-3" /> 9896302035
+                  <a href="tel:9896302035" className="text-[#172A50] hover:text-[#8B1745] flex items-center gap-1.5">
+                    <Phone className="w-3 h-3 text-[#D9AD54]" /> 9896302035
                   </a>
                 </div>
               </div>

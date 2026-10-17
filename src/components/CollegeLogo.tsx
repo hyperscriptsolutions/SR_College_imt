@@ -12,10 +12,10 @@ export default function CollegeLogo({
   showText = true,
 }: LogoProps) {
   const isDarkBg = variant === "light";
-  const primaryColor = isDarkBg ? "#FFFFFF" : "#10264A";
-  const accentColor = isDarkBg ? "#A99BFF" : "#367BFF";
-  const textColor = isDarkBg ? "text-white" : "text-[#10264A]";
-  const subtextColor = isDarkBg ? "text-slate-300" : "text-[#586885]";
+  const primaryColor = isDarkBg ? "#FFFFFF" : "#172A50";
+  const accentColor = isDarkBg ? "#D9AD54" : "#D9AD54";
+  const textColor = isDarkBg ? "text-white" : "text-[#172A50]";
+  const subtextColor = isDarkBg ? "text-slate-300" : "text-[#718096]";
 
   return (
     <div className="flex items-center gap-3">
@@ -30,12 +30,12 @@ export default function CollegeLogo({
         {/* Shield background */}
         <defs>
           <linearGradient id="crestGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#10264A" />
-            <stop offset="100%" stopColor="#1A3A6D" />
+            <stop offset="0%" stopColor="#172A50" />
+            <stop offset="100%" stopColor="#26345B" />
           </linearGradient>
           <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#367BFF" />
-            <stop offset="100%" stopColor="#A99BFF" />
+            <stop offset="0%" stopColor="#D9AD54" />
+            <stop offset="100%" stopColor="#F5D076" />
           </linearGradient>
         </defs>
 
@@ -46,23 +46,23 @@ export default function CollegeLogo({
         {/* Inner Shield contour */}
         <path
           d="M50 18 C65 18 72 26 72 44 C72 66 50 78 50 78 C50 78 28 66 28 44 C28 26 35 18 50 18 Z"
-          fill="#0B1A33"
+          fill="#111F3B"
           stroke="url(#goldGrad)"
           strokeWidth="1.5"
         />
 
         {/* Sound Wave & Speech Rays inside Crest */}
-        <path d="M42 42 Q42 50 42 58" stroke="#A99BFF" strokeWidth="2" strokeLinecap="round" />
-        <path d="M46 36 Q46 50 46 64" stroke="#367BFF" strokeWidth="2.2" strokeLinecap="round" />
-        <path d="M50 32 Q50 50 50 68" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="round" />
-        <path d="M54 36 Q54 50 54 64" stroke="#367BFF" strokeWidth="2.2" strokeLinecap="round" />
-        <path d="M58 42 Q58 50 58 58" stroke="#A99BFF" strokeWidth="2" strokeLinecap="round" />
+        <path d="M42 42 Q42 50 42 58" stroke="#D9AD54" strokeWidth="2" strokeLinecap="round" />
+        <path d="M46 36 Q46 50 46 64" stroke="#FFFFFF" strokeWidth="2.2" strokeLinecap="round" />
+        <path d="M50 32 Q50 50 50 68" stroke="#D9AD54" strokeWidth="2.5" strokeLinecap="round" />
+        <path d="M54 36 Q54 50 54 64" stroke="#FFFFFF" strokeWidth="2.2" strokeLinecap="round" />
+        <path d="M58 42 Q58 50 58 58" stroke="#D9AD54" strokeWidth="2" strokeLinecap="round" />
 
         {/* Open Book Foundation at base of shield */}
         <path
           d="M36 68 Q50 64 50 71 Q50 64 64 68 Q50 60 36 68 Z"
-          fill="#367BFF"
-          opacity="0.9"
+          fill="#D9AD54"
+          opacity="0.95"
         />
 
         {/* Letters "SR" */}
@@ -80,15 +80,15 @@ export default function CollegeLogo({
         </text>
 
         {/* Star accent at bottom */}
-        <polygon points="50,81 52,85 56,85 53,88 54,92 50,89 46,92 47,88 44,85 48,85" fill="#367BFF" />
+        <polygon points="50,81 52,85 56,85 53,88 54,92 50,89 46,92 47,88 44,85 48,85" fill="#D9AD54" />
       </svg>
 
       {showText && (
         <div className="flex flex-col">
-          <span className={`font-extrabold tracking-tight text-base sm:text-lg leading-tight ${textColor}`}>
+          <span className={`font-extrabold tracking-tight text-sm sm:text-base xl:text-lg leading-tight whitespace-nowrap ${textColor}`}>
             SR COLLEGE OF EDUCATION
           </span>
-          <span className={`text-[11px] sm:text-xs font-medium tracking-wide ${subtextColor}`}>
+          <span className={`text-[10px] sm:text-[11px] xl:text-xs font-medium tracking-wide whitespace-nowrap ${subtextColor}`}>
             Rohtak, Haryana • Estd. Institution
           </span>
         </div>

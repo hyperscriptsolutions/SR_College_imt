@@ -7,7 +7,7 @@ import ScrollProgressBar from "./ScrollProgressBar";
 
 export default function PublicLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen flex flex-col bg-[#F5F8FF] text-[#13264A] selection:bg-[#2684FF] selection:text-white">
+    <div className="min-h-screen flex flex-col bg-[#FFFCF6] text-[#263238] selection:bg-[#D9AD54]/30 selection:text-[#172A50]">
       <ScrollProgressBar />
       <Navbar />
       <div className="flex-grow">

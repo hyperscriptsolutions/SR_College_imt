@@ -5,11 +5,7 @@ import {
   Layers,
   ChevronDown,
   BookMarked,
-  UserCheck,
   MessageCircle,
-  FileText,
-  PenTool,
-  Globe2,
   Ear,
   Brain,
   HandMetal,
@@ -20,7 +16,7 @@ import {
   Sparkles,
   Info,
 } from "lucide-react";
-import type { SemesterData, SubjectItem } from "@/lib/dataStore";
+import type { SemesterData } from "@/lib/dataStore";
 
 interface CourseStructureProps {
   initialCurriculum?: SemesterData[];
@@ -235,52 +231,56 @@ export default function CourseStructure({ initialCurriculum }: CourseStructurePr
   };
 
   return (
-    <section id="structure" className="py-20 sm:py-28 bg-[#F5F8FF] relative">
+    <section id="structure" className="py-20 sm:py-28 bg-[#FFFCF6] relative border-t border-[#E8E2D8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#2684FF]/10 border border-[#2684FF]/20 text-xs font-bold text-[#2684FF] uppercase tracking-wider mb-3">
-            <Layers className="w-3.5 h-3.5" />
-            Curriculum & Syllabus Explorer
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#D9AD54]/10 border border-[#D9AD54]/30 text-xs font-bold text-[#B88B2E] uppercase tracking-wider mb-3">
+            <Layers className="w-3.5 h-3.5 text-[#D9AD54]" />
+            Curriculum &amp; Syllabus Explorer
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#071B3D] tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#172A50] tracking-tight mb-4">
             Course Structure
           </h2>
-          <p className="text-base sm:text-lg text-[#536B8E] leading-relaxed">
+          <p className="text-base sm:text-lg text-[#718096] leading-relaxed">
             The DHLS syllabus published by NIED is structured across two comprehensive semesters. Click any subject below to explore its description and core learning focus.
           </p>
         </div>
 
         {/* Semester Tab Switcher */}
         <div className="flex justify-center mb-10">
-          <div className="inline-flex p-1.5 rounded-2xl bg-white border border-slate-200 shadow-sm">
+          <div className="inline-flex p-1.5 rounded-2xl bg-white border border-[#E8E2D8] shadow-2xs">
             <button
               onClick={() => setActiveSemester(1)}
-              className={`flex items-center gap-2.5 px-6 sm:px-8 py-3 rounded-xl text-sm sm:text-base font-bold transition-all duration-200 ${
+              className={`flex items-center gap-2.5 px-6 sm:px-8 py-3 rounded-xl text-sm sm:text-base font-bold transition-all duration-150 cursor-pointer ${
                 activeSemester === 1
-                  ? "bg-[#071B3D] text-white shadow-md shadow-[#071B3D]/25"
-                  : "text-[#536B8E] hover:text-[#071B3D] hover:bg-slate-50"
+                  ? "bg-[#172A50] text-white shadow-sm"
+                  : "text-[#718096] hover:text-[#172A50] hover:bg-stone-50"
               }`}
             >
-              <span className="w-2.5 h-2.5 rounded-full bg-[#2684FF]" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#D9AD54]" />
               <span>Semester 1</span>
-              <span className="text-xs px-2 py-0.5 rounded-full bg-white/20 text-white font-medium">
+              <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${
+                activeSemester === 1 ? "bg-white/20 text-white" : "bg-stone-100 text-[#718096]"
+              }`}>
                 {sem1.length} Subjects
               </span>
             </button>
 
             <button
               onClick={() => setActiveSemester(2)}
-              className={`flex items-center gap-2.5 px-6 sm:px-8 py-3 rounded-xl text-sm sm:text-base font-bold transition-all duration-200 ${
+              className={`flex items-center gap-2.5 px-6 sm:px-8 py-3 rounded-xl text-sm sm:text-base font-bold transition-all duration-150 cursor-pointer ${
                 activeSemester === 2
-                  ? "bg-[#071B3D] text-white shadow-md shadow-[#071B3D]/25"
-                  : "text-[#536B8E] hover:text-[#071B3D] hover:bg-slate-50"
+                  ? "bg-[#172A50] text-white shadow-sm"
+                  : "text-[#718096] hover:text-[#172A50] hover:bg-stone-50"
               }`}
             >
-              <span className="w-2.5 h-2.5 rounded-full bg-[#9B6DFF]" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#8B1745]" />
               <span>Semester 2</span>
-              <span className="text-xs px-2 py-0.5 rounded-full bg-white/20 text-white font-medium">
+              <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${
+                activeSemester === 2 ? "bg-white/20 text-white" : "bg-stone-100 text-[#718096]"
+              }`}>
                 {sem2.length} Subjects
               </span>
             </button>
@@ -288,19 +288,19 @@ export default function CourseStructure({ initialCurriculum }: CourseStructurePr
         </div>
 
         {/* Semester Title Badge */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-200">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-[#E8E2D8]">
           <div>
-            <h3 className="text-2xl font-extrabold text-[#071B3D]">
+            <h3 className="text-2xl font-extrabold text-[#172A50]">
               {activeSemester === 1 ? "Semester 1 Curriculum" : "Semester 2 Curriculum"}
             </h3>
-            <p className="text-xs sm:text-sm text-[#536B8E]">
+            <p className="text-xs sm:text-sm text-[#718096]">
               {activeSemester === 1
                 ? "Foundations of Communication, Speech Anatomy, Language Expression & Assessment"
                 : "Audiology, Indian Sign Language (ISL), Speech Pathology & Rehabilitation"}
             </p>
           </div>
 
-          <div className="text-xs font-semibold text-[#2684FF] bg-[#2684FF]/10 px-3 py-1.5 rounded-full">
+          <div className="text-xs font-semibold text-[#172A50] bg-white border border-[#E8E2D8] px-3.5 py-1.5 rounded-full shadow-2xs">
             Click on any card to view detailed outline
           </div>
         </div>
@@ -317,8 +317,8 @@ export default function CourseStructure({ initialCurriculum }: CourseStructurePr
                 onClick={() => toggleExpand(subj.id)}
                 className={`cursor-pointer rounded-2xl p-5 border transition-all duration-200 text-left flex flex-col justify-between ${
                   isExpanded
-                    ? "bg-white border-[#2684FF] shadow-lg shadow-[#2684FF]/10 ring-1 ring-[#2684FF]"
-                    : "bg-white border-slate-200 hover:border-[#2684FF]/50 hover:shadow-md"
+                    ? "bg-white border-[#172A50] shadow-md ring-1 ring-[#172A50]"
+                    : "bg-white border-[#E8E2D8] hover:border-[#D9AD54] hover:shadow-sm"
                 }`}
                 role="button"
                 tabIndex={0}
@@ -332,27 +332,27 @@ export default function CourseStructure({ initialCurriculum }: CourseStructurePr
                 <div>
                   {/* Top row: Code & Category Tag */}
                   <div className="flex items-center justify-between gap-2 mb-3">
-                    <span className="text-[11px] font-bold text-slate-500 bg-slate-100 px-2.5 py-0.5 rounded-md">
+                    <span className="text-[11px] font-bold text-[#172A50] bg-[#FFFCF6] border border-[#E8E2D8] px-2.5 py-0.5 rounded-md font-mono">
                       {subj.code}
                     </span>
-                    <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full border bg-slate-50 text-slate-700 border-slate-200">
+                    <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full border bg-stone-50 text-[#718096] border-[#E8E2D8]">
                       {subj.category}
                     </span>
                   </div>
 
                   {/* Subject Title & Icon */}
                   <div className="flex items-start gap-3 mb-3">
-                    <div className="p-2 rounded-xl bg-slate-100 text-[#071B3D] flex-shrink-0 mt-0.5">
-                      <Icon className="w-5 h-5 text-[#2684FF]" />
+                    <div className="p-2 rounded-xl bg-[#172A50]/10 text-[#172A50] flex-shrink-0 mt-0.5">
+                      <Icon className="w-5 h-5 text-[#8B1745]" />
                     </div>
-                    <h4 className="text-base font-bold text-[#071B3D] leading-snug">
+                    <h4 className="text-base font-bold text-[#172A50] leading-snug">
                       {subj.title}
                     </h4>
                   </div>
 
                   {/* Description */}
                   <p
-                    className={`text-xs text-[#536B8E] leading-relaxed transition-all duration-200 ${
+                    className={`text-xs text-[#718096] leading-relaxed transition-all duration-200 ${
                       isExpanded ? "line-clamp-none mt-2" : "line-clamp-2"
                     }`}
                   >
@@ -361,11 +361,11 @@ export default function CourseStructure({ initialCurriculum }: CourseStructurePr
                 </div>
 
                 {/* Footer expansion indicator */}
-                <div className="pt-3 mt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-semibold text-[#2684FF]">
+                <div className="pt-3 mt-3 border-t border-stone-100 flex items-center justify-between text-[11px] font-bold text-[#8B1745]">
                   <span>{isExpanded ? "Show Less" : "Explore Subject"}</span>
                   <ChevronDown
                     className={`w-4 h-4 transition-transform duration-200 ${
-                      isExpanded ? "rotate-180 text-[#2684FF]" : "text-slate-400"
+                      isExpanded ? "rotate-180 text-[#8B1745]" : "text-stone-400"
                     }`}
                   />
                 </div>
@@ -375,10 +375,10 @@ export default function CourseStructure({ initialCurriculum }: CourseStructurePr
         </div>
 
         {/* Transparent Institutional Notice */}
-        <div className="max-w-4xl mx-auto p-5 rounded-2xl bg-white border border-slate-200/80 shadow-sm flex items-start gap-3.5">
-          <Info className="w-5 h-5 text-[#2684FF] flex-shrink-0 mt-0.5" />
-          <p className="text-xs sm:text-sm text-[#536B8E] leading-relaxed">
-            <strong className="text-[#071B3D] font-semibold">Institutional Clarification:</strong>{" "}
+        <div className="max-w-4xl mx-auto p-5 rounded-2xl bg-white border border-[#E8E2D8] shadow-2xs flex items-start gap-3.5">
+          <Info className="w-5 h-5 text-[#D9AD54] flex-shrink-0 mt-0.5" />
+          <p className="text-xs sm:text-sm text-[#718096] leading-relaxed">
+            <strong className="text-[#172A50] font-semibold">Institutional Clarification:</strong>{" "}
             The subjects listed above reflect the official curriculum referenced from the published NIED portal. 
             Fee structures, semester examinations, and admission schedules are subject to institutional confirmation by 
             SR College of Education. No clinical practice guarantees or payment commitments are assumed.

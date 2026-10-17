@@ -119,8 +119,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       <aside
         className={`hidden lg:flex lg:flex-col lg:w-64 border-r transition-colors duration-200 z-30 ${
           isDark
-            ? "bg-[#030D1D] border-[#29D7FF]/15 text-slate-200"
-            : "bg-[#071B3D] border-[#102B58] text-white"
+            ? "bg-[#0B1324] border-[#26345B] text-slate-200"
+            : "bg-[#172A50] border-[#26345B] text-white"
         }`}
       >
         {/* Brand Crest */}
@@ -131,7 +131,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               <div className="text-sm font-extrabold tracking-tight text-white leading-tight">
                 SR COLLEGE
               </div>
-              <div className="text-[10px] text-[#29D7FF] font-semibold tracking-wider uppercase">
+              <div className="text-[10px] text-[#D9AD54] font-semibold tracking-wider uppercase">
                 DHLS Admin Panel
               </div>
             </div>
@@ -262,7 +262,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               className="fixed inset-0 bg-black/60 backdrop-blur-sm"
               onClick={() => setMobileSidebarOpen(false)}
             />
-            <div className="fixed inset-y-0 left-0 w-72 bg-[#071B3D] text-white p-6 flex flex-col justify-between shadow-2xl">
+            <div className="fixed inset-y-0 left-0 w-72 bg-[#172A50] text-white p-6 flex flex-col justify-between shadow-2xl">
               <div>
                 <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-6">
                   <div className="flex items-center gap-2">
