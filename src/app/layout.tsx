@@ -77,14 +77,14 @@ export default function RootLayout({
     "contactPoint": [
       {
         "@type": "ContactPoint",
-        "telephone": "+91-9886302035",
+        "telephone": "+91-9896302035",
         "contactType": "admissions",
         "areaServed": "IN",
         "availableLanguage": ["English", "Hindi"]
       },
       {
         "@type": "ContactPoint",
-        "telephone": "+91-9992700642",
+        "telephone": "+91-7404153253",
         "contactType": "admissions",
         "areaServed": "IN",
         "availableLanguage": ["English", "Hindi"]

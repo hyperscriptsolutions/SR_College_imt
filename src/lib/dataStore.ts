@@ -342,8 +342,8 @@ const DEFAULT_FAQS: FAQItem[] = [
   },
   {
     id: "faq-6",
-    question: "How can I contact S. R. College of Education?",
-    answer: "You can reach S. R. College of Education by phone at 9886302035, 9992700642, 9992700255, or 9306040793, by email at srcollegeeducation@gmail.com, or by visiting the campus at S. R. College of Education, IMT, Sector 30-B, Delhi Road, Rohtak, Haryana.",
+    question: "How can I contact S.R COLLEGE OF EDUCATION?",
+    answer: "You can reach S.R COLLEGE OF EDUCATION by phone at 9896302035, 7404153253, 9992700255, or 9306040793, by email at srcollegeeducation@gmail.com, or by visiting the campus at S.R COLLEGE OF EDUCATION, IMT, Sector 30-B, Delhi Road, Rohtak, Haryana.",
     isPublished: true,
     sortOrder: 6,
   },

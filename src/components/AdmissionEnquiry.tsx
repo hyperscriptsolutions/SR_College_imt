@@ -42,7 +42,7 @@ export default function AdmissionEnquiry() {
     const cleanPhone = formData.mobile.replace(/[\s\-+]/g, "").slice(-10);
     const phoneRegex = /^[6-9]\d{9}$/;
     if (!cleanPhone || !phoneRegex.test(cleanPhone)) {
-      errs.mobile = "Please enter a valid 10-digit Indian mobile number (e.g. 9886302035).";
+      errs.mobile = "Please enter a valid 10-digit Indian mobile number (e.g. 9896302035).";
     }
 
     if (formData.email.trim()) {
@@ -151,7 +151,7 @@ export default function AdmissionEnquiry() {
               {/* Call Buttons */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2.5 mb-6">
                 <a
-                  href="tel:9886302035"
+                  href="tel:9896302035"
                   className="flex items-center justify-between p-3 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/10 transition-colors group cursor-pointer"
                 >
                   <div className="flex items-center gap-2.5">
@@ -160,14 +160,14 @@ export default function AdmissionEnquiry() {
                     </div>
                     <div>
                       <div className="text-[10px] text-slate-300 font-medium">Primary Admissions</div>
-                      <div className="text-sm font-bold text-white tracking-wide font-mono">9886302035</div>
+                      <div className="text-sm font-bold text-white tracking-wide font-mono">9896302035</div>
                     </div>
                   </div>
                   <span className="text-xs font-semibold text-[#D9AD54] group-hover:underline">Call</span>
                 </a>
 
                 <a
-                  href="tel:9992700642"
+                  href="tel:7404153253"
                   className="flex items-center justify-between p-3 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/10 transition-colors group cursor-pointer"
                 >
                   <div className="flex items-center gap-2.5">
@@ -176,7 +176,7 @@ export default function AdmissionEnquiry() {
                     </div>
                     <div>
                       <div className="text-[10px] text-slate-300 font-medium">Admissions Desk</div>
-                      <div className="text-sm font-bold text-white tracking-wide font-mono">9992700642</div>
+                      <div className="text-sm font-bold text-white tracking-wide font-mono">7404153253</div>
                     </div>
                   </div>
                   <span className="text-xs font-semibold text-[#D9AD54] group-hover:underline">Call</span>

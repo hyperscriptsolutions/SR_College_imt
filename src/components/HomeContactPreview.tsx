@@ -54,9 +54,9 @@ export default function HomeContactPreview() {
                     <strong className="block text-[#172A50] font-bold mb-0.5">Helpline Numbers:</strong>
                     <div className="font-mono text-[#172A50] font-bold flex flex-col gap-0.5">
                       <div className="space-x-1">
-                        <a href="tel:9886302035" className="hover:text-[#8B1745] hover:underline">9886302035</a>
+                        <a href="tel:9896302035" className="hover:text-[#8B1745] hover:underline">9896302035</a>
                         <span>/</span>
-                        <a href="tel:9992700642" className="hover:text-[#8B1745] hover:underline">9992700642</a>
+                        <a href="tel:7404153253" className="hover:text-[#8B1745] hover:underline">7404153253</a>
                       </div>
                       <div className="space-x-1">
                         <a href="tel:9992700255" className="hover:text-[#8B1745] hover:underline">9992700255</a>

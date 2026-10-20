@@ -40,7 +40,7 @@ export default function FAQSection({ initialFaqs }: FAQSectionProps) {
     {
       question: "How can I contact S. R. College of Education?",
       answer:
-        "You can contact S. R. College of Education via phone at 9886302035, 9992700642, 9992700255, or 9306040793, by email at srcollegeeducation@gmail.com, or by visiting the campus located at S. R. College of Education, IMT, Sector 30-B, Delhi Road, Rohtak, Haryana. You can also submit the admission enquiry form on this website.",
+        "You can contact S.R COLLEGE OF EDUCATION via phone at 9896302035, 7404153253, 9992700255, or 9306040793, by email at srcollegeeducation@gmail.com, or by visiting the campus located at S.R COLLEGE OF EDUCATION, IMT, Sector 30-B, Delhi Road, Rohtak, Haryana. You can also submit the admission enquiry form on this website.",
     },
     {
       question: "Is DHLS admission currently available at S. R. College?",
@@ -147,11 +147,11 @@ export default function FAQSection({ initialFaqs }: FAQSectionProps) {
 
           <div className="flex flex-wrap items-center gap-3">
             <a
-              href="tel:9886302035"
+              href="tel:9896302035"
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold text-[#172A50] bg-white border border-[#E8E2D8] hover:border-[#D9AD54] transition-colors shadow-2xs"
             >
               <Phone className="w-4 h-4 text-[#D9AD54]" />
-              <span className="font-mono">9886302035</span>
+              <span className="font-mono">9896302035</span>
             </a>
             <a
               href="mailto:srcollegeeducation@gmail.com"

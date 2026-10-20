@@ -106,19 +106,19 @@ export default function EligibilityAdmissionPage() {
 
             <div className="grid grid-cols-2 gap-2 flex-shrink-0">
               <a
-                href="tel:9886302035"
+                href="tel:9896302035"
                 className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-full font-bold text-xs text-[#172A50] bg-[#D9AD54] hover:bg-[#c99c43] transition-all shadow-md font-mono cursor-pointer"
               >
                 <Phone className="w-3.5 h-3.5" />
-                <span>9886302035</span>
+                <span>9896302035</span>
               </a>
 
               <a
-                href="tel:9992700642"
+                href="tel:7404153253"
                 className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-full font-bold text-xs text-[#172A50] bg-[#D9AD54] hover:bg-[#c99c43] transition-all shadow-md font-mono cursor-pointer"
               >
                 <Phone className="w-3.5 h-3.5" />
-                <span>9992700642</span>
+                <span>7404153253</span>
               </a>
 
               <a

@@ -139,9 +139,9 @@ export default function Footer() {
                 <Phone className="w-4 h-4 text-[#D9AD54] flex-shrink-0 mt-0.5" />
                 <div className="flex flex-col gap-1 font-mono text-xs">
                   <div className="flex items-center gap-2">
-                    <a href="tel:9886302035" className="text-white hover:underline">9886302035</a>
+                    <a href="tel:9896302035" className="text-white hover:underline">9896302035</a>
                     <span>/</span>
-                    <a href="tel:9992700642" className="text-white hover:underline">9992700642</a>
+                    <a href="tel:7404153253" className="text-white hover:underline">7404153253</a>
                   </div>
                   <div className="flex items-center gap-2">
                     <a href="tel:9992700255" className="text-white hover:underline">9992700255</a>

@@ -73,16 +73,16 @@ export default function CollegeContact() {
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-sm font-semibold font-mono">
                       <a
-                        href="tel:9886302035"
+                        href="tel:9896302035"
                         className="text-[#172A50] hover:text-[#8B1745] hover:underline flex items-center gap-1.5"
                       >
-                        +91 9886302035
+                        +91 9896302035
                       </a>
                       <a
-                        href="tel:9992700642"
+                        href="tel:7404153253"
                         className="text-[#172A50] hover:text-[#8B1745] hover:underline flex items-center gap-1.5"
                       >
-                        +91 9992700642
+                        +91 7404153253
                       </a>
                       <a
                         href="tel:9992700255"
