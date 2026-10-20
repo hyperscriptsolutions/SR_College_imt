@@ -70,7 +70,7 @@ export default function AdminDashboardPage() {
             Dashboard Overview
           </h1>
           <p className="text-xs sm:text-sm text-[#536B8E] mt-1">
-            Real-time management metrics for SR College of Education DHLS course portal.
+            Real-time management metrics for S. R. College of Education DHLS course portal.
           </p>
         </div>
 

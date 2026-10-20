@@ -11,22 +11,22 @@ export default function DHLSJourney() {
       stage: "01",
       title: "Explore the Course",
       icon: Compass,
-      description: "Review the full curriculum, 2 semesters, and 18 subjects published in the NIED course outline.",
+      description: "Review the regular 1-year offline curriculum, 2 semesters, and 18 subjects recognized by RCI.",
       tag: "Self-Review",
     },
     {
       stage: "02",
       title: "Check Eligibility",
       icon: BookCheck,
-      description: "Verify that you meet the listed entry qualification of '12th and Above' from any recognized board.",
+      description: "Verify that you meet the listed entry qualification of '12th (PCM or PCB) and Above' from any recognized board.",
       tag: "Verification",
     },
     {
       stage: "03",
-      title: "Confirm Admission Status",
+      title: "Register on NBER-RCI Portal",
       icon: ClipboardList,
-      description: "Check directly with SR College of Education to verify if DHLS admissions are currently open for this session.",
-      tag: "College Confirmation",
+      description: "DHLS has an intake capacity of 30 seats. Admissions are conducted centrally through online registration on the NBER-RCI portal (August to October).",
+      tag: "Central Admission (30 Seats)",
     },
     {
       stage: "04",
@@ -37,10 +37,10 @@ export default function DHLSJourney() {
     },
     {
       stage: "05",
-      title: "Follow Official Process",
+      title: "Counselling & Admission",
       icon: Award,
-      description: "Complete verified documentation and institutional formalities according to official college guidelines.",
-      tag: "Enrollment Steps",
+      description: "Follow the prescribed online counselling and admission procedure to complete enrollment at S. R. College of Education.",
+      tag: "Prescribed Counselling",
     },
   ];
 

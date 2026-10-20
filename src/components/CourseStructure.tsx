@@ -244,7 +244,7 @@ export default function CourseStructure({ initialCurriculum }: CourseStructurePr
             Course Structure
           </h2>
           <p className="text-base sm:text-lg text-[#718096] leading-relaxed">
-            The DHLS syllabus published by NIED is structured across two comprehensive semesters. Click any subject below to explore its description and core learning focus.
+            The DHLS syllabus is a regular 1-year offline diploma curriculum recognised by the Rehabilitation Council of India (RCI), structured across two comprehensive semesters. Click any subject below to explore its description and core learning focus.
           </p>
         </div>
 
@@ -379,9 +379,8 @@ export default function CourseStructure({ initialCurriculum }: CourseStructurePr
           <Info className="w-5 h-5 text-[#D9AD54] flex-shrink-0 mt-0.5" />
           <p className="text-xs sm:text-sm text-[#718096] leading-relaxed">
             <strong className="text-[#172A50] font-semibold">Institutional Clarification:</strong>{" "}
-            The subjects listed above reflect the official curriculum referenced from the published NIED portal. 
-            Fee structures, semester examinations, and admission schedules are subject to institutional confirmation by 
-            SR College of Education. No clinical practice guarantees or payment commitments are assumed.
+            The subjects listed above reflect the official curriculum recognised by the Rehabilitation Council of India (RCI). 
+            Classes, practical audiology sessions, and clinical postings are conducted in regular offline mode at S. R. College of Education, Rohtak.
           </p>
         </div>
 

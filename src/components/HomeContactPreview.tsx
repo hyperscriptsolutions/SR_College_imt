@@ -22,7 +22,7 @@ export default function HomeContactPreview() {
               </div>
 
               <h2 className="text-2xl sm:text-3xl font-extrabold text-[#172A50] tracking-tight mb-3">
-                Connect with SR College of Education
+                Connect with S. R. College of Education
               </h2>
 
               <p className="text-xs sm:text-sm text-[#718096] leading-relaxed mb-6">
@@ -40,7 +40,7 @@ export default function HomeContactPreview() {
                   <div>
                     <strong className="block text-[#172A50] font-bold mb-0.5">Campus Address:</strong>
                     <span className="text-[#718096] leading-snug">
-                      L.M.T., Sector 30-A, Near Saint Gate, Rohtak, Haryana – 124001
+                      S. R. College of Education, IMT, Sector 30-B, Delhi Road, Rohtak, Haryana
                     </span>
                   </div>
                 </div>
@@ -52,10 +52,17 @@ export default function HomeContactPreview() {
                   </div>
                   <div>
                     <strong className="block text-[#172A50] font-bold mb-0.5">Helpline Numbers:</strong>
-                    <div className="font-mono text-[#172A50] font-bold space-x-1">
-                      <a href="tel:9416968076" className="hover:text-[#8B1745] hover:underline">9416968076</a>
-                      <span>/</span>
-                      <a href="tel:9052002305" className="hover:text-[#8B1745] hover:underline">9052002305</a>
+                    <div className="font-mono text-[#172A50] font-bold flex flex-col gap-0.5">
+                      <div className="space-x-1">
+                        <a href="tel:9886302035" className="hover:text-[#8B1745] hover:underline">9886302035</a>
+                        <span>/</span>
+                        <a href="tel:9992700642" className="hover:text-[#8B1745] hover:underline">9992700642</a>
+                      </div>
+                      <div className="space-x-1">
+                        <a href="tel:9992700255" className="hover:text-[#8B1745] hover:underline">9992700255</a>
+                        <span>/</span>
+                        <a href="tel:9306040793" className="hover:text-[#8B1745] hover:underline">9306040793</a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -67,8 +74,8 @@ export default function HomeContactPreview() {
                   </div>
                   <div>
                     <strong className="block text-[#172A50] font-bold mb-0.5">Email Desk:</strong>
-                    <a href="mailto:srcollegeofeducation@gmail.com" className="text-[#172A50] hover:text-[#8B1745] hover:underline font-medium">
-                      srcollegeofeducation@gmail.com
+                    <a href="mailto:srcollegeeducation@gmail.com" className="text-[#172A50] hover:text-[#8B1745] hover:underline font-medium">
+                      srcollegeeducation@gmail.com
                     </a>
                   </div>
                 </div>

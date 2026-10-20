@@ -7,31 +7,31 @@ export default function Eligibility() {
       stepNumber: "01",
       title: "Review Your Qualification",
       icon: GraduationCap,
-      badge: "Eligibility: 12th & Above",
+      badge: "Eligibility: 12th (PCM / PCB) & Above",
       badgeColor: "bg-[#8B1745]/10 text-[#8B1745] border-[#8B1745]/20",
       description:
-        "According to the referenced NIED curriculum, the eligibility criterion is '12th and Above'. Students who have successfully completed their 10+2 / Higher Secondary education from a recognized education board are eligible to explore this course.",
-      note: "No specific stream or minimum cut-off marks are presupposed; please confirm official college criteria.",
+        "The DHLS program is an offline, regular 1-year diploma course recognised by the Rehabilitation Council of India (RCI). The entry eligibility criterion is 12th (PCM or PCB) and Above. Students who have successfully completed their 10+2 / Higher Secondary education with Physics, Chemistry, Mathematics (PCM) or Biology (PCB) from a recognized education board are eligible to apply.",
+      note: "Candidates must have completed 10+2 with PCM or PCB; regular offline course recognised by RCI.",
     },
     {
       stepNumber: "02",
       title: "Review Course Guidelines",
       icon: FileCheck,
-      badge: "Reference Syllabus",
+      badge: "RCI Syllabus Framework",
       badgeColor: "bg-[#D9AD54]/15 text-[#B88B2E] border-[#D9AD54]/30",
       description:
         "Understand the curriculum subjects spanning across 2 semesters, including speech mechanics, communication theories, sign language, and audiological fundamentals. Ensure the curriculum aligns with your learning interests.",
-      note: "Curriculum structure is referenced from published NIED documentation.",
+      note: "Curriculum structure is recognized by the Rehabilitation Council of India (RCI).",
     },
     {
       stepNumber: "03",
-      title: "Confirm Admission Availability",
+      title: "NBER-RCI Central Admission",
       icon: PhoneCall,
-      badge: "Direct Verification",
+      badge: "Intake: 30 Seats",
       badgeColor: "bg-[#172A50]/10 text-[#172A50] border-[#172A50]/20",
       description:
-        "Get in touch directly with the SR College of Education administration to verify current admission status, seat allocation, batch commencement dates, and applicable documentation requirements.",
-      note: "SR College of Education confirms its own official admissions and batch intake.",
+        "DHLS has an intake capacity of 30 seats. Admissions are conducted centrally through registration on the NBER-RCI portal, generally during the months of August to October. Candidates must complete the online registration process and follow the prescribed counselling and admission procedure.",
+      note: "Central registration via NBER-RCI portal (Aug-Oct); 30 intake capacity.",
     },
   ];
 
@@ -49,9 +49,9 @@ export default function Eligibility() {
             Is This Course for You?
           </h2>
           <p className="text-base sm:text-lg text-[#718096] leading-relaxed">
-            The published NIED documentation lists the entry eligibility as{" "}
+            The DHLS program is an offline, regular 1-year diploma course recognised by the Rehabilitation Council of India (RCI) with entry eligibility as{" "}
             <span className="font-bold text-[#172A50] bg-white border border-[#E8E2D8] px-2.5 py-0.5 rounded-md shadow-2xs">
-              12th and Above
+              12th (PCM / PCB) and Above
             </span>
             . Follow this straightforward 3-step process to evaluate your eligibility and confirm admission details.
           </p>
@@ -113,10 +113,10 @@ export default function Eligibility() {
               </div>
               <div>
                 <h4 className="text-base sm:text-lg font-bold text-white mb-1">
-                  Official College Confirmation Required
+                  Central Admission on NBER-RCI Portal (30 Seats Intake)
                 </h4>
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-xl">
-                  While NIED specifies &quot;12th and Above&quot;, SR College of Education must officially confirm current session admission criteria, seat availability, and batch intake. Contact our admissions desk to verify today.
+                  DHLS has an intake capacity of 30 seats. Admissions are conducted centrally through registration on the NBER-RCI portal, generally during the months of August to October. Candidates must complete the online registration process and follow the prescribed counselling and admission procedure. Contact our admissions desk for helpdesk guidance.
                 </p>
               </div>
             </div>

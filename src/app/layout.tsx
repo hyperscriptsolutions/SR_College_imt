@@ -17,13 +17,13 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "DHLS Course | SR College of Education, Rohtak",
+  title: "DHLS Course | S. R. College of Education, Rohtak",
   description:
-    "Explore the Diploma in Hearing Language and Speech (DHLS) at SR College of Education, Rohtak. Understand course subjects, eligibility, communication theories, audiology, and admission enquiry.",
+    "Explore the Diploma in Hearing Language and Speech (DHLS) at S. R. College of Education, Rohtak. Understand course subjects, eligibility, communication theories, audiology, and admission enquiry.",
   keywords: [
     "DHLS",
     "Diploma in Hearing Language and Speech",
-    "SR College of Education",
+    "S. R. College of Education",
     "Rohtak",
     "Hearing and Speech Course",
     "Audiology",
@@ -31,25 +31,25 @@ export const metadata: Metadata = {
     "Communication Sciences",
     "Haryana Education",
   ],
-  authors: [{ name: "SR College of Education", url: "https://www.srcoe.com/" }],
-  creator: "SR College of Education",
-  publisher: "SR College of Education",
+  authors: [{ name: "S. R. College of Education", url: "https://www.srcoe.com/" }],
+  creator: "S. R. College of Education",
+  publisher: "S. R. College of Education",
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
-    title: "DHLS Course | SR College of Education, Rohtak",
+    title: "DHLS Course | S. R. College of Education, Rohtak",
     description:
       "Understand Hearing. Discover Speech. Empower Communication. Explore the Diploma in Hearing Language and Speech (DHLS) curriculum and admission guidelines.",
     url: "https://www.srcoe.com/",
-    siteName: "SR College of Education",
+    siteName: "S. R. College of Education",
     locale: "en_IN",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "DHLS Course | SR College of Education, Rohtak",
+    title: "DHLS Course | S. R. College of Education, Rohtak",
     description:
       "Understand Hearing. Discover Speech. Empower Communication. Explore the Diploma in Hearing Language and Speech (DHLS).",
   },
@@ -63,12 +63,12 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "EducationalOrganization",
-    "name": "SR College of Education",
+    "name": "S. R. College of Education",
     "url": "https://www.srcoe.com/",
     "logo": "https://www.srcoe.com/images/logo1.png",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "L.M.T., Sector 30-B, Kheri Sadh, Delhi Road",
+      "streetAddress": "S. R. College of Education, IMT, Sector 30-B, Delhi Road",
       "addressLocality": "Rohtak",
       "postalCode": "124001",
       "addressRegion": "Haryana",
@@ -77,14 +77,28 @@ export default function RootLayout({
     "contactPoint": [
       {
         "@type": "ContactPoint",
-        "telephone": "+91-9416968076",
+        "telephone": "+91-9886302035",
         "contactType": "admissions",
         "areaServed": "IN",
         "availableLanguage": ["English", "Hindi"]
       },
       {
         "@type": "ContactPoint",
-        "telephone": "+91-9896302035",
+        "telephone": "+91-9992700642",
+        "contactType": "admissions",
+        "areaServed": "IN",
+        "availableLanguage": ["English", "Hindi"]
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": "+91-9992700255",
+        "contactType": "enquiries",
+        "areaServed": "IN",
+        "availableLanguage": ["English", "Hindi"]
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": "+91-9306040793",
         "contactType": "enquiries",
         "areaServed": "IN",
         "availableLanguage": ["English", "Hindi"]

@@ -25,7 +25,7 @@ export default function CollegeLogo({
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className={`${className} flex-shrink-0 transition-transform duration-300 hover:scale-105`}
-        aria-label="SR College of Education Emblem"
+        aria-label="S. R. College of Education Emblem"
       >
         {/* Shield background */}
         <defs>
@@ -65,18 +65,18 @@ export default function CollegeLogo({
           opacity="0.95"
         />
 
-        {/* Letters "SR" */}
+        {/* Letters "S.R." */}
         <text
           x="50"
           y="30"
           textAnchor="middle"
           fill="#FFFFFF"
-          fontSize="10"
+          fontSize="9"
           fontWeight="bold"
-          letterSpacing="1"
+          letterSpacing="0.5"
           fontFamily="system-ui"
         >
-          SR
+          S.R.
         </text>
 
         {/* Star accent at bottom */}
@@ -86,7 +86,7 @@ export default function CollegeLogo({
       {showText && (
         <div className="flex flex-col">
           <span className={`font-extrabold tracking-tight text-sm sm:text-base xl:text-lg leading-tight whitespace-nowrap ${textColor}`}>
-            SR COLLEGE OF EDUCATION
+            S. R. COLLEGE OF EDUCATION
           </span>
           <span className={`text-[10px] sm:text-[11px] xl:text-xs font-medium tracking-wide whitespace-nowrap ${subtextColor}`}>
             Rohtak, Haryana • Estd. Institution

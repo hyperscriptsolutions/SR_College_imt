@@ -59,7 +59,7 @@ export default function Navbar() {
             <Link
               href="/"
               className="flex items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#172A50] rounded-lg flex-shrink-0"
-              aria-label="SR College of Education Homepage"
+              aria-label="S. R. College of Education Homepage"
             >
               <CollegeLogo variant="navy" className="h-8 w-8 sm:h-9 sm:w-9 xl:h-10 xl:w-10" />
             </Link>
@@ -90,12 +90,12 @@ export default function Navbar() {
             {/* Actions: Direct Call & Enquire Now (Right) */}
             <div className="hidden md:flex items-center gap-2.5 xl:gap-3 flex-shrink-0">
               <a
-                href="tel:9416968076"
+                href="tel:9886302035"
                 className="flex items-center gap-1.5 text-xs xl:text-sm font-semibold text-[#172A50] hover:text-[#8B1745] px-3 xl:px-3.5 py-1.5 rounded-full bg-white border border-[#E8E2D8] hover:border-[#D9AD54] transition-all shadow-2xs whitespace-nowrap"
-                title="Call SR College Admissions Desk"
+                title="Call S. R. College Admissions Desk"
               >
                 <Phone className="w-3.5 h-3.5 text-[#172A50]" />
-                <span className="font-mono tracking-tight font-bold">9416968076</span>
+                <span className="font-mono tracking-tight font-bold">9886302035</span>
               </a>
 
               <Link
@@ -110,7 +110,7 @@ export default function Navbar() {
             {/* Mobile Actions & Hamburger */}
             <div className="flex items-center gap-2 lg:hidden">
               <a
-                href="tel:9416968076"
+                href="tel:9886302035"
                 className="p-2 rounded-full bg-white border border-[#E8E2D8] text-[#172A50] md:hidden"
                 aria-label="Call Admissions Desk"
               >
@@ -180,12 +180,18 @@ export default function Navbar() {
 
               <div className="p-3.5 rounded-xl bg-white border border-[#E8E2D8] text-xs text-[#263238]">
                 <div className="font-bold text-[#172A50] mb-1.5">Admissions Helpline:</div>
-                <div className="flex flex-col gap-1 font-mono font-semibold">
-                  <a href="tel:9416968076" className="text-[#172A50] hover:text-[#8B1745] flex items-center gap-1.5">
-                    <Phone className="w-3 h-3 text-[#D9AD54]" /> 9416968076
+                <div className="grid grid-cols-2 gap-1.5 font-mono font-semibold text-[11px]">
+                  <a href="tel:9886302035" className="text-[#172A50] hover:text-[#8B1745] flex items-center gap-1">
+                    <Phone className="w-3 h-3 text-[#D9AD54]" /> 9886302035
                   </a>
-                  <a href="tel:9896302035" className="text-[#172A50] hover:text-[#8B1745] flex items-center gap-1.5">
-                    <Phone className="w-3 h-3 text-[#D9AD54]" /> 9896302035
+                  <a href="tel:9992700642" className="text-[#172A50] hover:text-[#8B1745] flex items-center gap-1">
+                    <Phone className="w-3 h-3 text-[#D9AD54]" /> 9992700642
+                  </a>
+                  <a href="tel:9992700255" className="text-[#172A50] hover:text-[#8B1745] flex items-center gap-1">
+                    <Phone className="w-3 h-3 text-[#D9AD54]" /> 9992700255
+                  </a>
+                  <a href="tel:9306040793" className="text-[#172A50] hover:text-[#8B1745] flex items-center gap-1">
+                    <Phone className="w-3 h-3 text-[#D9AD54]" /> 9306040793
                   </a>
                 </div>
               </div>

@@ -69,7 +69,7 @@ export async function POST(request: NextRequest) {
       qualification,
       message: message || "General DHLS Course Enquiry",
       course: "Diploma in Hearing Language and Speech (DHLS)",
-      institution: "SR College of Education, Rohtak",
+      institution: "S. R. College of Education, Rohtak",
       submittedAt: timestamp,
       status: "PENDING_COLLEGE_CONTACT",
     };
@@ -102,7 +102,7 @@ export async function POST(request: NextRequest) {
       success: true,
       enquiryId,
       message:
-        "Thank you! Your DHLS enquiry has been recorded with SR College of Education. Our admissions representative will contact you via phone shortly.",
+        "Thank you! Your DHLS enquiry has been recorded with S. R. College of Education. Our admissions representative will contact you via phone shortly.",
       details: {
         enquiryId,
         fullName,

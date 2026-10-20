@@ -25,7 +25,7 @@ export default function Footer() {
           <div className="lg:col-span-4">
             <CollegeLogo variant="light" className="h-11 w-11 mb-4" />
             <p className="text-xs text-slate-300 leading-relaxed max-w-sm mb-5">
-              SR College of Education is a recognized academic institution in Rohtak, Haryana. 
+              S. R. College of Education is a recognized academic institution in Rohtak, Haryana. 
               This premier destination for Diploma in Hearing, Language and Speech (DHLS).
             </p>
 
@@ -126,27 +126,30 @@ export default function Footer() {
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-[#D9AD54] flex-shrink-0 mt-0.5" />
                 <span className="leading-relaxed">
-                  L.M.T. Sector 30-A, Near Saint Gate, Rohtak, Haryana – 124001
+                  S. R. College of Education, IMT, Sector 30-B, Delhi Road, Rohtak, Haryana
                 </span>
               </div>
 
-              <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-[#D9AD54] flex-shrink-0" />
-                <div className="flex items-center gap-2 font-mono">
-                  <a href="tel:9416968076" className="text-white hover:underline">
-                    9416968076
-                  </a>
-                  <span>/</span>
-                  <a href="tel:9052002305" className="text-white hover:underline">
-                    9052002305
-                  </a>
+              <div className="flex items-start gap-2.5">
+                <Phone className="w-4 h-4 text-[#D9AD54] flex-shrink-0 mt-0.5" />
+                <div className="flex flex-col gap-1 font-mono text-xs">
+                  <div className="flex items-center gap-2">
+                    <a href="tel:9886302035" className="text-white hover:underline">9886302035</a>
+                    <span>/</span>
+                    <a href="tel:9992700642" className="text-white hover:underline">9992700642</a>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <a href="tel:9992700255" className="text-white hover:underline">9992700255</a>
+                    <span>/</span>
+                    <a href="tel:9306040793" className="text-white hover:underline">9306040793</a>
+                  </div>
                 </div>
               </div>
 
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-[#D9AD54] flex-shrink-0" />
-                <a href="mailto:srcollegeofeducation@gmail.com" className="text-white hover:underline">
-                  srcollegeofeducation@gmail.com
+                <a href="mailto:srcollegeeducation@gmail.com" className="text-white hover:underline">
+                  srcollegeeducation@gmail.com
                 </a>
               </div>
 
@@ -215,7 +218,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-6 border-t border-[#26345B] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <p>
-            &copy; {currentYear} SR College of Education, Rohtak. All rights reserved.
+            &copy; {currentYear} S. R. College of Education, Rohtak. All rights reserved.
           </p>
 
           <div className="flex items-center gap-4 text-xs">

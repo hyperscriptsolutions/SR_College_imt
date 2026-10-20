@@ -18,14 +18,14 @@ export default function FAQSection({ initialFaqs }: FAQSectionProps) {
         "DHLS stands for Diploma in Hearing Language and Speech. It is an educational diploma program focused on the foundational study of human communication, speech and language articulation, auditory acoustics, and speech mechanisms.",
     },
     {
-      question: "How long is the DHLS course according to NIED?",
+      question: "How long is the DHLS course and what is its recognition?",
       answer:
-        "According to the official course information published on the NIED portal, the DHLS course has a duration of 1 Year, structured across two academic semesters.",
+        "The DHLS course is a regular 1-Year (2 Semesters) diploma course recognised by the Rehabilitation Council of India (RCI).",
     },
     {
       question: "What educational qualification is listed for eligibility?",
       answer:
-        "As listed in the referenced NIED documentation, the eligibility criterion is '12th and Above'. Applicants who have completed their 10+2 / Higher Secondary education or higher from a recognized board can explore this program. Specific stream criteria or marks requirements should be confirmed directly with the college.",
+        "The entry eligibility is 12th (PCM or PCB) and Above. Applicants who have completed their 10+2 / Higher Secondary education with Physics, Chemistry, Mathematics (PCM) or Biology (PCB) from a recognized education board are eligible to apply for this regular offline diploma course recognised by the Rehabilitation Council of India (RCI).",
     },
     {
       question: "What subjects are included in DHLS?",
@@ -33,24 +33,24 @@ export default function FAQSection({ initialFaqs }: FAQSectionProps) {
         "The curriculum comprises 18 subjects across two semesters. Semester 1 includes Personality Development & Communication Skills, Communication Theories, Expressionism of the Language, Developing Oral & Written Skills, Command Over Targeted Language, Language Interpreting, Communication Language & Speech, Anatomy & Physiology of the Speech Mechanism, and Internal Assessment. Semester 2 includes Oral Expression, Indian Sign Language (ISL), Communicative English & Computers, Audiology, Speech & Language Pathology, Community-Based Rehabilitation, Legal Language & Writing, Internal Assessment & Project, and Viva.",
     },
     {
-      question: "Is the course available online or offline according to NIED?",
+      question: "Is the DHLS course available online or offline?",
       answer:
-        "According to the information listed by NIED, the course is referenced as available in Online / Offline modes. However, classroom lectures, practical lab sessions, and internal assessments are subject to the specific operational mode adopted by the college for any given academic batch.",
+        "The DHLS course is conducted strictly in Offline, Regular mode. It is a full-time 1-year diploma course recognised by the Rehabilitation Council of India (RCI), featuring regular classroom lectures, hands-on audiology lab sessions, speech therapy clinics, and practical training on campus at S. R. College of Education, Rohtak.",
     },
     {
-      question: "How can I contact SR College of Education?",
+      question: "How can I contact S. R. College of Education?",
       answer:
-        "You can contact SR College of Education via phone at 9416968076 or 9052002305, by email at srcollegeofeducation@gmail.com, or by visiting the campus located at L.M.T., Sector 30-A, Near Saint Gate, Rohtak – 124001, Haryana, India. You can also submit the admission enquiry form on this website.",
+        "You can contact S. R. College of Education via phone at 9886302035, 9992700642, 9992700255, or 9306040793, by email at srcollegeeducation@gmail.com, or by visiting the campus located at S. R. College of Education, IMT, Sector 30-B, Delhi Road, Rohtak, Haryana. You can also submit the admission enquiry form on this website.",
     },
     {
-      question: "Is DHLS admission currently available at SR College?",
+      question: "Is DHLS admission currently available at S. R. College?",
       answer:
-        "Admissions for specific academic batches, seat capacity, and intake status are scheduled periodically by SR College of Education. Because admission openings vary by academic session, prospective students are advised to submit an enquiry or call the college admissions office directly to confirm current availability.",
+        "DHLS has an intake capacity of 30 seats. Admissions are conducted centrally through registration on the NBER-RCI portal, generally during the months of August to October. Candidates must complete the online registration process and follow the prescribed counselling and admission procedure.",
     },
     {
       question: "What are the current fees and admission requirements?",
       answer:
-        "Official fee structures, installment schedules, and mandatory enrollment documentation must be confirmed directly with SR College of Education. The institution does not publish unverified fee amounts online to ensure students receive accurate, up-to-date financial and academic guidance.",
+        "Official fee structures, installment schedules, and mandatory enrollment documentation must be confirmed directly with S. R. College of Education. The institution does not publish unverified fee amounts online to ensure students receive accurate, up-to-date financial and academic guidance.",
     },
   ];
 
@@ -79,7 +79,7 @@ export default function FAQSection({ initialFaqs }: FAQSectionProps) {
             Frequently Asked Questions
           </h2>
           <p className="text-base sm:text-lg text-[#718096] leading-relaxed">
-            Find answers regarding the DHLS curriculum based on published NIED specifications and verified SR College of Education contact channels.
+            Find answers regarding the DHLS curriculum based on published NIED specifications and verified S. R. College of Education contact channels.
           </p>
         </div>
 
@@ -147,14 +147,14 @@ export default function FAQSection({ initialFaqs }: FAQSectionProps) {
 
           <div className="flex flex-wrap items-center gap-3">
             <a
-              href="tel:9416968076"
+              href="tel:9886302035"
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold text-[#172A50] bg-white border border-[#E8E2D8] hover:border-[#D9AD54] transition-colors shadow-2xs"
             >
               <Phone className="w-4 h-4 text-[#D9AD54]" />
-              <span className="font-mono">9416968076</span>
+              <span className="font-mono">9886302035</span>
             </a>
             <a
-              href="mailto:srcollegeofeducation@gmail.com"
+              href="mailto:srcollegeeducation@gmail.com"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-[#8B1745] hover:bg-[#721238] transition-colors shadow-sm"
             >
               <Mail className="w-4 h-4 text-[#D9AD54]" />

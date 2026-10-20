@@ -8,15 +8,15 @@
   },
   {
     "id": "faq-2",
-    "question": "How long is the DHLS course according to NIED?",
-    "answer": "According to the official course information published on the NIED portal, the DHLS course has a duration of 1 Year, structured across two academic semesters.",
+    "question": "How long is the DHLS course and what is its recognition?",
+    "answer": "The DHLS course is a regular 1-Year (2 Semesters) diploma course recognised by the Rehabilitation Council of India (RCI).",
     "isPublished": true,
     "sortOrder": 2
   },
   {
     "id": "faq-3",
     "question": "What educational qualification is listed for eligibility?",
-    "answer": "As listed in the referenced NIED documentation, the entry eligibility is '12th and Above'. Applicants who have completed their 10+2 / Higher Secondary education from a recognized education board are eligible to explore this course.",
+    "answer": "The entry eligibility is 12th (PCM or PCB) and Above. Applicants who have completed their 10+2 / Higher Secondary education with Physics, Chemistry, Mathematics (PCM) or Biology (PCB) from a recognized education board are eligible to apply for this regular offline diploma course recognised by the Rehabilitation Council of India (RCI).",
     "isPublished": true,
     "sortOrder": 3
   },
@@ -29,29 +29,29 @@
   },
   {
     "id": "faq-5",
-    "question": "Is the course available online or offline according to NIED?",
-    "answer": "According to the information listed by NIED, the course is referenced as available in Online / Offline modes. Specific operational modes and lecture schedules are subject to institutional confirmation by the college.",
+    "question": "Is the DHLS course available online or offline?",
+    "answer": "The DHLS course is conducted strictly in Offline, Regular mode. It is a full-time 1-year diploma course recognised by the Rehabilitation Council of India (RCI), featuring regular classroom lectures, hands-on audiology lab sessions, speech therapy clinics, and practical training on campus at S. R. College of Education, Rohtak.",
     "isPublished": true,
     "sortOrder": 5
   },
   {
     "id": "faq-6",
-    "question": "How can I contact SR College of Education?",
-    "answer": "You can reach SR College of Education by phone at 9416968076 or 9896302035, by email at srcollegeeducation@gmail.com, or by visiting the campus at Sector 30-B, Kheri Sadh, Rohtak, Haryana.",
+    "question": "How can I contact S. R. College of Education?",
+    "answer": "You can reach S. R. College of Education by phone at 9886302035, 9992700642, 9992700255, or 9306040793, by email at srcollegeeducation@gmail.com, or by visiting the campus at S. R. College of Education, IMT, Sector 30-B, Delhi Road, Rohtak, Haryana.",
     "isPublished": true,
     "sortOrder": 6
   },
   {
     "id": "faq-7",
-    "question": "Is DHLS admission currently available at SR College?",
-    "answer": "Batch intakes and seat capacities are scheduled periodically. Prospective applicants should contact the college admissions desk directly to verify current session availability.",
+    "question": "Is DHLS admission currently available at S. R. College?",
+    "answer": "DHLS has an intake capacity of 30 seats. Admissions are conducted centrally through registration on the NBER-RCI portal, generally during the months of August to October. Candidates must complete the online registration process and follow the prescribed counselling and admission procedure.",
     "isPublished": true,
     "sortOrder": 7
   },
   {
     "id": "faq-8",
     "question": "What are the current fees and admission requirements?",
-    "answer": "Official fee structures and enrollment documentation must be confirmed directly with SR College of Education to ensure students receive accurate, up-to-date guidance.",
+    "answer": "Official fee structures and enrollment documentation must be confirmed directly with S. R. College of Education to ensure students receive accurate, up-to-date guidance.",
     "isPublished": true,
     "sortOrder": 8
   }

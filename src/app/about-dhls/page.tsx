@@ -7,6 +7,8 @@ import {
   GraduationCap,
   Clock,
   Laptop,
+  Award,
+  Users,
 } from "lucide-react";
 import AboutDHLS from "@/components/AboutDHLS";
 import DHLSJourney from "@/components/DHLSJourney";
@@ -14,9 +16,9 @@ import PublicLayout from "@/components/PublicLayout";
 import { getCourseContent } from "@/lib/dataStore";
 
 export const metadata = {
-  title: "About DHLS Course | SR College of Education",
+  title: "About DHLS Course | S. R. College of Education",
   description:
-    "Learn about the Diploma in Hearing Language and Speech (DHLS) curriculum, its foundational pillars, communication science, and course overview at SR College of Education, Rohtak.",
+    "Learn about the Diploma in Hearing Language and Speech (DHLS) curriculum, its foundational pillars, communication science, and course overview at S. R. College of Education, Rohtak.",
 };
 
 export default function AboutDHLSPage() {
@@ -41,22 +43,30 @@ export default function AboutDHLSPage() {
           </h1>
 
           <p className="max-w-3xl mx-auto text-base sm:text-lg text-slate-200 leading-relaxed mb-8">
-            The <strong className="text-white">Diploma in Hearing Language and Speech (DHLS)</strong> is an undergraduate-level diploma program structured around the science of human voice production, hearing evaluation, and verbal communication.
+            The <strong className="text-white">Diploma in Hearing Language and Speech (DHLS)</strong> is an offline, regular 1-year diploma course recognised by the Rehabilitation Council of India (RCI), structured around the science of human voice production, hearing evaluation, and verbal communication.
           </p>
 
           {/* Key Reference Stats Chips */}
           <div className="inline-flex flex-wrap justify-center gap-3 text-xs sm:text-sm">
             <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/10 border border-white/15 backdrop-blur-xs">
               <Clock className="w-4 h-4 text-[#D9AD54]" />
-              <span>Duration: <strong>{content.duration || "1 Year"}</strong></span>
+              <span>Duration: <strong>{content.duration || "1 Year (Regular)"}</strong></span>
             </div>
             <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/10 border border-white/15 backdrop-blur-xs">
               <GraduationCap className="w-4 h-4 text-[#D9AD54]" />
-              <span>Eligibility: <strong>{content.eligibility || "12th & Above"}</strong></span>
+              <span>Eligibility: <strong>{content.eligibility || "12th (PCM / PCB) & Above"}</strong></span>
             </div>
             <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/10 border border-white/15 backdrop-blur-xs">
               <Laptop className="w-4 h-4 text-[#D9AD54]" />
-              <span>Reference Framework: <strong>RCI / NIED Curriculum</strong></span>
+              <span>Mode: <strong>{content.mode || "Offline (Regular)"}</strong></span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/10 border border-white/15 backdrop-blur-xs">
+              <Award className="w-4 h-4 text-[#D9AD54]" />
+              <span>Recognition: <strong>Rehabilitation Council of India (RCI)</strong></span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/10 border border-white/15 backdrop-blur-xs">
+              <Users className="w-4 h-4 text-[#D9AD54]" />
+              <span>Intake Capacity: <strong>30 Seats</strong></span>
             </div>
           </div>
         </div>
@@ -168,7 +178,7 @@ export default function AboutDHLSPage() {
             Ready to Explore the Curriculum Details?
           </h2>
           <p className="text-sm sm:text-base text-[#718096] max-w-2xl mx-auto mb-8">
-            Review the semester-by-semester breakdown of subjects or submit an admission enquiry directly to SR College of Education.
+            Review the semester-by-semester breakdown of subjects or submit an admission enquiry directly to S. R. College of Education.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4">

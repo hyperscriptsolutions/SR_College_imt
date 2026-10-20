@@ -58,7 +58,7 @@ export default function AdminLoginPage() {
             <CollegeLogo variant="light" className="h-16 w-16" showText={false} />
           </div>
           <h1 className="text-2xl font-extrabold tracking-tight text-white mb-1">
-            SR COLLEGE OF EDUCATION
+            S. R. COLLEGE OF EDUCATION
           </h1>
           <p className="text-xs text-[#D9AD54] font-semibold uppercase tracking-wider">
             DHLS Administration Portal

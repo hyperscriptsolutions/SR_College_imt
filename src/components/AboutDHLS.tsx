@@ -63,9 +63,9 @@ export default function AboutDHLS() {
           </h2>
           <p className="text-base sm:text-lg text-[#718096] leading-relaxed">
             <strong className="text-[#172A50]">DHLS</strong> stands for{" "}
-            <span className="text-[#172A50] font-semibold">Diploma in Hearing Language and Speech</span>. It is a 
-            structured academic curriculum focused on the foundational study of human communication, speech articulation, 
-            auditory acoustics, and language development.
+            <span className="text-[#172A50] font-semibold">Diploma in Hearing Language and Speech</span>. It is an 
+            offline, regular 1-year diploma course recognised by the Rehabilitation Council of India (RCI), focused on 
+            the comprehensive study of human communication, vocal mechanics, auditory acoustics, and speech-language rehabilitation.
           </p>
         </div>
 
@@ -128,11 +128,8 @@ export default function AboutDHLS() {
             <Info className="w-5 h-5" />
           </div>
           <div className="text-xs sm:text-sm text-[#718096] leading-relaxed">
-            <strong className="text-[#172A50] font-semibold">Important Clarification:</strong>{" "}
-            The DHLS course provides foundational theoretical and practical knowledge in communication, 
-            hearing, and speech-language skills. It is designed to help students understand the core principles of human 
-            communication and does not automatically qualify for professional speech and language therapy practice. Professional 
-            accreditation and requirements depend on governing regulatory bodies.
+            <strong className="text-[#172A50] font-semibold">Academic Accreditation:</strong>{" "}
+            The DHLS program at S. R. College of Education, Rohtak is an offline, regular 1-year diploma course recognised by the Rehabilitation Council of India (RCI). It delivers rigorous classroom instruction, specialized audiology instrumentation labs, and clinical speech-language therapy training.
           </div>
         </div>
 

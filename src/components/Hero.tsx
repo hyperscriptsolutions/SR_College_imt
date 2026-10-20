@@ -14,6 +14,7 @@ import {
   BookOpen,
   Award,
   Mic,
+  Users,
 } from "lucide-react";
 import type { CourseContent, AppearanceSettings } from "@/lib/dataStore";
 
@@ -23,9 +24,9 @@ interface HeroProps {
 }
 
 export default function Hero({ content, appearance }: HeroProps) {
-  const duration = content?.duration || "1 Year";
-  const eligibility = content?.eligibility || "12th & Above";
-  const mode = content?.mode || "Online / Offline / ...";
+  const duration = content?.duration || "1 Year (Regular)";
+  const eligibility = content?.eligibility || "12th (PCM / PCB) & Above";
+  const mode = content?.mode || "Offline (Regular)";
   const primaryCta = content?.primaryCtaText || "Explore the DHLS Course";
   const secondaryCta = content?.secondaryCtaText || "Enquire About Admission";
   const showWaveform = appearance?.showWaveform ?? true;
@@ -49,12 +50,17 @@ export default function Hero({ content, appearance }: HeroProps) {
             <div className="flex flex-wrap items-center gap-2.5 mb-5">
               <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#172A50] text-white text-xs font-semibold tracking-wide shadow-xs">
                 <MapPin className="w-3.5 h-3.5 text-[#D9AD54]" />
-                <span>SR COLLEGE OF EDUCATION • ROHTAK</span>
+                <span>S. R. COLLEGE OF EDUCATION • ROHTAK</span>
+              </div>
+
+              <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#8B1745] text-white text-xs font-semibold shadow-xs">
+                <Award className="w-3.5 h-3.5 text-[#D9AD54]" />
+                <span>Recognised by RCI</span>
               </div>
 
               <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-[#E8E2D8] text-xs font-semibold text-[#8B1745] shadow-2xs">
                 <span className="w-2 h-2 rounded-full bg-[#8B1745]" />
-                <span>Indian Sign Language (ISL)</span>
+                <span>Regular 1-Year Diploma (Offline)</span>
               </div>
             </div>
 
@@ -74,7 +80,7 @@ export default function Hero({ content, appearance }: HeroProps) {
 
             {/* Curriculum Description */}
             <p className="text-sm sm:text-base text-[#718096] mb-8 leading-relaxed max-w-xl">
-              This foundational 1-year academic curriculum explores the scientific mechanisms of human speech organs, linguistic articulation, acoustic soundwaves, and community rehabilitation principles.
+              An offline, regular 1-year diploma course recognised by the Rehabilitation Council of India (RCI). The curriculum explores the scientific mechanisms of speech organs, linguistic articulation, acoustic soundwaves, audiology, and community rehabilitation.
             </p>
 
             {/* Primary Burgundy & Secondary Outlined CTAs */}
@@ -97,7 +103,7 @@ export default function Hero({ content, appearance }: HeroProps) {
             {/* Reference Information Cards */}
             <div className="pt-6 border-t border-[#E8E2D8]">
               <div className="text-[11px] sm:text-xs uppercase font-bold text-[#718096] tracking-wider mb-3">
-                Curriculum Reference Details (As Published by RCI/NIED)
+                Course Details (Recognised by Rehabilitation Council of India - RCI)
               </div>
               
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
@@ -131,7 +137,7 @@ export default function Hero({ content, appearance }: HeroProps) {
                   </div>
                   <div>
                     <div className="text-[10px] text-[#718096] font-semibold uppercase">Mode</div>
-                    <div className="text-xs sm:text-sm font-bold text-[#172A50] truncate max-w-[120px]">{mode}</div>
+                    <div className="text-xs sm:text-sm font-bold text-[#172A50] truncate">{mode}</div>
                   </div>
                 </div>
 
@@ -139,9 +145,15 @@ export default function Hero({ content, appearance }: HeroProps) {
 
               {/* Sub-chips row */}
               <div className="flex flex-wrap items-center justify-between gap-3 text-xs text-[#718096] pt-1">
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-[#E8E2D8] text-[11px] font-semibold text-[#172A50]">
-                  <Mic className="w-3.5 h-3.5 text-[#8B1745]" />
-                  <span>Speech &amp; Language Pathology</span>
+                <div className="flex flex-wrap items-center gap-2">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-[#E8E2D8] text-[11px] font-semibold text-[#172A50]">
+                    <Users className="w-3.5 h-3.5 text-[#B88B2E]" />
+                    <span>30 Seats Intake • NBER-RCI Portal (Aug-Oct)</span>
+                  </div>
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-[#E8E2D8] text-[11px] font-semibold text-[#172A50]">
+                    <Mic className="w-3.5 h-3.5 text-[#8B1745]" />
+                    <span>Speech &amp; Audiology Pathology</span>
+                  </div>
                 </div>
 
                 <a
@@ -176,7 +188,7 @@ export default function Hero({ content, appearance }: HeroProps) {
                   Clinical Audiometry &amp; Acoustic Analysis
                 </span>
                 <span className="text-[11px] text-slate-200 hidden sm:inline">
-                  SR College of Education Lab
+                  S. R. College of Education Lab
                 </span>
               </div>
             </div>

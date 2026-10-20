@@ -22,7 +22,7 @@ export default function CollegeContact() {
             Campus Location &amp; Contact
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#172A50] tracking-tight mb-4">
-            Visit &amp; Contact SR College of Education
+            Visit &amp; Contact S. R. College of Education
           </h2>
           <p className="text-base sm:text-lg text-[#718096] leading-relaxed">
             Reach out directly to the institution in Rohtak, Haryana for in-person consultations, campus tours, and verified DHLS admission guidelines.
@@ -40,7 +40,7 @@ export default function CollegeContact() {
               </div>
 
               <h3 className="text-2xl font-extrabold text-[#172A50] mb-5">
-                SR COLLEGE OF EDUCATION
+                S. R. COLLEGE OF EDUCATION
               </h3>
 
               <div className="space-y-5 mb-8">
@@ -55,9 +55,9 @@ export default function CollegeContact() {
                       Campus Address
                     </div>
                     <p className="text-xs sm:text-sm text-[#718096] leading-relaxed">
-                      L.M.T., Sector 30-A, Near Saint Gate, Delhi Road,
+                      S. R. College of Education,
                       <br />
-                      Rohtak – 124001, Haryana, India.
+                      IMT, Sector 30-B, Delhi Road, Rohtak, Haryana
                     </p>
                   </div>
                 </div>
@@ -71,18 +71,30 @@ export default function CollegeContact() {
                     <div className="text-xs font-bold text-[#172A50] uppercase tracking-wider mb-1">
                       Direct Telephones (Click to Call)
                     </div>
-                    <div className="flex flex-col gap-1 text-sm font-semibold font-mono">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-sm font-semibold font-mono">
                       <a
-                        href="tel:9416968076"
+                        href="tel:9886302035"
                         className="text-[#172A50] hover:text-[#8B1745] hover:underline flex items-center gap-1.5"
                       >
-                        +91 9416968076
+                        +91 9886302035
                       </a>
                       <a
-                        href="tel:9052002305"
+                        href="tel:9992700642"
                         className="text-[#172A50] hover:text-[#8B1745] hover:underline flex items-center gap-1.5"
                       >
-                        +91 9052002305
+                        +91 9992700642
+                      </a>
+                      <a
+                        href="tel:9992700255"
+                        className="text-[#172A50] hover:text-[#8B1745] hover:underline flex items-center gap-1.5"
+                      >
+                        +91 9992700255
+                      </a>
+                      <a
+                        href="tel:9306040793"
+                        className="text-[#172A50] hover:text-[#8B1745] hover:underline flex items-center gap-1.5"
+                      >
+                        +91 9306040793
                       </a>
                     </div>
                   </div>
@@ -98,10 +110,10 @@ export default function CollegeContact() {
                       Official College Email
                     </div>
                     <a
-                      href="mailto:srcollegeofeducation@gmail.com"
+                      href="mailto:srcollegeeducation@gmail.com"
                       className="text-xs sm:text-sm font-semibold text-[#172A50] hover:text-[#8B1745] hover:underline transition-colors"
                     >
-                      srcollegeofeducation@gmail.com
+                      srcollegeeducation@gmail.com
                     </a>
                   </div>
                 </div>
@@ -147,7 +159,7 @@ export default function CollegeContact() {
             {/* Direct Google Directions Link */}
             <div className="pt-6 border-t border-stone-100">
               <a
-                href="https://www.google.com/maps/search/?api=1&query=SR+College+of+Education+Sector+30-B+Kheri+Sadh+Rohtak+Haryana"
+                href="https://www.google.com/maps/search/?api=1&query=S.+R.+College+of+Education+IMT+Sector+30-B+Delhi+Road+Rohtak+Haryana"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full inline-flex items-center justify-center gap-2 py-3 px-5 rounded-full text-xs sm:text-sm font-bold text-white bg-[#172A50] hover:bg-[#26345B] transition-colors shadow-sm"
@@ -164,8 +176,8 @@ export default function CollegeContact() {
             {/* Embedded Responsive Map */}
             <div className="relative w-full h-[380px] sm:h-[450px] rounded-2xl overflow-hidden border border-[#E8E2D8] bg-stone-100">
               <iframe
-                title="SR College of Education Location Map"
-                src="https://maps.google.com/maps?q=SR%20College%20of%20Education%2C%20Sector%2030-B%2C%20Kheri%20Sadh%2C%20Delhi%20Road%2C%20Rohtak%20Haryana&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                title="S. R. College of Education Location Map"
+                src="https://maps.google.com/maps?q=S.%20R.%20College%20of%20Education%2C%20IMT%2C%20Sector%2030-B%2C%20Delhi%20Road%2C%20Rohtak%2C%20Haryana&t=&z=14&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -179,10 +191,10 @@ export default function CollegeContact() {
               <div className="absolute top-4 left-4 p-3 rounded-xl bg-white/95 backdrop-blur-xs shadow-md border border-[#E8E2D8] text-xs">
                 <div className="font-bold text-[#172A50] flex items-center gap-1.5">
                   <MapPin className="w-4 h-4 text-[#8B1745]" />
-                  SR College of Education
+                  S. R. College of Education
                 </div>
                 <div className="text-[11px] text-[#718096]">
-                  Sector 30-A, Near Saint Gate, Rohtak
+                  IMT, Sector 30-B, Delhi Road, Rohtak
                 </div>
               </div>
             </div>

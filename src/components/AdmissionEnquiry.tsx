@@ -42,7 +42,7 @@ export default function AdmissionEnquiry() {
     const cleanPhone = formData.mobile.replace(/[\s\-+]/g, "").slice(-10);
     const phoneRegex = /^[6-9]\d{9}$/;
     if (!cleanPhone || !phoneRegex.test(cleanPhone)) {
-      errs.mobile = "Please enter a valid 10-digit Indian mobile number (e.g. 9896302035).";
+      errs.mobile = "Please enter a valid 10-digit Indian mobile number (e.g. 9886302035).";
     }
 
     if (formData.email.trim()) {
@@ -125,7 +125,7 @@ export default function AdmissionEnquiry() {
             Ready to Explore DHLS?
           </h2>
           <p className="text-base sm:text-lg text-[#718096] leading-relaxed">
-            Have questions about eligibility, course details or admission availability? Get in touch with SR College of Education.
+            Have questions about eligibility, course details or admission availability? Get in touch with S. R. College of Education.
           </p>
         </div>
 
@@ -149,37 +149,69 @@ export default function AdmissionEnquiry() {
               </p>
 
               {/* Call Buttons */}
-              <div className="space-y-3 mb-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2.5 mb-6">
                 <a
-                  href="tel:9416968076"
-                  className="flex items-center justify-between p-3.5 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/10 transition-colors group cursor-pointer"
+                  href="tel:9886302035"
+                  className="flex items-center justify-between p-3 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/10 transition-colors group cursor-pointer"
                 >
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-[#D9AD54] flex items-center justify-center text-[#172A50]">
-                      <Phone className="w-5 h-5" />
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-9 h-9 rounded-xl bg-[#D9AD54] flex items-center justify-center text-[#172A50] flex-shrink-0">
+                      <Phone className="w-4 h-4" />
                     </div>
                     <div>
-                      <div className="text-[11px] text-slate-300 font-medium">Primary Admissions Line</div>
-                      <div className="text-base font-bold text-white tracking-wide font-mono">9416968076</div>
+                      <div className="text-[10px] text-slate-300 font-medium">Primary Admissions</div>
+                      <div className="text-sm font-bold text-white tracking-wide font-mono">9886302035</div>
                     </div>
                   </div>
-                  <span className="text-xs font-semibold text-[#D9AD54] group-hover:underline">Call Now</span>
+                  <span className="text-xs font-semibold text-[#D9AD54] group-hover:underline">Call</span>
                 </a>
 
                 <a
-                  href="tel:9052002305"
-                  className="flex items-center justify-between p-3.5 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/10 transition-colors group cursor-pointer"
+                  href="tel:9992700642"
+                  className="flex items-center justify-between p-3 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/10 transition-colors group cursor-pointer"
                 >
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-white/20 text-[#D9AD54] flex items-center justify-center">
-                      <Phone className="w-5 h-5" />
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-9 h-9 rounded-xl bg-white/20 text-[#D9AD54] flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-4 h-4" />
                     </div>
                     <div>
-                      <div className="text-[11px] text-slate-300 font-medium">Secondary Admissions Desk</div>
-                      <div className="text-base font-bold text-white tracking-wide font-mono">9052002305</div>
+                      <div className="text-[10px] text-slate-300 font-medium">Admissions Desk</div>
+                      <div className="text-sm font-bold text-white tracking-wide font-mono">9992700642</div>
                     </div>
                   </div>
-                  <span className="text-xs font-semibold text-[#D9AD54] group-hover:underline">Call Now</span>
+                  <span className="text-xs font-semibold text-[#D9AD54] group-hover:underline">Call</span>
+                </a>
+
+                <a
+                  href="tel:9992700255"
+                  className="flex items-center justify-between p-3 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/10 transition-colors group cursor-pointer"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-9 h-9 rounded-xl bg-white/20 text-[#D9AD54] flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <div className="text-[10px] text-slate-300 font-medium">Counseling Helpline</div>
+                      <div className="text-sm font-bold text-white tracking-wide font-mono">9992700255</div>
+                    </div>
+                  </div>
+                  <span className="text-xs font-semibold text-[#D9AD54] group-hover:underline">Call</span>
+                </a>
+
+                <a
+                  href="tel:9306040793"
+                  className="flex items-center justify-between p-3 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/10 transition-colors group cursor-pointer"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-9 h-9 rounded-xl bg-white/20 text-[#D9AD54] flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <div className="text-[10px] text-slate-300 font-medium">Information Desk</div>
+                      <div className="text-sm font-bold text-white tracking-wide font-mono">9306040793</div>
+                    </div>
+                  </div>
+                  <span className="text-xs font-semibold text-[#D9AD54] group-hover:underline">Call</span>
                 </a>
               </div>
 
@@ -188,10 +220,10 @@ export default function AdmissionEnquiry() {
                 <Mail className="w-4 h-4 text-[#D9AD54]" />
                 <span>Email:</span>
                 <a
-                  href="mailto:srcollegeofeducation@gmail.com"
+                  href="mailto:srcollegeeducation@gmail.com"
                   className="text-white font-medium hover:text-[#D9AD54] transition-colors hover:underline"
                 >
-                  srcollegeofeducation@gmail.com
+                  srcollegeeducation@gmail.com
                 </a>
               </div>
             </div>
@@ -200,7 +232,7 @@ export default function AdmissionEnquiry() {
             <div className="p-5 rounded-2xl bg-white border border-[#E8E2D8] shadow-2xs flex items-start gap-3.5">
               <Lock className="w-5 h-5 text-[#8B1745] flex-shrink-0 mt-0.5" />
               <div className="text-xs text-[#718096] leading-relaxed">
-                <strong className="text-[#172A50] font-semibold">Privacy Commitment:</strong> Your contact information is never shared with third parties. It is used exclusively by the SR College of Education admissions desk to provide verified information regarding the DHLS course.
+                <strong className="text-[#172A50] font-semibold">Privacy Commitment:</strong> Your contact information is never shared with third parties. It is used exclusively by the S. R. College of Education admissions desk to provide verified information regarding the DHLS course.
               </div>
             </div>
 
@@ -362,11 +394,11 @@ export default function AdmissionEnquiry() {
                           }`}
                         >
                           <option value="">Select your qualification...</option>
-                          <option value="12th Standard (Higher Secondary)">12th Standard / Higher Secondary (10+2)</option>
+                          <option value="12th Standard (PCM / PCB)">12th Standard / Higher Secondary (10+2 PCM or PCB)</option>
                           <option value="Graduate / Bachelor's Degree">Graduate / Bachelor&apos;s Degree (B.A, B.Sc, B.Com, etc.)</option>
                           <option value="Post Graduate / Master's Degree">Post Graduate / Master&apos;s Degree</option>
                           <option value="Diploma Holder">Diploma in Other Discipline</option>
-                          <option value="Currently Appearing for 12th">Currently Appearing for 12th</option>
+                          <option value="Currently Appearing for 12th (PCM / PCB)">Currently Appearing for 12th (PCM / PCB)</option>
                           <option value="Other">Other Qualification</option>
                         </select>
                       </div>
@@ -397,7 +429,7 @@ export default function AdmissionEnquiry() {
 
                     {/* Privacy notice */}
                     <p className="text-[11px] text-[#718096] leading-relaxed pt-1">
-                      By submitting this form, you acknowledge that your details will be utilized solely by SR College of Education to communicate DHLS course information. No commercial marketing resale.
+                      By submitting this form, you acknowledge that your details will be utilized solely by S. R. College of Education to communicate DHLS course information. No commercial marketing resale.
                     </p>
 
                     {/* Submit Button in Burgundy #8B1745 */}

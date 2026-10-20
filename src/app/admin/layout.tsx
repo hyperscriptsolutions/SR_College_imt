@@ -129,7 +129,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             <CollegeLogo variant="light" className="h-9 w-9" showText={false} />
             <div>
               <div className="text-sm font-extrabold tracking-tight text-white leading-tight">
-                SR COLLEGE
+                S. R. COLLEGE
               </div>
               <div className="text-[10px] text-[#D9AD54] font-semibold tracking-wider uppercase">
                 DHLS Admin Panel
