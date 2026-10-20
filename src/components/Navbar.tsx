@@ -38,6 +38,7 @@ export default function Navbar() {
   const navLinks = [
     { label: "Home", href: "/" },
     { label: "About DHLS", href: "/about-dhls" },
+    { label: "Campus & Labs", href: "/#facilities" },
     { label: "Eligibility & Admission", href: "/eligibility-admission" },
     { label: "Course Structure", href: "/course-structure" },
     { label: "FAQs", href: "/faqs" },

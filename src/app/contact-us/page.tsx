@@ -5,6 +5,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import CollegeContact from "@/components/CollegeContact";
+import CampusFacilitiesGallery from "@/components/CampusFacilitiesGallery";
 import PublicLayout from "@/components/PublicLayout";
 
 export const metadata = {
@@ -78,6 +79,9 @@ export default function ContactUsPage() {
 
       {/* Main College Location & Interactive Maps Component */}
       <CollegeContact />
+
+      {/* Interactive Video Tour and Photo Gallery of Campus Facilities */}
+      <CampusFacilitiesGallery />
     </PublicLayout>
   );
 }

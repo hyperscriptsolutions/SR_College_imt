@@ -52,6 +52,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/#facilities" className="hover:text-[#D9AD54] transition-colors">
+                  Campus Facilities &amp; Labs
+                </Link>
+              </li>
+              <li>
                 <Link href="/eligibility-admission" className="hover:text-[#D9AD54] transition-colors">
                   Eligibility &amp; Admission
                 </Link>

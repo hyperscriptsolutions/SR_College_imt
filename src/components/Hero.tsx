@@ -15,6 +15,8 @@ import {
   Award,
   Mic,
   Users,
+  Play,
+  Video,
 } from "lucide-react";
 import type { CourseContent, AppearanceSettings } from "@/lib/dataStore";
 
@@ -172,24 +174,28 @@ export default function Hero({ content, appearance }: HeroProps) {
           {/* Right Column: Photograph, Frequency Visualizer & Complementary Info Cards */}
           <div className="lg:col-span-6 flex flex-col gap-5">
             
-            {/* Audiologist Testing Student Photograph */}
-            <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-[#E8E2D8] shadow-md bg-stone-100 h-64 sm:h-72 w-full">
+            {/* Real Campus Classroom / Department Laboratory Photograph */}
+            <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-[#E8E2D8] shadow-md bg-stone-100 h-64 sm:h-72 w-full group">
               <Image
-                src="/images/hero_audiologist.jpg"
-                alt="Audiologist and speech-hearing specialist conducting hearing test with student wearing headphones"
+                src="/images/ear_anatomy_classroom.png"
+                alt="S. R. College DHLS department ear anatomy and clinical audiology lecture hall"
                 fill
                 priority
-                className="object-cover object-center"
+                className="object-cover object-center group-hover:scale-103 transition-transform duration-300"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#172A50]/70 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#172A50]/80 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-xs text-white">
-                <span className="font-semibold bg-[#172A50]/80 backdrop-blur-xs px-3 py-1 rounded-full border border-white/20">
-                  Clinical Audiometry &amp; Acoustic Analysis
+                <span className="font-semibold bg-[#172A50]/90 backdrop-blur-xs px-3 py-1 rounded-full border border-white/20">
+                  Ear Anatomy &amp; Audiology Lecture Hall
                 </span>
-                <span className="text-[11px] text-slate-200 hidden sm:inline">
-                  S. R. College of Education Lab
-                </span>
+                <a
+                  href="#facilities"
+                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#8B1745] hover:bg-[#721238] text-white text-[11px] font-bold shadow-xs transition-colors cursor-pointer"
+                >
+                  <Play className="w-3 h-3 text-[#D9AD54] fill-current" />
+                  <span>Campus Video Tour</span>
+                </a>
               </div>
             </div>
 

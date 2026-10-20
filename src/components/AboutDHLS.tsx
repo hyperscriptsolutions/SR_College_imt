@@ -15,8 +15,8 @@ export default function AboutDHLS() {
         "Oral and written language analysis",
         "Language intervention & generation models",
       ],
-      image: "/images/communication_language.jpg",
-      imageAlt: "Speech and language specialist working with student on language acquisition and interactive flashcards",
+      image: "/images/biology_lab_interior.png",
+      imageAlt: "S. R. College speech biology and anatomy laboratory interior with anatomical charts",
     },
     {
       title: "Understanding Hearing",
@@ -29,8 +29,8 @@ export default function AboutDHLS() {
         "Methods of audiological testing",
         "Introductory knowledge of hearing aids",
       ],
-      image: "/images/hearing_examination.jpg",
-      imageAlt: "Hearing care specialist examining child's ear with medical otoscope in clinic",
+      image: "/images/campus_building_3.jpg",
+      imageAlt: "S. R. College soundproof audiometric testing chamber with observation control window",
     },
     {
       title: "Speech and Language",
@@ -43,8 +43,8 @@ export default function AboutDHLS() {
         "Mechanisms of speech production",
         "Considerations in speech and language pathology",
       ],
-      image: "/images/speech_pathology.jpg",
-      imageAlt: "Speech therapist working with student evaluating acoustic waveform on computer monitor",
+      image: "/images/campus_building_2.jpg",
+      imageAlt: "S. R. College speech-language therapy consultation room and articulation clinical lab",
     },
   ];
 
