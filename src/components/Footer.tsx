@@ -25,7 +25,7 @@ export default function Footer() {
           <div className="lg:col-span-4">
             <CollegeLogo variant="light" className="h-11 w-11 mb-4" />
             <p className="text-xs text-slate-300 leading-relaxed max-w-sm mb-5">
-              S. R. College of Education is a recognized academic institution in Rohtak, Haryana. 
+              S.R COLLEGE OF EDUCATION is a recognized academic institution in Rohtak, Haryana. 
               This premier destination for Diploma in Hearing, Language and Speech (DHLS).
             </p>
 
@@ -223,7 +223,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-6 border-t border-[#26345B] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <p>
-            &copy; {currentYear} S. R. College of Education, Rohtak. All rights reserved.
+            &copy; {currentYear} S.R COLLEGE OF EDUCATION, Rohtak. All rights reserved.
           </p>
 
           <div className="flex items-center gap-4 text-xs">

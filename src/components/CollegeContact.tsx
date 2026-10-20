@@ -22,7 +22,7 @@ export default function CollegeContact() {
             Campus Location &amp; Contact
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#172A50] tracking-tight mb-4">
-            Visit &amp; Contact S. R. College of Education
+            Visit &amp; Contact S.R COLLEGE OF EDUCATION
           </h2>
           <p className="text-base sm:text-lg text-[#718096] leading-relaxed">
             Reach out directly to the institution in Rohtak, Haryana for in-person consultations, campus tours, and verified DHLS admission guidelines.
@@ -40,7 +40,7 @@ export default function CollegeContact() {
               </div>
 
               <h3 className="text-2xl font-extrabold text-[#172A50] mb-5">
-                S. R. COLLEGE OF EDUCATION
+                S.R COLLEGE OF EDUCATION
               </h3>
 
               <div className="space-y-5 mb-8">
@@ -191,7 +191,7 @@ export default function CollegeContact() {
               <div className="absolute top-4 left-4 p-3 rounded-xl bg-white/95 backdrop-blur-xs shadow-md border border-[#E8E2D8] text-xs">
                 <div className="font-bold text-[#172A50] flex items-center gap-1.5">
                   <MapPin className="w-4 h-4 text-[#8B1745]" />
-                  S. R. College of Education
+                  S.R COLLEGE OF EDUCATION
                 </div>
                 <div className="text-[11px] text-[#718096]">
                   IMT, Sector 30-B, Delhi Road, Rohtak

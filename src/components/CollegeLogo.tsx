@@ -86,7 +86,7 @@ export default function CollegeLogo({
       {showText && (
         <div className="flex flex-col">
           <span className={`font-extrabold tracking-tight text-sm sm:text-base xl:text-lg leading-tight whitespace-nowrap ${textColor}`}>
-            S. R. COLLEGE OF EDUCATION
+            S.R COLLEGE OF EDUCATION
           </span>
           <span className={`text-[10px] sm:text-[11px] xl:text-xs font-medium tracking-wide whitespace-nowrap ${subtextColor}`}>
             Rohtak, Haryana • Estd. Institution

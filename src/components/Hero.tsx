@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import SoundWaveVisualizer from "./SoundWaveVisualizer";
@@ -16,6 +16,9 @@ import {
   Mic,
   Users,
   Play,
+  Pause,
+  Volume2,
+  VolumeX,
   Video,
 } from "lucide-react";
 import type { CourseContent, AppearanceSettings } from "@/lib/dataStore";
@@ -32,6 +35,87 @@ export default function Hero({ content, appearance }: HeroProps) {
   const primaryCta = content?.primaryCtaText || "Explore the DHLS Course";
   const secondaryCta = content?.secondaryCtaText || "Enquire About Admission";
   const showWaveform = appearance?.showWaveform ?? true;
+
+  const [isPlaying, setIsPlaying] = useState<boolean>(true);
+  const [isMuted, setIsMuted] = useState<boolean>(true);
+  const heroVideoRef = useRef<HTMLVideoElement>(null);
+  const heroContainerRef = useRef<HTMLDivElement>(null);
+  const userPausedRef = useRef<boolean>(false);
+
+  // Automatically play when on the Hero section; pause automatically when scrolled away (down or up)
+  useEffect(() => {
+    const container = heroContainerRef.current;
+    if (!container) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const isVisible = entry.isIntersecting && entry.intersectionRatio >= 0.2;
+
+          if (!heroVideoRef.current) return;
+
+          if (isVisible) {
+            // User IS on the hero section -> auto-play video
+            if (!userPausedRef.current && heroVideoRef.current.paused) {
+              heroVideoRef.current.muted = isMuted;
+              const playPromise = heroVideoRef.current.play();
+              if (playPromise !== undefined) {
+                playPromise
+                  .then(() => setIsPlaying(true))
+                  .catch(() => {
+                    // Browser policy fallback: force muted auto-play
+                    if (heroVideoRef.current) {
+                      heroVideoRef.current.muted = true;
+                      setIsMuted(true);
+                      heroVideoRef.current
+                        .play()
+                        .then(() => setIsPlaying(true))
+                        .catch(() => {});
+                    }
+                  });
+              }
+            }
+          } else {
+            // User is NOT on the hero section -> pause video automatically
+            if (!heroVideoRef.current.paused) {
+              heroVideoRef.current.pause();
+              setIsPlaying(false);
+            }
+            // Reset manual pause once user leaves section so returning triggers auto-play again
+            userPausedRef.current = false;
+          }
+        });
+      },
+      {
+        threshold: [0, 0.2, 0.5],
+      }
+    );
+
+    observer.observe(container);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [isMuted]);
+
+  const toggleHeroPlay = () => {
+    if (!heroVideoRef.current) return;
+    if (heroVideoRef.current.paused) {
+      userPausedRef.current = false;
+      heroVideoRef.current.play();
+      setIsPlaying(true);
+    } else {
+      userPausedRef.current = true;
+      heroVideoRef.current.pause();
+      setIsPlaying(false);
+    }
+  };
+
+  const toggleHeroMute = () => {
+    if (!heroVideoRef.current) return;
+    heroVideoRef.current.muted = !heroVideoRef.current.muted;
+    setIsMuted(heroVideoRef.current.muted);
+  };
 
   return (
     <section
@@ -52,7 +136,7 @@ export default function Hero({ content, appearance }: HeroProps) {
             <div className="flex flex-wrap items-center gap-2.5 mb-5">
               <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#172A50] text-white text-xs font-semibold tracking-wide shadow-xs">
                 <MapPin className="w-3.5 h-3.5 text-[#D9AD54]" />
-                <span>S. R. COLLEGE OF EDUCATION • ROHTAK</span>
+                <span>S.R COLLEGE OF EDUCATION • ROHTAK</span>
               </div>
 
               <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#8B1745] text-white text-xs font-semibold shadow-xs">
@@ -174,27 +258,93 @@ export default function Hero({ content, appearance }: HeroProps) {
           {/* Right Column: Photograph, Frequency Visualizer & Complementary Info Cards */}
           <div className="lg:col-span-6 flex flex-col gap-5">
             
-            {/* Real Campus Classroom / Department Laboratory Photograph */}
-            <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-[#E8E2D8] shadow-md bg-stone-100 h-64 sm:h-72 w-full group">
-              <Image
-                src="/images/ear_anatomy_classroom.png"
-                alt="S. R. College DHLS department ear anatomy and clinical audiology lecture hall"
-                fill
-                priority
-                className="object-cover object-center group-hover:scale-103 transition-transform duration-300"
-                sizes="(max-width: 1024px) 100vw, 50vw"
+            {/* Live Campus Tour Video Player in Marked Hero Card */}
+            <div
+              ref={heroContainerRef}
+              className="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-[#E8E2D8] shadow-lg bg-[#0A1120] h-64 sm:h-76 w-full group"
+            >
+              <video
+                ref={heroVideoRef}
+                src="/videos/campus_tour_1.mp4"
+                poster="/images/ear_anatomy_classroom.png"
+                muted={isMuted}
+                autoPlay
+                playsInline
+                loop
+                className="w-full h-full object-cover"
+                onPlay={() => setIsPlaying(true)}
+                onPause={() => setIsPlaying(false)}
+                onError={(e) => {
+                  const target = e.currentTarget as HTMLVideoElement;
+                  const fallback =
+                    "https://res.cloudinary.com/ozrdoi7q/video/upload/v1792479950/WhatsApp_Video_2026-10-19_at_10.14.46_PM.mp4";
+                  if (target.src !== fallback) {
+                    target.src = fallback;
+                  }
+                }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#172A50]/80 via-transparent to-transparent pointer-events-none" />
-              <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-xs text-white">
-                <span className="font-semibold bg-[#172A50]/90 backdrop-blur-xs px-3 py-1 rounded-full border border-white/20">
-                  Ear Anatomy &amp; Audiology Lecture Hall
+
+              {/* Gradient overlays for contrast and readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/35 pointer-events-none" />
+
+              {/* Top Banner Badge */}
+              <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-10">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#172A50]/90 backdrop-blur-md border border-white/20 text-[11px] font-bold text-white shadow-sm">
+                  <span
+                    className={`w-2 h-2 rounded-full transition-colors ${
+                      isPlaying ? "bg-emerald-400 animate-pulse" : "bg-amber-400"
+                    }`}
+                  />
+                  <span>CAMPUS TOUR VIDEO • S.R COLLEGE OF EDUCATION</span>
                 </span>
+                <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded-md bg-[#8B1745] text-white shadow-xs">
+                  HD Walkthrough
+                </span>
+              </div>
+
+              {/* Center Play/Pause Overlay */}
+              <button
+                onClick={toggleHeroPlay}
+                aria-label={isPlaying ? "Pause tour video" : "Play tour video"}
+                className={`absolute inset-0 m-auto w-14 h-14 rounded-full bg-[#172A50]/80 hover:bg-[#8B1745] text-white border-2 border-white/40 backdrop-blur-md flex items-center justify-center shadow-xl transition-all duration-200 cursor-pointer z-10 ${
+                  isPlaying ? "opacity-0 group-hover:opacity-100 scale-90" : "opacity-100 scale-100"
+                }`}
+              >
+                {isPlaying ? (
+                  <Pause className="w-6 h-6 text-[#D9AD54]" />
+                ) : (
+                  <Play className="w-6 h-6 text-[#D9AD54] ml-0.5" />
+                )}
+              </button>
+
+              {/* Bottom Control Bar */}
+              <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs text-white z-10">
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={toggleHeroPlay}
+                    className="p-1.5 rounded-lg bg-black/60 hover:bg-black/80 backdrop-blur-xs text-white transition-colors cursor-pointer border border-white/10"
+                    title={isPlaying ? "Pause" : "Play"}
+                  >
+                    {isPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
+                  </button>
+                  <button
+                    onClick={toggleHeroMute}
+                    className="p-1.5 rounded-lg bg-black/60 hover:bg-black/80 backdrop-blur-xs text-white transition-colors cursor-pointer border border-white/10"
+                    title={isMuted ? "Unmute sound" : "Mute sound"}
+                  >
+                    {isMuted ? <VolumeX className="w-3.5 h-3.5" /> : <Volume2 className="w-3.5 h-3.5" />}
+                  </button>
+                  <span className="text-[11px] text-slate-200 font-medium hidden sm:inline-block">
+                    {isPlaying ? "Playing Campus Tour" : "Paused"}
+                  </span>
+                </div>
+
                 <a
                   href="#facilities"
-                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#8B1745] hover:bg-[#721238] text-white text-[11px] font-bold shadow-xs transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#D9AD54] hover:bg-[#c99c43] text-[#172A50] text-[11px] font-bold shadow-md transition-all cursor-pointer"
                 >
-                  <Play className="w-3 h-3 text-[#D9AD54] fill-current" />
-                  <span>Campus Video Tour</span>
+                  <Video className="w-3.5 h-3.5" />
+                  <span>All 5 Videos &amp; Photos &darr;</span>
                 </a>
               </div>
             </div>
