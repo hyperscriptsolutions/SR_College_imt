@@ -35,22 +35,22 @@ export default function FAQSection({ initialFaqs }: FAQSectionProps) {
     {
       question: "Is the DHLS course available online or offline?",
       answer:
-        "The DHLS course is conducted strictly in Offline, Regular mode. It is a full-time 1-year diploma course recognised by the Rehabilitation Council of India (RCI), featuring regular classroom lectures, hands-on audiology lab sessions, speech therapy clinics, and practical training on campus at S. R. College of Education, Rohtak.",
+        "The DHLS course is conducted strictly in Offline, Regular mode. It is a full-time 1-year diploma course recognised by the Rehabilitation Council of India (RCI), featuring regular classroom lectures, hands-on audiology lab sessions, speech therapy clinics, and practical training on campus at S.R College of Education, Rohtak.",
     },
     {
-      question: "How can I contact S. R. College of Education?",
+      question: "How can I contact S.R College of Education?",
       answer:
         "You can contact S.R COLLEGE OF EDUCATION via phone at 9896302035, 7404153253, 9992700255, or 9306040793, by email at srcollegeeducation@gmail.com, or by visiting the campus located at S.R COLLEGE OF EDUCATION, IMT, Sector 30-B, Delhi Road, Rohtak, Haryana. You can also submit the admission enquiry form on this website.",
     },
     {
-      question: "Is DHLS admission currently available at S. R. College?",
+      question: "Is DHLS admission currently available at S.R College?",
       answer:
         "DHLS has an intake capacity of 30 seats. Admissions are conducted centrally through registration on the NBER-RCI portal, generally during the months of August to October. Candidates must complete the online registration process and follow the prescribed counselling and admission procedure.",
     },
     {
       question: "What are the current fees and admission requirements?",
       answer:
-        "Official fee structures, installment schedules, and mandatory enrollment documentation must be confirmed directly with S. R. College of Education. The institution does not publish unverified fee amounts online to ensure students receive accurate, up-to-date financial and academic guidance.",
+        "Official fee structures, installment schedules, and mandatory enrollment documentation must be confirmed directly with S.R College of Education. The institution does not publish unverified fee amounts online to ensure students receive accurate, up-to-date financial and academic guidance.",
     },
   ];
 
@@ -79,7 +79,7 @@ export default function FAQSection({ initialFaqs }: FAQSectionProps) {
             Frequently Asked Questions
           </h2>
           <p className="text-base sm:text-lg text-[#718096] leading-relaxed">
-            Find answers regarding the DHLS curriculum based on published NIED specifications and verified S. R. College of Education contact channels.
+            Find answers regarding the DHLS curriculum based on published NIED specifications and verified S.R College of Education contact channels.
           </p>
         </div>
 

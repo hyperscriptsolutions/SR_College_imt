@@ -33,8 +33,8 @@ export default function WhatYouWillExplore({ showDisciplines = true }: WhatYouWi
       icon: MessageSquare,
       iconColor: "text-[#8B1745]",
       iconBg: "bg-[#8B1745]/10",
-      image: "/images/community_classroom.png",
-      imageAlt: "S.R COLLEGE OF EDUCATION wood-paneled seminar and communication lecture hall",
+      image: "/images/adult_communication_theories.jpg",
+      imageAlt: "Adult university students collaborating in seminar discussion on communication theories",
       description:
         "Understand the foundations of communication, language and interpersonal interaction.",
       spotlightDescription:
@@ -55,8 +55,8 @@ export default function WhatYouWillExplore({ showDisciplines = true }: WhatYouWi
       icon: Mic,
       iconColor: "text-[#B88B2E]",
       iconBg: "bg-[#D9AD54]/15",
-      image: "/images/biology_lab_interior.png",
-      imageAlt: "S.R COLLEGE OF EDUCATION biological speech mechanics and human anatomy laboratory",
+      image: "/images/college_science_lab.jpg",
+      imageAlt: "Adult science student in lab coat analyzing biological speech instrumentation",
       description:
         "Study the structure and function of the vocal system and its role in speech production.",
       spotlightDescription:
@@ -77,8 +77,8 @@ export default function WhatYouWillExplore({ showDisciplines = true }: WhatYouWi
       icon: Headphones,
       iconColor: "text-[#172A50]",
       iconBg: "bg-[#172A50]/10",
-      image: "/images/ear_anatomy_classroom.png",
-      imageAlt: "S.R COLLEGE OF EDUCATION ear anatomy and psychoacoustic auditory perception classroom",
+      image: "/images/awh_hearing.jpg",
+      imageAlt: "Adult audiology clinician and student conducting computerized hearing evaluation and acoustic assessment",
       description:
         "Explore sound waves, hearing mechanisms, and their impact on communication.",
       spotlightDescription:
@@ -99,8 +99,8 @@ export default function WhatYouWillExplore({ showDisciplines = true }: WhatYouWi
       icon: HandMetal,
       iconColor: "text-[#D9AD54]",
       iconBg: "bg-white/10",
-      image: "/images/campus_building_2.jpg",
-      imageAlt: "S.R COLLEGE OF EDUCATION clinical articulation mirror and visual communication suite",
+      image: "/images/sign_language_dialogue.jpg",
+      imageAlt: "Adult students practicing Indian Sign Language and visual-gestural communication",
       description:
         "Learn the basics of Indian Sign Language (ISL) and its role in inclusive communication.",
       spotlightDescription:

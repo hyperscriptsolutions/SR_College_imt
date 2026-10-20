@@ -12,7 +12,7 @@ import PublicLayout from "@/components/PublicLayout";
 import { getCurriculum } from "@/lib/dataStore";
 
 export const metadata = {
-  title: "DHLS Course Structure & Syllabus | S. R. College of Education",
+  title: "DHLS Course Structure & Syllabus | S.R College of Education",
   description:
     "Explore the 1-Year, 18-subject curriculum for the Diploma in Hearing Language and Speech (DHLS) across Semester 1 and Semester 2, referenced from NIED.",
 };
@@ -104,7 +104,7 @@ export default function CourseStructurePage() {
               <strong className="text-[#172A50] block mb-1">
                 Official Curriculum Source Attribution:
               </strong>
-              The 18-subject curriculum outline presented above is referenced from the official syllabus published by the National Institute for Empowerment of Persons with Multiple Disabilities (NIED) for the Diploma in Hearing Language and Speech. Batch schedules, instructional medium, classroom modes, and laboratory sessions at S. R. College of Education, Rohtak are structured according to academic session guidelines.
+              The 18-subject curriculum outline presented above is referenced from the official syllabus published by the National Institute for Empowerment of Persons with Multiple Disabilities (NIED) for the Diploma in Hearing Language and Speech. Batch schedules, instructional medium, classroom modes, and laboratory sessions at S.R College of Education, Rohtak are structured according to academic session guidelines.
             </div>
           </div>
 

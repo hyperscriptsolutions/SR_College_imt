@@ -380,7 +380,7 @@ export default function CourseStructure({ initialCurriculum }: CourseStructurePr
           <p className="text-xs sm:text-sm text-[#718096] leading-relaxed">
             <strong className="text-[#172A50] font-semibold">Institutional Clarification:</strong>{" "}
             The subjects listed above reflect the official curriculum recognised by the Rehabilitation Council of India (RCI). 
-            Classes, practical audiology sessions, and clinical postings are conducted in regular offline mode at S. R. College of Education, Rohtak.
+            Classes, practical audiology sessions, and clinical postings are conducted in regular offline mode at S.R College of Education, Rohtak.
           </p>
         </div>
 

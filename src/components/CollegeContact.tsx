@@ -55,7 +55,7 @@ export default function CollegeContact() {
                       Campus Address
                     </div>
                     <p className="text-xs sm:text-sm text-[#718096] leading-relaxed">
-                      S. R. College of Education,
+                      S.R College of Education,
                       <br />
                       IMT, Sector 30-B, Delhi Road, Rohtak, Haryana
                     </p>
@@ -176,7 +176,7 @@ export default function CollegeContact() {
             {/* Embedded Responsive Map */}
             <div className="relative w-full h-[380px] sm:h-[450px] rounded-2xl overflow-hidden border border-[#E8E2D8] bg-stone-100">
               <iframe
-                title="S. R. College of Education Location Map"
+                title="S.R College of Education Location Map"
                 src="https://maps.google.com/maps?q=S.%20R.%20College%20of%20Education%2C%20IMT%2C%20Sector%2030-B%2C%20Delhi%20Road%2C%20Rohtak%2C%20Haryana&t=&z=14&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="100%"

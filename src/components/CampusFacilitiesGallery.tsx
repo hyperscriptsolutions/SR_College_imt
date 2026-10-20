@@ -54,7 +54,7 @@ const CAMPUS_VIDEOS: CampusVideoItem[] = [
     category: "Campus Tour",
     duration: "0:10",
     description:
-      "First-hand walkthrough of the bright academic block, department hallways, and welcoming facilities at S. R. College of Education, Sector 30-B, IMT Rohtak.",
+      "First-hand walkthrough of the bright academic block, department hallways, and welcoming facilities at S.R College of Education, Sector 30-B, IMT Rohtak.",
     localSrc: "/videos/campus_tour_1.mp4",
     cloudSrc:
       "https://res.cloudinary.com/ozrdoi7q/video/upload/v1792479950/WhatsApp_Video_2026-10-19_at_10.14.46_PM.mp4",
@@ -203,7 +203,7 @@ const CAMPUS_PHOTOS: CampusPhotoItem[] = [
     categoryLabel: "Administration",
     tag: "Admissions Desk",
     description:
-      "Executive administration office at S. R. College of Education, Sector 30-B, IMT Rohtak where candidates receive personalized admission counseling.",
+      "Executive administration office at S.R College of Education, Sector 30-B, IMT Rohtak where candidates receive personalized admission counseling.",
     specs: [
       "Dedicated student counseling desk",
       "Institutional verification archives",
@@ -380,7 +380,7 @@ export default function CampusFacilitiesGallery() {
           <p className="text-base sm:text-lg text-[#718096] leading-relaxed">
             Take a video tour and explore verified photographs of the specialized speech therapy clinics,
             soundproof audiometric isolation booth, ear anatomy lecture halls, and practical training facilities at
-            S. R. College of Education, Rohtak.
+            S.R College of Education, Rohtak.
           </p>
 
           {/* Tab Switcher */}
@@ -511,7 +511,7 @@ export default function CampusFacilitiesGallery() {
                 <div className="p-5 sm:p-6 bg-[#172A50] text-white">
                   <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
                     <span className="text-xs font-bold text-[#D9AD54] uppercase tracking-wider">
-                      {selectedVideo.category} • S. R. College of Education
+                      {selectedVideo.category} • S.R College of Education
                     </span>
                     <span className="text-[11px] px-2.5 py-0.5 rounded-full bg-white/10 text-slate-300">
                       RCI Recognized Campus

@@ -14,9 +14,9 @@ import PublicLayout from "@/components/PublicLayout";
 import { getCourseContent } from "@/lib/dataStore";
 
 export const metadata = {
-  title: "Eligibility & Admission | S. R. College of Education",
+  title: "Eligibility & Admission | S.R College of Education",
   description:
-    "Review eligibility criteria (12th PCM / PCB & Above) and submit an official admission enquiry for the Diploma in Hearing Language and Speech (DHLS) at S. R. College of Education, Rohtak.",
+    "Review eligibility criteria (12th PCM / PCB & Above) and submit an official admission enquiry for the Diploma in Hearing Language and Speech (DHLS) at S.R College of Education, Rohtak.",
 };
 
 export default function EligibilityAdmissionPage() {
@@ -74,7 +74,7 @@ export default function EligibilityAdmissionPage() {
               <strong className="font-bold text-[#172A50] block mb-1">
                 Central NBER-RCI Admission Notice (30 Seats Intake):
               </strong>
-              DHLS has an intake capacity of 30 seats. Admissions are conducted centrally through registration on the NBER-RCI portal, generally during the months of August to October. Candidates must complete the online registration process and follow the prescribed counselling and admission procedure. S. R. College of Education, Rohtak assists candidates with verified schedule updates and admission desk counseling.
+              DHLS has an intake capacity of 30 seats. Admissions are conducted centrally through registration on the NBER-RCI portal, generally during the months of August to October. Candidates must complete the online registration process and follow the prescribed counselling and admission procedure. S.R College of Education, Rohtak assists candidates with verified schedule updates and admission desk counseling.
             </div>
           </div>
         </div>
@@ -100,7 +100,7 @@ export default function EligibilityAdmissionPage() {
                 Need Immediate Assistance with Your Application?
               </h3>
               <p className="text-xs sm:text-sm text-slate-300 max-w-xl">
-                Speak directly with an S. R. College admissions counselor for guidance regarding documentation, eligibility verification, and campus visits.
+                Speak directly with an S.R College admissions counselor for guidance regarding documentation, eligibility verification, and campus visits.
               </p>
             </div>
 

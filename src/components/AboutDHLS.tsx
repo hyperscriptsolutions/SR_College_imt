@@ -16,7 +16,7 @@ export default function AboutDHLS() {
         "Language intervention & generation models",
       ],
       image: "/images/biology_lab_interior.png",
-      imageAlt: "S. R. College speech biology and anatomy laboratory interior with anatomical charts",
+      imageAlt: "S.R College speech biology and anatomy laboratory interior with anatomical charts",
     },
     {
       title: "Understanding Hearing",
@@ -30,7 +30,7 @@ export default function AboutDHLS() {
         "Introductory knowledge of hearing aids",
       ],
       image: "/images/campus_building_3.jpg",
-      imageAlt: "S. R. College soundproof audiometric testing chamber with observation control window",
+      imageAlt: "S.R College soundproof audiometric testing chamber with observation control window",
     },
     {
       title: "Speech and Language",
@@ -44,7 +44,7 @@ export default function AboutDHLS() {
         "Considerations in speech and language pathology",
       ],
       image: "/images/campus_building_2.jpg",
-      imageAlt: "S. R. College speech-language therapy consultation room and articulation clinical lab",
+      imageAlt: "S.R College speech-language therapy consultation room and articulation clinical lab",
     },
   ];
 
@@ -129,7 +129,7 @@ export default function AboutDHLS() {
           </div>
           <div className="text-xs sm:text-sm text-[#718096] leading-relaxed">
             <strong className="text-[#172A50] font-semibold">Academic Accreditation:</strong>{" "}
-            The DHLS program at S. R. College of Education, Rohtak is an offline, regular 1-year diploma course recognised by the Rehabilitation Council of India (RCI). It delivers rigorous classroom instruction, specialized audiology instrumentation labs, and clinical speech-language therapy training.
+            The DHLS program at S.R College of Education, Rohtak is an offline, regular 1-year diploma course recognised by the Rehabilitation Council of India (RCI). It delivers rigorous classroom instruction, specialized audiology instrumentation labs, and clinical speech-language therapy training.
           </div>
         </div>
 

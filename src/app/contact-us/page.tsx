@@ -9,9 +9,9 @@ import CampusFacilitiesGallery from "@/components/CampusFacilitiesGallery";
 import PublicLayout from "@/components/PublicLayout";
 
 export const metadata = {
-  title: "Contact Us & Campus Location | S. R. College of Education",
+  title: "Contact Us & Campus Location | S.R College of Education",
   description:
-    "Contact S. R. College of Education, Rohtak for DHLS course counseling, admission guidance, telephone helplines, email support, and interactive campus directions.",
+    "Contact S.R College of Education, Rohtak for DHLS course counseling, admission guidance, telephone helplines, email support, and interactive campus directions.",
 };
 
 export default function ContactUsPage() {
@@ -30,7 +30,7 @@ export default function ContactUsPage() {
           </nav>
 
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-5 leading-tight">
-            Contact <span className="text-[#D9AD54]">S. R. College of Education</span>
+            Contact <span className="text-[#D9AD54]">S.R College of Education</span>
           </h1>
 
           <p className="max-w-3xl mx-auto text-base sm:text-lg text-slate-200 leading-relaxed mb-8">

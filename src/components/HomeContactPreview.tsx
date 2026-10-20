@@ -22,7 +22,7 @@ export default function HomeContactPreview() {
               </div>
 
               <h2 className="text-2xl sm:text-3xl font-extrabold text-[#172A50] tracking-tight mb-3">
-                Connect with S. R. College of Education
+                Connect with S.R College of Education
               </h2>
 
               <p className="text-xs sm:text-sm text-[#718096] leading-relaxed mb-6">
@@ -40,7 +40,7 @@ export default function HomeContactPreview() {
                   <div>
                     <strong className="block text-[#172A50] font-bold mb-0.5">Campus Address:</strong>
                     <span className="text-[#718096] leading-snug">
-                      S. R. College of Education, IMT, Sector 30-B, Delhi Road, Rohtak, Haryana
+                      S.R College of Education, IMT, Sector 30-B, Delhi Road, Rohtak, Haryana
                     </span>
                   </div>
                 </div>

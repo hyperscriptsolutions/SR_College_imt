@@ -39,7 +39,7 @@ export default function DHLSJourney() {
       stage: "05",
       title: "Counselling & Admission",
       icon: Award,
-      description: "Follow the prescribed online counselling and admission procedure to complete enrollment at S. R. College of Education.",
+      description: "Follow the prescribed online counselling and admission procedure to complete enrollment at S.R College of Education.",
       tag: "Prescribed Counselling",
     },
   ];

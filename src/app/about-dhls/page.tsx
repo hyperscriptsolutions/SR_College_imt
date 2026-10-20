@@ -16,9 +16,9 @@ import PublicLayout from "@/components/PublicLayout";
 import { getCourseContent } from "@/lib/dataStore";
 
 export const metadata = {
-  title: "About DHLS Course | S. R. College of Education",
+  title: "About DHLS Course | S.R College of Education",
   description:
-    "Learn about the Diploma in Hearing Language and Speech (DHLS) curriculum, its foundational pillars, communication science, and course overview at S. R. College of Education, Rohtak.",
+    "Learn about the Diploma in Hearing Language and Speech (DHLS) curriculum, its foundational pillars, communication science, and course overview at S.R College of Education, Rohtak.",
 };
 
 export default function AboutDHLSPage() {
@@ -178,7 +178,7 @@ export default function AboutDHLSPage() {
             Ready to Explore the Curriculum Details?
           </h2>
           <p className="text-sm sm:text-base text-[#718096] max-w-2xl mx-auto mb-8">
-            Review the semester-by-semester breakdown of subjects or submit an admission enquiry directly to S. R. College of Education.
+            Review the semester-by-semester breakdown of subjects or submit an admission enquiry directly to S.R College of Education.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4">

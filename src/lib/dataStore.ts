@@ -336,7 +336,7 @@ const DEFAULT_FAQS: FAQItem[] = [
   {
     id: "faq-5",
     question: "Is the DHLS course available online or offline?",
-    answer: "The DHLS course is conducted strictly in Offline, Regular mode. It is a full-time 1-year diploma course recognised by the Rehabilitation Council of India (RCI), featuring regular classroom lectures, hands-on audiology lab sessions, speech therapy clinics, and practical training on campus at S. R. College of Education, Rohtak.",
+    answer: "The DHLS course is conducted strictly in Offline, Regular mode. It is a full-time 1-year diploma course recognised by the Rehabilitation Council of India (RCI), featuring regular classroom lectures, hands-on audiology lab sessions, speech therapy clinics, and practical training on campus at S.R College of Education, Rohtak.",
     isPublished: true,
     sortOrder: 5,
   },
@@ -349,7 +349,7 @@ const DEFAULT_FAQS: FAQItem[] = [
   },
   {
     id: "faq-7",
-    question: "Is DHLS admission currently available at S. R. College?",
+    question: "Is DHLS admission currently available at S.R College?",
     answer: "DHLS has an intake capacity of 30 seats. Admissions are conducted centrally through registration on the NBER-RCI portal, generally during the months of August to October. Candidates must complete the online registration process and follow the prescribed counselling and admission procedure.",
     isPublished: true,
     sortOrder: 7,
@@ -357,7 +357,7 @@ const DEFAULT_FAQS: FAQItem[] = [
   {
     id: "faq-8",
     question: "What are the current fees and admission requirements?",
-    answer: "Official fee structures and enrollment documentation must be confirmed directly with S. R. College of Education to ensure students receive accurate, up-to-date guidance.",
+    answer: "Official fee structures and enrollment documentation must be confirmed directly with S.R College of Education to ensure students receive accurate, up-to-date guidance.",
     isPublished: true,
     sortOrder: 8,
   },

@@ -125,7 +125,7 @@ export default function AdmissionEnquiry() {
             Ready to Explore DHLS?
           </h2>
           <p className="text-base sm:text-lg text-[#718096] leading-relaxed">
-            Have questions about eligibility, course details or admission availability? Get in touch with S. R. College of Education.
+            Have questions about eligibility, course details or admission availability? Get in touch with S.R College of Education.
           </p>
         </div>
 
@@ -232,7 +232,7 @@ export default function AdmissionEnquiry() {
             <div className="p-5 rounded-2xl bg-white border border-[#E8E2D8] shadow-2xs flex items-start gap-3.5">
               <Lock className="w-5 h-5 text-[#8B1745] flex-shrink-0 mt-0.5" />
               <div className="text-xs text-[#718096] leading-relaxed">
-                <strong className="text-[#172A50] font-semibold">Privacy Commitment:</strong> Your contact information is never shared with third parties. It is used exclusively by the S. R. College of Education admissions desk to provide verified information regarding the DHLS course.
+                <strong className="text-[#172A50] font-semibold">Privacy Commitment:</strong> Your contact information is never shared with third parties. It is used exclusively by the S.R College of Education admissions desk to provide verified information regarding the DHLS course.
               </div>
             </div>
 
@@ -429,7 +429,7 @@ export default function AdmissionEnquiry() {
 
                     {/* Privacy notice */}
                     <p className="text-[11px] text-[#718096] leading-relaxed pt-1">
-                      By submitting this form, you acknowledge that your details will be utilized solely by S. R. College of Education to communicate DHLS course information. No commercial marketing resale.
+                      By submitting this form, you acknowledge that your details will be utilized solely by S.R College of Education to communicate DHLS course information. No commercial marketing resale.
                     </p>
 
                     {/* Submit Button in Burgundy #8B1745 */}

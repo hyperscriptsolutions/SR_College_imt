@@ -25,7 +25,7 @@ export default function CollegeLogo({
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className={`${className} flex-shrink-0 transition-transform duration-300 hover:scale-105`}
-        aria-label="S. R. College of Education Emblem"
+        aria-label="S.R College of Education Emblem"
       >
         {/* Shield background */}
         <defs>
@@ -65,7 +65,7 @@ export default function CollegeLogo({
           opacity="0.95"
         />
 
-        {/* Letters "S.R." */}
+        {/* Letters "S.R" */}
         <text
           x="50"
           y="30"
@@ -76,7 +76,7 @@ export default function CollegeLogo({
           letterSpacing="0.5"
           fontFamily="system-ui"
         >
-          S.R.
+          S.R
         </text>
 
         {/* Star accent at bottom */}

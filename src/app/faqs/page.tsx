@@ -10,9 +10,9 @@ import PublicLayout from "@/components/PublicLayout";
 import { getFAQs } from "@/lib/dataStore";
 
 export const metadata = {
-  title: "DHLS Frequently Asked Questions | S. R. College of Education",
+  title: "DHLS Frequently Asked Questions | S.R College of Education",
   description:
-    "Find clear answers regarding the DHLS diploma program duration, eligibility criteria, subjects, study mode, and admission enquiry channels at S. R. College of Education, Rohtak.",
+    "Find clear answers regarding the DHLS diploma program duration, eligibility criteria, subjects, study mode, and admission enquiry channels at S.R College of Education, Rohtak.",
 };
 
 export default function FAQsPage() {
@@ -59,7 +59,7 @@ export default function FAQsPage() {
               <strong className="text-[#172A50] block mb-1">
                 Notice Regarding Fees &amp; Batch Scheduling:
               </strong>
-              Official fee schedules, installment modes, and academic calendar dates are not listed as fixed amounts online to ensure candidates receive current, verified figures directly from the S. R. College admissions office. Contact our helpdesk for direct assistance.
+              Official fee schedules, installment modes, and academic calendar dates are not listed as fixed amounts online to ensure candidates receive current, verified figures directly from the S.R College admissions office. Contact our helpdesk for direct assistance.
             </div>
           </div>
 

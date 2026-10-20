@@ -131,7 +131,7 @@ export default function Footer() {
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-[#D9AD54] flex-shrink-0 mt-0.5" />
                 <span className="leading-relaxed">
-                  S. R. College of Education, IMT, Sector 30-B, Delhi Road, Rohtak, Haryana
+                  S.R College of Education, IMT, Sector 30-B, Delhi Road, Rohtak, Haryana
                 </span>
               </div>
 
