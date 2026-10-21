@@ -19,7 +19,7 @@ interface WhatYouWillExploreProps {
 }
 
 export default function WhatYouWillExplore({ showDisciplines = true }: WhatYouWillExploreProps) {
-  const [selectedTheme, setSelectedTheme] = useState<number>(3); // ISL highlighted by default as in reference screenshot
+  const [selectedTheme, setSelectedTheme] = useState<number>(0);
 
   if (showDisciplines === false) {
     return null;
@@ -33,7 +33,7 @@ export default function WhatYouWillExplore({ showDisciplines = true }: WhatYouWi
       icon: MessageSquare,
       iconColor: "text-[#8B1745]",
       iconBg: "bg-[#8B1745]/10",
-      image: "/images/adult_communication_theories.jpg",
+      image: "/images/communication_theories.jpg",
       imageAlt: "Adult university students collaborating in seminar discussion on communication theories",
       description:
         "Understand the foundations of communication, language and interpersonal interaction.",
@@ -55,8 +55,8 @@ export default function WhatYouWillExplore({ showDisciplines = true }: WhatYouWi
       icon: Mic,
       iconColor: "text-[#B88B2E]",
       iconBg: "bg-[#D9AD54]/15",
-      image: "/images/college_science_lab.jpg",
-      imageAlt: "Adult science student in lab coat analyzing biological speech instrumentation",
+      image: "/images/human_vocal_apparatus.jpg",
+      imageAlt: "Detailed anatomical cross-section diagram of the human vocal tract and vocal fold phonation apparatus",
       description:
         "Study the structure and function of the vocal system and its role in speech production.",
       spotlightDescription:
@@ -77,8 +77,8 @@ export default function WhatYouWillExplore({ showDisciplines = true }: WhatYouWi
       icon: Headphones,
       iconColor: "text-[#172A50]",
       iconBg: "bg-[#172A50]/10",
-      image: "/images/awh_hearing.jpg",
-      imageAlt: "Adult audiology clinician and student conducting computerized hearing evaluation and acoustic assessment",
+      image: "/images/auditory_acoustics.jpg",
+      imageAlt: "Audiology student analyzing acoustic sound wave spectrogram and frequency thresholds with headphones",
       description:
         "Explore sound waves, hearing mechanisms, and their impact on communication.",
       spotlightDescription:
@@ -99,8 +99,8 @@ export default function WhatYouWillExplore({ showDisciplines = true }: WhatYouWi
       icon: HandMetal,
       iconColor: "text-[#D9AD54]",
       iconBg: "bg-white/10",
-      image: "/images/sign_language_dialogue.jpg",
-      imageAlt: "Adult students practicing Indian Sign Language and visual-gestural communication",
+      image: "/images/indian_sign_language_dialogue.jpg",
+      imageAlt: "Instructor and students practicing Indian Sign Language (ISL) gestures in an inclusive communication session",
       description:
         "Learn the basics of Indian Sign Language (ISL) and its role in inclusive communication.",
       spotlightDescription:
@@ -228,13 +228,17 @@ export default function WhatYouWillExplore({ showDisciplines = true }: WhatYouWi
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             {/* Left Photograph */}
-            <div className="lg:col-span-4 relative h-60 sm:h-72 rounded-2xl overflow-hidden border border-[#E8E2D8] bg-stone-100 shadow-2xs">
+            <div className="lg:col-span-4 relative h-60 sm:h-72 rounded-2xl overflow-hidden border border-[#E8E2D8] bg-[#FAF8F5] shadow-2xs">
               <Image
                 key={currentTheme.id}
                 src={currentTheme.image}
                 alt={currentTheme.imageAlt}
                 fill
-                className="object-cover object-center transition-all duration-300"
+                className={
+                  currentTheme.id === 1
+                    ? "object-contain object-center p-2 transition-all duration-300"
+                    : "object-cover object-center transition-all duration-300"
+                }
                 sizes="(max-width: 1024px) 100vw, 33vw"
               />
             </div>
