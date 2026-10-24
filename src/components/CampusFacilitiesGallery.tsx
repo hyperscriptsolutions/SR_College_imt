@@ -38,7 +38,7 @@ interface CampusVideoItem {
 interface CampusPhotoItem {
   id: string;
   title: string;
-  category: "all" | "audiology" | "speech" | "classrooms" | "admin";
+  category: "all" | "audiology" | "speech" | "classrooms" | "admin" | "campus";
   categoryLabel: string;
   tag: string;
   description: string;
@@ -111,6 +111,23 @@ const CAMPUS_VIDEOS: CampusVideoItem[] = [
 ];
 
 const CAMPUS_PHOTOS: CampusPhotoItem[] = [
+  {
+    id: "photo-0",
+    title: "Main Campus Entrance & DHLS Center Gate",
+    category: "campus",
+    categoryLabel: "Campus Gate",
+    tag: "Main Entrance",
+    description:
+      "The official main entrance of S.R. College of Education, Industrial Model Township (IMT), Rohtak, featuring on-site counseling, academic blocks, and the dedicated DHLS department.",
+    specs: [
+      "Official RCI DHLS academic department wing",
+      "Prime location at IMT Rohtak, Garhi Bohar, Haryana",
+      "Direct on-campus student counseling & admissions office",
+    ],
+    localSrc: "/images/hero_campus_main.jpg",
+    cloudSrc:
+      "https://res.cloudinary.com/ozrdoi7q/image/upload/v1792760849/WhatsApp_Image_2026-10-22_at_12.34.53_PM.jpg",
+  },
   {
     id: "photo-1",
     title: "Soundproof Audiometric Testing Chamber",
@@ -632,7 +649,8 @@ export default function CampusFacilitiesGallery() {
             {/* Category Filter Pills */}
             <div className="flex flex-wrap items-center justify-center gap-2">
               {[
-                { key: "all", label: "All Facilities (6)" },
+                { key: "all", label: `All Facilities (${CAMPUS_PHOTOS.length})` },
+                { key: "campus", label: "Main Campus (1)" },
                 { key: "audiology", label: "Audiology & Labs (2)" },
                 { key: "speech", label: "Speech Clinics (1)" },
                 { key: "classrooms", label: "Lecture Halls (2)" },

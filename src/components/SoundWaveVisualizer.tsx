@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState, useRef } from "react";
-import { Volume2, VolumeX, Radio, Info } from "lucide-react";
+import { Volume2, VolumeX, Info } from "lucide-react";
 
 interface SoundWaveProps {
   className?: string;
@@ -58,7 +58,7 @@ export default function SoundWaveVisualizer({
     return () => clearInterval(interval);
   }, [barCount, isPlayingAudio]);
 
-  // Clean Web Audio API synthesis for genuine reference tone
+  // Clean Web Audio API synthesis for genuine reference tone (starts ONLY on user click)
   const playTone = (freq: number) => {
     try {
       const AudioCtx =
@@ -86,7 +86,7 @@ export default function SoundWaveVisualizer({
       osc.type = "sine";
       osc.frequency.setValueAtTime(freq, audioCtxRef.current.currentTime);
 
-      // Safe, gentle volume with soft fade-in
+      // Safe, gentle volume with soft fade-in ramp
       gain.gain.setValueAtTime(0.001, audioCtxRef.current.currentTime);
       gain.gain.exponentialRampToValueAtTime(0.06, audioCtxRef.current.currentTime + 0.08);
 
@@ -152,22 +152,22 @@ export default function SoundWaveVisualizer({
 
   return (
     <div
-      className={`relative rounded-2xl sm:rounded-3xl p-5 sm:p-6 bg-[#172A50] border border-[#26345B] shadow-2xl text-white ${className}`}
+      className={`relative rounded-2xl sm:rounded-3xl p-5 sm:p-6 bg-white border border-[#E8E2D8] text-[#172D55] shadow-md hover:shadow-lg transition-shadow ${className}`}
     >
       {/* Top Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 pb-3 border-b border-[#26345B]">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 pb-3 border-b border-[#E8E2D8]">
         <div>
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#D9AD54] animate-pulse" />
-            <h3 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-white">
+            <span className="w-2 h-2 rounded-full bg-[#E1B34F] animate-pulse" />
+            <h3 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#172D55]">
               Acoustic &amp; Speech Frequency Wave
             </h3>
           </div>
           <div className="flex items-center gap-2 mt-1">
-            <span className="text-[11px] text-slate-300 font-medium tracking-wide">
+            <span className="text-[11px] text-[#64748B] font-medium tracking-wide">
               Auditory Perception Range
             </span>
-            <span className="text-[10px] px-2.5 py-0.5 rounded-full bg-[#8B1745]/30 text-[#F5C2D2] border border-[#8B1745]/40 font-mono font-semibold">
+            <span className="text-[10px] px-2.5 py-0.5 rounded-full bg-[#981747]/10 text-[#981747] border border-[#981747]/20 font-mono font-semibold">
               125 Hz – 8,000 Hz
             </span>
           </div>
@@ -178,46 +178,46 @@ export default function SoundWaveVisualizer({
           onClick={toggleAudio}
           className={`flex items-center gap-2 text-xs font-bold px-3.5 py-1.5 rounded-full transition-all duration-150 border cursor-pointer self-start sm:self-auto ${
             isPlayingAudio
-              ? "bg-[#D9AD54] text-[#172A50] border-[#D9AD54] shadow-md"
-              : "bg-white/10 text-white border-white/20 hover:bg-white/15"
+              ? "bg-[#981747] text-white border-[#981747] shadow-md active:scale-95"
+              : "bg-white hover:bg-stone-50 text-[#172D55] border-[#E8E2D8] shadow-2xs hover:border-[#E1B34F]"
           }`}
-          aria-label={isPlayingAudio ? "Stop Reference Tone" : "Play Reference Tone"}
+          aria-label={isPlayingAudio ? "Stop Reference Tone" : "Play 1000 Hz Reference Tone"}
         >
           {isPlayingAudio ? (
             <>
-              <Volume2 className="w-3.5 h-3.5 text-[#172A50] animate-pulse" />
+              <Volume2 className="w-3.5 h-3.5 text-[#E1B34F] animate-pulse" />
               <span>Playing {selectedFreq} Hz</span>
             </>
           ) : (
             <>
-              <VolumeX className="w-3.5 h-3.5 text-slate-300" />
+              <VolumeX className="w-3.5 h-3.5 text-[#981747]" />
               <span>Play {selectedFreq} Hz Tone</span>
             </>
           )}
         </button>
       </div>
 
-      {/* Waveform Bar Graphic with Gold, Coral, and Teal accents */}
+      {/* Waveform Bar Graphic with Multi-Color Acoustic Gradient */}
       <div
         className="flex items-center justify-center gap-1 sm:gap-1.5 h-20 sm:h-24 px-1 my-2"
         aria-hidden="true"
       >
         {heights.map((h, idx) => {
           const ratio = idx / (barCount - 1);
-          // multi-color warm acoustic gradient
-          let barBg = "linear-gradient(180deg, #26345B 0%, #172A50 100%)";
+          // High-contrast multi-color gradient matching project design system
+          let barBg = "linear-gradient(180deg, #CBD5E1 0%, #94A3B8 100%)";
           if (ratio > 0.15 && ratio <= 0.4) {
-            barBg = "linear-gradient(180deg, #D9AD54 0%, #8B1745 100%)";
+            barBg = "linear-gradient(180deg, #981747 0%, #B8285F 100%)";
           } else if (ratio > 0.4 && ratio <= 0.65) {
-            barBg = "linear-gradient(180deg, #F39C12 0%, #D9AD54 100%)";
+            barBg = "linear-gradient(180deg, #E1B34F 0%, #D9AD54 100%)";
           } else if (ratio > 0.65 && ratio <= 0.88) {
-            barBg = "linear-gradient(180deg, #38BDF8 0%, #26345B 100%)";
+            barBg = "linear-gradient(180deg, #0284C7 0%, #172D55 100%)";
           }
 
           return (
             <div
               key={idx}
-              className="w-1.5 sm:w-2 rounded-full transition-all duration-150 ease-out"
+              className="w-1.5 sm:w-2 rounded-full transition-all duration-150 ease-out shadow-xs"
               style={{
                 height: `${h}px`,
                 background: barBg,
@@ -228,20 +228,20 @@ export default function SoundWaveVisualizer({
       </div>
 
       {/* Frequency Scale Labels Line */}
-      <div className="relative pt-2 pb-1 border-t border-[#26345B]">
-        <div className="flex items-center justify-between text-[10px] sm:text-[11px] font-mono text-slate-300">
-          <span className="font-bold text-[#D9AD54]">125 Hz</span>
-          <span className="text-slate-400 hidden xs:inline">500 Hz</span>
-          <span className="text-slate-300 font-semibold font-sans text-[10px] px-2 py-0.5 rounded bg-white/10">
-            1,000 Hz (Core)
+      <div className="relative pt-2 pb-1 border-t border-[#E8E2D8]">
+        <div className="flex items-center justify-between text-[10px] sm:text-[11px] font-mono text-[#64748B]">
+          <span className="font-bold text-[#981747]">125 Hz</span>
+          <span className="text-[#94A3B8] hidden xs:inline">500 Hz</span>
+          <span className="text-[#172D55] font-semibold font-sans text-[10px] px-2.5 py-0.5 rounded-full bg-stone-100 border border-[#E8E2D8] shadow-2xs">
+            1,000 Hz (Core Speech)
           </span>
-          <span className="text-slate-400 hidden xs:inline">4,000 Hz</span>
-          <span className="font-bold text-[#38BDF8]">8,000 Hz</span>
+          <span className="text-[#94A3B8] hidden xs:inline">4,000 Hz</span>
+          <span className="font-bold text-[#0284C7]">8,000 Hz</span>
         </div>
       </div>
 
       {/* Interactive Octave Band Frequency Selector (Cards Row) */}
-      <div className="mt-3 pt-3 border-t border-[#26345B]">
+      <div className="mt-3 pt-3 border-t border-[#E8E2D8]">
         <div className="grid grid-cols-4 sm:grid-cols-7 gap-1.5">
           {octaveBands.map((band) => {
             const isSelected = selectedFreq === band.freq;
@@ -256,12 +256,14 @@ export default function SoundWaveVisualizer({
                 }}
                 className={`py-2 px-1 rounded-xl text-center border transition-all cursor-pointer ${
                   isSelected
-                    ? "bg-[#26345B] border-[#D9AD54] text-white shadow-sm ring-1 ring-[#D9AD54]"
-                    : "bg-white/5 border-white/10 text-slate-300 hover:bg-white/10 hover:text-white"
+                    ? "bg-[#172D55] border-[#172D55] text-white shadow-md ring-2 ring-[#E1B34F]"
+                    : "bg-stone-50 hover:bg-white border-[#E8E2D8] text-[#172D55] shadow-2xs hover:border-[#E1B34F]"
                 }`}
               >
-                <div className="text-[11px] font-bold font-mono">{band.label}</div>
-                <div className="text-[8px] text-slate-400 truncate mt-0.5">
+                <div className={`text-[11px] font-bold font-mono ${isSelected ? "text-white" : "text-[#172D55]"}`}>
+                  {band.label}
+                </div>
+                <div className={`text-[8px] truncate mt-0.5 ${isSelected ? "text-[#E1B34F] font-medium" : "text-[#64748B]"}`}>
                   {band.desc}
                 </div>
               </button>
@@ -271,10 +273,10 @@ export default function SoundWaveVisualizer({
       </div>
 
       {/* Informational Subtext */}
-      <div className="mt-3.5 flex items-start gap-2.5 text-[11px] text-slate-300 bg-black/20 p-3 rounded-xl border border-white/10">
-        <Info className="w-4 h-4 text-[#D9AD54] flex-shrink-0 mt-0.5" />
+      <div className="mt-3.5 flex items-start gap-2.5 text-[11px] text-[#475569] bg-stone-50 p-3 rounded-xl border border-[#E8E2D8] shadow-2xs">
+        <Info className="w-4 h-4 text-[#981747] flex-shrink-0 mt-0.5" />
         <p className="leading-relaxed">
-          <strong className="text-white">Auditory Perception Range:</strong> Standard audiometric evaluation maps hearing thresholds between <span className="text-[#D9AD54] font-semibold">125 Hz</span> and <span className="text-[#38BDF8] font-semibold">8,000 Hz</span>. The DHLS curriculum covers acoustics, detection, and foundational speech and language pathways.
+          <strong className="text-[#172D55]">Auditory Perception Range:</strong> Standard audiometric evaluation maps hearing thresholds between <span className="text-[#981747] font-bold">125 Hz</span> and <span className="text-[#0284C7] font-bold">8,000 Hz</span>. The DHLS curriculum covers acoustics, detection, and foundational speech and language pathways.
         </p>
       </div>
     </div>
