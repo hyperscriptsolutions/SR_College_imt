@@ -56,41 +56,38 @@ export default function Hero({ content, appearance }: HeroProps) {
     offset: ["start start", "end end"],
   });
 
-  // 1. Initial State Prompt: visible at scrollY = 0, gently fades out as visitor scrolls
-  const promptOpacity = useTransform(scrollYProgress, [0, 0.08], [1, 0]);
-  const promptY = useTransform(scrollYProgress, [0, 0.08], isReduced ? [0, 0] : [0, 10]);
+  // 1. Initial State Prompt: visible at scrollY = 0, quickly fades out as soon as the user scrolls
+  const promptOpacity = useTransform(scrollYProgress, [0, 0.04], [1, 0]);
+  const promptY = useTransform(scrollYProgress, [0, 0.04], isReduced ? [0, 0] : [0, 8]);
 
-  // 2. Contrast Overlay Gradient: starts very subtle (0.10) leaving photo sunny, deepens to 1.0 for pristine text contrast
-  const overlayOpacity = useTransform(scrollYProgress, [0.03, 0.22], [0.1, 1]);
+  // 2. Contrast Overlay Gradient: deepens immediately on first scroll for crisp text contrast
+  const overlayOpacity = useTransform(scrollYProgress, [0.01, 0.08], [0.15, 1]);
 
-  // 3. Badges Row: reveals first (0.07 -> 0.22)
-  const badgesOpacity = useTransform(scrollYProgress, [0.07, 0.22], [0, 1]);
-  const badgesY = useTransform(scrollYProgress, [0.07, 0.22], isReduced ? [0, 0] : [24, 0]);
+  // 3. Unified Single-Scroll Reveal: ALL marked items come in TOGETHER on 1 scroll!
+  const contentOpacity = useTransform(scrollYProgress, [0.01, 0.08], [0, 1]);
+  const contentY = useTransform(scrollYProgress, [0.01, 0.08], isReduced ? [0, 0] : [16, 0]);
 
-  // 4. Main Headline: reveals second (0.15 -> 0.32)
-  const headlineOpacity = useTransform(scrollYProgress, [0.15, 0.32], [0, 1]);
-  const headlineY = useTransform(scrollYProgress, [0.15, 0.32], isReduced ? [0, 0] : [28, 0]);
+  // All marked elements share the same fast reveal
+  const badgesOpacity = contentOpacity;
+  const badgesY = contentY;
+  const headlineOpacity = contentOpacity;
+  const headlineY = contentY;
+  const descOpacity = contentOpacity;
+  const descY = contentY;
+  const ctaOpacity = contentOpacity;
+  const ctaY = contentY;
+  const highlightsOpacity = contentOpacity;
+  const highlightsY = contentY;
 
-  // 5. Supporting Text & Curriculum Description: reveals third (0.24 -> 0.42)
-  const descOpacity = useTransform(scrollYProgress, [0.24, 0.42], [0, 1]);
-  const descY = useTransform(scrollYProgress, [0.24, 0.42], isReduced ? [0, 0] : [24, 0]);
-
-  // 6. Action Pill Buttons: reveals fourth (0.34 -> 0.52)
-  const ctaOpacity = useTransform(scrollYProgress, [0.34, 0.52], [0, 1]);
-  const ctaY = useTransform(scrollYProgress, [0.34, 0.52], isReduced ? [0, 0] : [20, 0]);
-  const ctaPointerEvents = useTransform(scrollYProgress, (p) => (p > 0.3 ? "auto" : "none"));
-
-  // 7. Course Highlights & Chips: reveals fifth (0.44 -> 0.62)
-  const highlightsOpacity = useTransform(scrollYProgress, [0.44, 0.62], [0, 1]);
-  const highlightsY = useTransform(scrollYProgress, [0.44, 0.62], isReduced ? [0, 0] : [20, 0]);
-  const highlightsPointerEvents = useTransform(scrollYProgress, (p) => (p > 0.4 ? "auto" : "none"));
+  const ctaPointerEvents = useTransform(scrollYProgress, (p) => (p > 0.02 ? "auto" : "none"));
+  const highlightsPointerEvents = useTransform(scrollYProgress, (p) => (p > 0.02 ? "auto" : "none"));
 
   // Smooth scroll to the reading plateau upon clicking the explore prompt
   const handleScrollDown = () => {
     if (trackRef.current) {
       const rect = trackRef.current.getBoundingClientRect();
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      const targetScroll = scrollTop + rect.top + trackRef.current.offsetHeight * 0.65;
+      const targetScroll = scrollTop + rect.top + trackRef.current.offsetHeight * 0.15;
       window.scrollTo({ top: targetScroll, behavior: "smooth" });
     }
   };
@@ -221,14 +218,14 @@ export default function Hero({ content, appearance }: HeroProps) {
       <section
         ref={trackRef}
         id="hero"
-        className="hidden lg:block relative w-full h-[290vh] bg-[#0B1528]"
+        className="hidden lg:block relative w-full h-[175vh] bg-[#0B1528]"
         style={{
           paddingTop: "var(--navbar-height, 76px)",
         }}
       >
         {/* Pinned Sticky Hero Viewport - Strictly Positioned Below Navbar with Top Clearance */}
         <div
-          className="sticky z-20 w-full overflow-hidden flex flex-col justify-center text-white bg-[#0B1528] pt-6 sm:pt-8 lg:pt-10 pb-4"
+          className="sticky z-20 w-full overflow-hidden flex flex-col justify-start xl:justify-center text-white bg-[#0B1528] pt-4 sm:pt-6 lg:pt-6 pb-4"
           style={{
             top: "var(--navbar-height, 76px)",
             height: "calc(100dvh - var(--navbar-height, 76px))",
@@ -271,19 +268,19 @@ export default function Hero({ content, appearance }: HeroProps) {
             </div>
           </motion.div>
 
-          {/* Animated Hero Content Container on Desktop */}
-          <div className="relative z-10 w-full my-auto py-2">
+          {/* Animated Hero Content Container on Desktop - Safe padding ensures badges never clip under navbar */}
+          <div className="relative z-10 w-full mt-2 lg:mt-3 xl:my-auto py-1">
             <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full">
               <div className="grid grid-cols-12 gap-6 xl:gap-8 items-center w-full">
                 {/* Left Column Spacer (on desktop): Keeps campus entrance gate & students clear */}
                 <div className="col-span-5" />
 
                 {/* Right Column: Direct Text Overlay matching reference layout */}
-                <div className="col-span-7 flex flex-col justify-center">
-                  {/* 1. Badges Row - Clean, spaced, and fully visible below navbar */}
+                <div className="col-span-7 flex flex-col justify-start xl:justify-center">
+                  {/* 1. Badges Row - Clean, spaced, and guaranteed 100% visible below navbar */}
                   <motion.div
                     style={{ opacity: badgesOpacity, y: badgesY }}
-                    className="flex flex-wrap items-center gap-2 xl:gap-2.5 mb-3.5 xl:mb-4"
+                    className="flex flex-wrap items-center gap-2 xl:gap-2.5 mb-2.5 xl:mb-3.5"
                   >
                     <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#172D55]/95 backdrop-blur-md border border-white/25 text-white text-[11px] xl:text-xs font-semibold tracking-wide shadow-sm">
                       <MapPin className="w-3.5 h-3.5 text-[#E1B34F]" />
