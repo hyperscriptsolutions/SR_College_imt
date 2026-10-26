@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import CollegeLogo from "./CollegeLogo";
-import { Phone, Mail, MapPin, Shield, ArrowUp, Lock } from "lucide-react";
+import { Phone, Mail, MapPin, Shield, ArrowUp } from "lucide-react";
 
 export default function Footer() {
   const [currentYear, setCurrentYear] = useState(2026);
@@ -212,15 +212,6 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="mt-5 pt-3 border-t border-[#26345B] flex items-center justify-between text-xs text-slate-400">
-              <Link
-                href="/admin/login"
-                className="inline-flex items-center gap-1.5 text-slate-400 hover:text-[#D9AD54] transition-colors"
-              >
-                <Lock className="w-3.5 h-3.5" />
-                <span>Admin Login</span>
-              </Link>
-            </div>
           </div>
 
         </div>
