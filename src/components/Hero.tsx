@@ -110,102 +110,102 @@ export default function Hero({ content, appearance }: HeroProps) {
           paddingTop: "var(--navbar-height, 64px)",
         }}
       >
-        {/* 1. Full-Width Campus Photo on Top (Zero Zoom, Natural 16:10 Ratio) */}
-        <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] overflow-hidden bg-black/40">
+        {/* 1. Full-Width Campus Photo on Top (Exact Image Aspect Ratio 1678:937 for Zero Cropping & Zero Zoom) */}
+        <div className="relative w-full aspect-[1678/937] overflow-hidden bg-[#0B1528] border-b border-white/10">
           <Image
             src={photoSrc}
             alt="S.R. College of Education Campus Entrance Gate - Rohtak, Haryana"
             fill
             priority
-            sizes="100vw"
-            className="object-cover object-[center_22%]"
+            sizes="(max-width: 1024px) 100vw, 1200px"
+            className="object-cover object-center"
             onError={() => setPhotoSrc(HERO_PHOTO_LOCAL)}
           />
         </div>
 
         {/* 2. Dark Navy Content Block (Directly below photo, matching reference layout) */}
-        <div className="px-4 py-7 sm:py-10 bg-[#0B1528] text-center">
+        <div className="px-3.5 sm:px-6 md:px-8 py-6 sm:py-8 md:py-10 bg-[#0B1528] text-center">
           <div className="max-w-3xl mx-auto flex flex-col items-center">
             {/* Badges */}
-            <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 mb-3.5">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#172D55] border border-white/20 text-white text-[11px] sm:text-xs font-semibold shadow-sm">
-                <MapPin className="w-3.5 h-3.5 text-[#E1B34F]" />
+            <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 mb-3 sm:mb-4">
+              <div className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full bg-[#172D55] border border-white/20 text-white text-[10px] sm:text-xs font-semibold shadow-sm">
+                <MapPin className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-[#E1B34F]" />
                 <span>S.R COLLEGE OF EDUCATION • ROHTAK</span>
               </div>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#981747] border border-white/20 text-white text-[11px] sm:text-xs font-semibold shadow-sm">
-                <Award className="w-3.5 h-3.5 text-[#E1B34F]" />
+              <div className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full bg-[#981747] border border-white/20 text-white text-[10px] sm:text-xs font-semibold shadow-sm">
+                <Award className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-[#E1B34F]" />
                 <span>Recognised by RCI</span>
               </div>
             </div>
 
-            {/* Main Headline (Bold White, Centered) */}
-            <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-snug mb-3">
+            {/* Main Headline (Bold White, Centered, Scaled for 320px - 768px) */}
+            <h1 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white tracking-tight leading-snug sm:leading-tight mb-2 sm:mb-3">
               Understand Hearing. Discover <span className="text-[#E1B34F]">Speech.</span>{" "}
               <span className="text-[#FBBF24]">Empower</span> Communication.
             </h1>
 
             {/* Subtitle (Bold Yellow, Centered - matches reference layout) */}
-            <p className="text-sm sm:text-base font-bold text-[#E1B34F] mb-3 leading-snug max-w-xl">
+            <p className="text-xs sm:text-sm md:text-base font-bold text-[#E1B34F] mb-2 sm:mb-3 leading-snug max-w-xl">
               {heroSupporting}
             </p>
 
-            {/* Description (Light Gray, Centered - matches reference layout) */}
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-5 max-w-2xl font-normal">
+            {/* Description (Light Gray, Centered, Perfectly Proportioned) */}
+            <p className="text-[11px] sm:text-xs md:text-sm text-slate-300 leading-relaxed mb-4 sm:mb-5 max-w-2xl font-normal">
               {description}
             </p>
 
             {/* Action Pill Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3.5 w-full sm:w-auto mb-6">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3.5 w-full sm:w-auto mb-5 sm:mb-6">
               <Link
                 href="/about-dhls"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 sm:py-3.5 rounded-full text-xs sm:text-sm font-bold text-white bg-[#172D55] hover:bg-[#0f1d38] border border-white/25 shadow-xl transition-all active:scale-95 text-center"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-bold text-white bg-[#172D55] hover:bg-[#0f1d38] border border-white/25 shadow-xl transition-all active:scale-95 text-center"
               >
                 <span>{primaryCta}</span>
-                <ArrowRight className="w-4 h-4 text-[#E1B34F]" />
+                <ArrowRight className="w-3.5 h-3.5 text-[#E1B34F]" />
               </Link>
 
               <Link
                 href="/eligibility-admission#enquiry"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 sm:py-3.5 rounded-full text-xs sm:text-sm font-bold text-[#172D55] bg-[#E1B34F] hover:bg-[#d4a540] shadow-xl transition-all active:scale-95 text-center"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-bold text-[#172D55] bg-[#E1B34F] hover:bg-[#d4a540] shadow-xl transition-all active:scale-95 text-center"
               >
                 <span>{secondaryCta}</span>
               </Link>
             </div>
 
-            {/* Course Highlights (Duration, Eligibility, Mode) */}
-            <div className="w-full grid grid-cols-3 gap-1.5 sm:gap-3 pt-4 border-t border-white/15">
-              <div className="flex flex-col items-center p-2 sm:p-2.5 rounded-xl bg-white/5 border border-white/10 text-white">
+            {/* Course Highlights (Duration, Eligibility, Mode) - Robust 3-Col Grid */}
+            <div className="w-full grid grid-cols-3 gap-1.5 sm:gap-3 pt-3.5 sm:pt-4 border-t border-white/15">
+              <div className="flex flex-col items-center p-1.5 sm:p-2.5 rounded-xl bg-white/5 border border-white/10 text-white min-w-0">
                 <div className="p-1 sm:p-1.5 rounded-lg bg-[#981747]/60 text-[#E1B34F] mb-1">
                   <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </div>
-                <div className="text-[8px] sm:text-[10px] text-slate-400 font-semibold uppercase tracking-wider">
+                <div className="text-[8px] sm:text-[9px] md:text-[10px] text-slate-400 font-semibold uppercase tracking-wider truncate w-full">
                   Duration
                 </div>
-                <div className="text-[10px] sm:text-xs font-bold text-white truncate max-w-full">
+                <div className="text-[10px] sm:text-xs md:text-sm font-bold text-white line-clamp-2 leading-tight">
                   {duration}
                 </div>
               </div>
 
-              <div className="flex flex-col items-center p-2 sm:p-2.5 rounded-xl bg-white/5 border border-white/10 text-white">
+              <div className="flex flex-col items-center p-1.5 sm:p-2.5 rounded-xl bg-white/5 border border-white/10 text-white min-w-0">
                 <div className="p-1 sm:p-1.5 rounded-lg bg-[#E1B34F]/35 text-[#E1B34F] mb-1">
                   <GraduationCap className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </div>
-                <div className="text-[8px] sm:text-[10px] text-slate-400 font-semibold uppercase tracking-wider">
+                <div className="text-[8px] sm:text-[9px] md:text-[10px] text-slate-400 font-semibold uppercase tracking-wider truncate w-full">
                   Eligibility
                 </div>
-                <div className="text-[10px] sm:text-xs font-bold text-white truncate max-w-full">
+                <div className="text-[10px] sm:text-xs md:text-sm font-bold text-white line-clamp-2 leading-tight">
                   {eligibility}
                 </div>
               </div>
 
-              <div className="flex flex-col items-center p-2 sm:p-2.5 rounded-xl bg-white/5 border border-white/10 text-white">
+              <div className="flex flex-col items-center p-1.5 sm:p-2.5 rounded-xl bg-white/5 border border-white/10 text-white min-w-0">
                 <div className="p-1 sm:p-1.5 rounded-lg bg-white/20 text-[#E1B34F] mb-1">
                   <Laptop className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </div>
-                <div className="text-[8px] sm:text-[10px] text-slate-400 font-semibold uppercase tracking-wider">
+                <div className="text-[8px] sm:text-[9px] md:text-[10px] text-slate-400 font-semibold uppercase tracking-wider truncate w-full">
                   Mode
                 </div>
-                <div className="text-[10px] sm:text-xs font-bold text-white truncate max-w-full">
+                <div className="text-[10px] sm:text-xs md:text-sm font-bold text-white line-clamp-2 leading-tight">
                   {mode}
                 </div>
               </div>
