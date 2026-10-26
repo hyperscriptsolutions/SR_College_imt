@@ -59,8 +59,7 @@ export const CATEGORY_DEFINITIONS: Record<GalleryCategory, CategoryMeta> = {
 
 /**
  * Genuine Photographs of S.R. College of Education, Rohtak, Haryana.
- * Strictly using authentic campus, lab, classroom, and activity photos.
- * Library is currently empty; when genuine library photos are available, add them here.
+ * Strictly using authentic campus, lab, classroom, library, and activity photos.
  */
 export const GALLERY_PHOTOS: GalleryPhoto[] = [
   {
@@ -216,6 +215,84 @@ export const GALLERY_PHOTOS: GalleryPhoto[] = [
     location: "Workshop Hall",
     src: "/images/adult_sign_language.jpg",
     alt: "Group demonstration of clinical sign language communication and vocabulary",
+    featured: false,
+    aspectRatio: "landscape",
+  },
+  {
+    id: "central-library",
+    title: "Central College Library & Academic Reference Section",
+    category: "library",
+    categoryLabel: "Library",
+    description:
+      "Spacious institutional library with floor-to-ceiling white bookshelves, speech-language pathology and audiology reference texts, research journals, and quiet reading study spaces.",
+    location: "Academic Block, First Floor",
+    src: "https://res.cloudinary.com/ozrdoi7q/image/upload/v1792760850/WhatsApp_Image_2026-10-23_at_6.29.34_PM_2.jpg",
+    alt: "Central College Library at S.R. College of Education with white wooden bookshelves filled with books and large study reading tables",
+    featured: true,
+    aspectRatio: "landscape",
+  },
+  {
+    id: "yoga-day-ncc",
+    title: "International Day of Yoga Celebration (1 HAR NCC)",
+    category: "events",
+    categoryLabel: "Events & Activities",
+    description:
+      "Female students participating in the International Day of Yoga celebration under the banner of 1 HAR (G) BN NCC Rohtak in the open-air campus amphitheater courtyard.",
+    location: "Open-Air Amphitheater Courtyard",
+    src: "https://res.cloudinary.com/ozrdoi7q/image/upload/v1792760852/WhatsApp_Image_2026-10-23_at_6.29.34_PM.jpg",
+    alt: "Female students performing yoga asanas on exercise mats during International Yoga Day under the 1 HAR (G) NCC Rohtak banner",
+    featured: true,
+    aspectRatio: "landscape",
+  },
+  {
+    id: "indoor-sports-wide",
+    title: "Indoor Sports Complex & Badminton Arena (Wide View)",
+    category: "campus",
+    categoryLabel: "Campus",
+    description:
+      "Elevated wide-angle perspective of the high-ceiling indoor sports complex featuring full-court badminton, table tennis, and recreation facilities for students.",
+    location: "Indoor Sports Complex",
+    src: "https://res.cloudinary.com/ozrdoi7q/image/upload/v1792760850/WhatsApp_Image_2026-10-22_at_12.34.50_PM.jpg",
+    alt: "Elevated perspective of the indoor sports complex showing the green badminton court and table tennis setup",
+    featured: false,
+    aspectRatio: "landscape",
+  },
+  {
+    id: "sensory-physio-equipment",
+    title: "Physiotherapy & Sensory Integration Apparatus",
+    category: "laboratories",
+    categoryLabel: "Laboratories",
+    description:
+      "Specialized clinical therapy suite equipped with an examination bed, suspended bolster sensory swing, foam positioning rollers, and Swedish wall rehabilitation ladders.",
+    location: "Department Rehabilitation Clinic",
+    src: "https://res.cloudinary.com/ozrdoi7q/image/upload/v1792760851/WhatsApp_Image_2026-10-23_at_6.29.35_PM_1.jpg",
+    alt: "Physiotherapy and sensory integration lab with examination bed, suspended bolster swing, and Swedish wall ladder",
+    featured: false,
+    aspectRatio: "landscape",
+  },
+  {
+    id: "pediatric-phonics-aids",
+    title: "Child Speech & Phonics Intervention Learning Center",
+    category: "laboratories",
+    categoryLabel: "Laboratories",
+    description:
+      "Early childhood language resource center with tactile alphabet blocks, phonological flashcards, sound matching kits, and structured therapy activity materials.",
+    location: "Pediatric Rehabilitation Wing",
+    src: "https://res.cloudinary.com/ozrdoi7q/image/upload/v1792760852/WhatsApp_Image_2026-10-23_at_6.29.37_PM.jpg",
+    alt: "Speech and language resource center with pediatric educational flashcards, alphabet boxes, and instructional aids",
+    featured: true,
+    aspectRatio: "landscape",
+  },
+  {
+    id: "clinical-motor-faculty",
+    title: "Clinical Motor Training & Faculty Demonstration",
+    category: "laboratories",
+    categoryLabel: "Laboratories",
+    description:
+      "Faculty members and clinical instructors reviewing adaptive physical rehabilitation apparatus, student therapy curricula, and assistive mobility equipment.",
+    location: "Physical Rehabilitation Center",
+    src: "https://res.cloudinary.com/ozrdoi7q/image/upload/v1792760850/WhatsApp_Image_2026-10-23_at_6.29.35_PM.jpg",
+    alt: "College faculty and instructors conducting a review of clinical equipment and motor rehabilitation devices",
     featured: false,
     aspectRatio: "landscape",
   },

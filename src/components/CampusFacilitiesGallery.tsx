@@ -230,6 +230,74 @@ const CAMPUS_PHOTOS: CampusPhotoItem[] = [
     cloudSrc:
       "https://res.cloudinary.com/ozrdoi7q/image/upload/v1792482733/WhatsApp_Image_2026-10-20_at_1.17.50_PM_1.jpg",
   },
+  {
+    id: "photo-7",
+    title: "Smart Interactive Digital Classroom",
+    category: "classrooms",
+    categoryLabel: "Smart Classroom",
+    tag: "Digital Teaching",
+    description:
+      "Modern interactive smart classroom equipped with a Specktron digital flat panel, multimedia instructional software, and acoustic wood paneling.",
+    specs: [
+      "Specktron interactive digital flat panel display",
+      "Wood acoustic wall paneling & natural daylight",
+      "Ergonomic student lecture tablet seating",
+    ],
+    localSrc: "/images/community_classroom.png",
+    cloudSrc:
+      "https://res.cloudinary.com/ozrdoi7q/image/upload/v1792760849/WhatsApp_Image_2026-10-23_at_6.29.34_PM_1.jpg",
+  },
+  {
+    id: "photo-8",
+    title: "Neuromotor & Sensory Rehabilitation Lab",
+    category: "speech",
+    categoryLabel: "Rehabilitation Lab",
+    tag: "Motor & Sensory Training",
+    description:
+      "Specialized clinical therapy laboratory featuring shock-absorbing red safety flooring, rebounder trampoline, suspended therapy swing, and adaptive mobility aids.",
+    specs: [
+      "Red padded safety matting & exercise zones",
+      "Adaptive mobility equipment (wheelchairs, walkers)",
+      "Suspended sensory integration therapy apparatus",
+    ],
+    localSrc: "/images/campus_building_2.jpg",
+    cloudSrc:
+      "https://res.cloudinary.com/ozrdoi7q/image/upload/v1792760851/WhatsApp_Image_2026-10-23_at_6.29.36_PM_1.jpg",
+  },
+  {
+    id: "photo-9",
+    title: "Science & Practical Chemistry Laboratory",
+    category: "audiology",
+    categoryLabel: "Practical Lab",
+    tag: "Experimental Sciences",
+    description:
+      "Fully equipped practical laboratory with tiled acid-resistant workbenches, Bunsen burners, laboratory glassware, and safety ventilation for scientific experiments.",
+    specs: [
+      "Chemical-resistant tiled laboratory workstations",
+      "Bunsen burner heating units & glassware stations",
+      "Ample cross-ventilation for student safety",
+    ],
+    localSrc: "/images/biology_lab_interior.png",
+    cloudSrc:
+      "https://res.cloudinary.com/ozrdoi7q/image/upload/v1792760851/WhatsApp_Image_2026-10-23_at_6.29.37_PM_2.jpg",
+  },
+  {
+    id: "photo-10",
+    title: "Indoor Sports Complex & Badminton Arena",
+    category: "campus",
+    categoryLabel: "Sports Arena",
+    tag: "Sports & Recreation",
+    description:
+      "High-ceiling indoor recreation arena featuring a full-size professional green badminton court, table tennis facilities, and sports recreation for student well-being.",
+    specs: [
+      "Full-size professional green indoor badminton court",
+      "Indoor table tennis recreational zone",
+      "Enclosed high-ceiling sports complex with lighting",
+    ],
+    localSrc: "/images/hero_campus_main.jpg",
+    cloudSrc:
+      "https://res.cloudinary.com/ozrdoi7q/image/upload/v1792760850/WhatsApp_Image_2026-10-22_at_12.34.51_PM.jpg",
+  },
 ];
 
 export default function CampusFacilitiesGallery() {
@@ -650,11 +718,11 @@ export default function CampusFacilitiesGallery() {
             <div className="flex flex-wrap items-center justify-center gap-2">
               {[
                 { key: "all", label: `All Facilities (${CAMPUS_PHOTOS.length})` },
-                { key: "campus", label: "Main Campus (1)" },
-                { key: "audiology", label: "Audiology & Labs (2)" },
-                { key: "speech", label: "Speech Clinics (1)" },
-                { key: "classrooms", label: "Lecture Halls (2)" },
-                { key: "admin", label: "Administration (1)" },
+                { key: "campus", label: `Campus & Sports (${CAMPUS_PHOTOS.filter((p) => p.category === "campus").length})` },
+                { key: "audiology", label: `Audiology & Labs (${CAMPUS_PHOTOS.filter((p) => p.category === "audiology").length})` },
+                { key: "speech", label: `Speech & Rehab (${CAMPUS_PHOTOS.filter((p) => p.category === "speech").length})` },
+                { key: "classrooms", label: `Classrooms (${CAMPUS_PHOTOS.filter((p) => p.category === "classrooms").length})` },
+                { key: "admin", label: `Administration (${CAMPUS_PHOTOS.filter((p) => p.category === "admin").length})` },
               ].map((filter) => (
                 <button
                   key={filter.key}
@@ -681,11 +749,12 @@ export default function CampusFacilitiesGallery() {
                   {/* Photo Container */}
                   <div className="relative aspect-4/3 w-full bg-stone-100 overflow-hidden">
                     <Image
-                      src={photo.localSrc}
+                      src={photo.cloudSrc || photo.localSrc}
                       alt={photo.title}
                       fill
                       className="object-cover object-center group-hover:scale-105 transition-transform duration-300"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                     
@@ -773,7 +842,7 @@ export default function CampusFacilitiesGallery() {
               {/* Lightbox Large Image */}
               <div className="relative w-full h-[55vh] sm:h-[65vh] bg-black">
                 <Image
-                  src={filteredPhotos[lightboxIndex].localSrc}
+                  src={filteredPhotos[lightboxIndex].cloudSrc || filteredPhotos[lightboxIndex].localSrc}
                   alt={filteredPhotos[lightboxIndex].title}
                   fill
                   className="object-contain"

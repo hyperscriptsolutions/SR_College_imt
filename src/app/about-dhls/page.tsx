@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   BookOpen,
   ArrowRight,
@@ -9,6 +10,8 @@ import {
   Laptop,
   Award,
   Users,
+  Stethoscope,
+  CheckCircle,
 } from "lucide-react";
 import AboutDHLS from "@/components/AboutDHLS";
 import DHLSJourney from "@/components/DHLSJourney";
@@ -161,6 +164,63 @@ export default function AboutDHLSPage() {
               </div>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* Practical Clinical Feature: Pediatric Speech & Language Intervention (img_1) */}
+      <section className="py-14 sm:py-18 bg-white border-y border-[#E8E2D8]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            {/* Photograph: img_1 */}
+            <div className="lg:col-span-6">
+              <div className="relative aspect-4/3 w-full rounded-3xl overflow-hidden border border-[#E8E2D8] shadow-md group bg-slate-100">
+                <Image
+                  src="https://res.cloudinary.com/ozrdoi7q/image/upload/v1792760851/WhatsApp_Image_2026-10-23_at_6.29.37_PM_1.jpg"
+                  alt="Pediatric speech therapy and child language development clinic room with flashcards, alphabet tactile boxes, and therapy materials at S.R. College of Education"
+                  fill
+                  className="object-cover group-hover:scale-102 transition-transform duration-300"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  loading="lazy"
+                />
+                <div className="absolute top-4 left-4 bg-[#8B1745]/90 backdrop-blur-xs text-white text-xs font-bold px-3 py-1.5 rounded-full border border-white/20 shadow-xs flex items-center gap-1.5">
+                  <Stethoscope className="w-3.5 h-3.5 text-[#D9AD54]" />
+                  <span>Clinical Speech Training Clinic</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Narrative & Highlights */}
+            <div className="lg:col-span-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#8B1745]/10 border border-[#8B1745]/30 text-xs font-bold text-[#8B1745] tracking-wide mb-3">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>Hands-on Clinical Exposure</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#172A50] tracking-tight mb-4">
+                Pediatric Speech &amp; Language Development Clinic
+              </h2>
+              <p className="text-sm sm:text-base text-[#718096] leading-relaxed mb-6">
+                DHLS candidates receive immersive clinical experience in our dedicated child language resource room. Equipped with articulation training flashcards, Montessori phonics learning kits, tactile alphabet boxes, and therapeutic mirrors, students observe and conduct real speech intervention sessions.
+              </p>
+
+              <div className="space-y-3 text-xs sm:text-sm">
+                <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-[#FFFCF6] border border-[#E8E2D8]">
+                  <CheckCircle className="w-5 h-5 text-[#8B1745] flex-shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="text-[#172A50] block font-bold">Child Language Stimulation Protocols</strong>
+                    <span className="text-[#718096]">Hands-on practice utilizing structured language stimulation kits, toy models, and cognitive interaction tools.</span>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-[#FFFCF6] border border-[#E8E2D8]">
+                  <CheckCircle className="w-5 h-5 text-[#D9AD54] flex-shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="text-[#172A50] block font-bold">Phonetic &amp; Articulation Development</strong>
+                    <span className="text-[#718096]">Supervised training to correct misarticulation, voice modulation, and oral-motor movement in pediatric cases.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

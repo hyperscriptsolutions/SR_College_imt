@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   GraduationCap,
   AlertCircle,
@@ -7,6 +8,8 @@ import {
   Clock,
   Award,
   Users,
+  Sparkles,
+  CheckCircle,
 } from "lucide-react";
 import Eligibility from "@/components/Eligibility";
 import AdmissionEnquiry from "@/components/AdmissionEnquiry";
@@ -82,6 +85,63 @@ export default function EligibilityAdmissionPage() {
 
       {/* Section 1: 3-Step Process (Eligibility Component) */}
       <Eligibility />
+
+      {/* Academic Assessment & Examination Infrastructure (img_14) */}
+      <section className="py-14 sm:py-18 bg-white border-y border-[#E8E2D8]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            {/* Photograph: img_14 */}
+            <div className="lg:col-span-6">
+              <div className="relative aspect-4/3 w-full rounded-3xl overflow-hidden border border-[#E8E2D8] shadow-md group bg-slate-100">
+                <Image
+                  src="https://res.cloudinary.com/ozrdoi7q/image/upload/v1792760851/WhatsApp_Image_2026-10-23_at_6.29.36_PM.jpg"
+                  alt="Students seated in individual writing-arm chairs in the spacious examination hall at S.R. College of Education"
+                  fill
+                  className="object-cover group-hover:scale-102 transition-transform duration-300"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  loading="lazy"
+                />
+                <div className="absolute top-4 left-4 bg-[#172A50]/90 backdrop-blur-xs text-white text-xs font-bold px-3 py-1.5 rounded-full border border-white/20 shadow-xs flex items-center gap-1.5">
+                  <GraduationCap className="w-3.5 h-3.5 text-[#D9AD54]" />
+                  <span>Academic &amp; Examination Hall</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Narrative & Details */}
+            <div className="lg:col-span-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#172A50]/10 border border-[#172A50]/20 text-xs font-bold text-[#172A50] tracking-wide mb-3">
+                <Sparkles className="w-3.5 h-3.5 text-[#D9AD54]" />
+                <span>Academic Rigor &amp; Assessment</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#172A50] tracking-tight mb-4">
+                Structured Examination &amp; Lecture Environment
+              </h2>
+              <p className="text-sm sm:text-base text-[#718096] leading-relaxed mb-6">
+                Students at S.R. College of Education complete their theoretical coursework and RCI-prescribed semester assessments in well-lit, spacious examination and lecture halls equipped with individual ergonomic tablet chairs, cross-ventilation, and strict proctoring standards.
+              </p>
+
+              <div className="space-y-3 text-xs sm:text-sm">
+                <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-[#FFFCF6] border border-[#E8E2D8]">
+                  <CheckCircle className="w-5 h-5 text-[#8B1745] flex-shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="text-[#172A50] block font-bold">Standardized Assessment Protocol</strong>
+                    <span className="text-[#718096]">Continuous internal evaluations, semester theory papers, and project reviews conducted according to RCI / NBER guidelines.</span>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-[#FFFCF6] border border-[#E8E2D8]">
+                  <CheckCircle className="w-5 h-5 text-[#D9AD54] flex-shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="text-[#172A50] block font-bold">Individual Writing Workstations</strong>
+                    <span className="text-[#718096]">Dedicated seating designed to provide comfortable writing posture and focused concentration during lengthy exam sessions.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Section 2: Interactive Admission Enquiry Form connected to /api/enquire */}
       <div id="enquiry">
