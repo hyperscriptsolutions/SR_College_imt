@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import CollegeLogo from "./CollegeLogo";
@@ -10,14 +10,27 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const headerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 15);
     };
 
+    const updateNavbarHeight = () => {
+      if (headerRef.current) {
+        const height = headerRef.current.offsetHeight;
+        document.documentElement.style.setProperty("--navbar-height", `${height}px`);
+      }
+    };
+
+    updateNavbarHeight();
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", updateNavbarHeight);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", updateNavbarHeight);
+    };
   }, []);
 
   // Close mobile drawer on route change or Esc key
@@ -38,36 +51,37 @@ export default function Navbar() {
   const navLinks = [
     { label: "Home", href: "/" },
     { label: "About DHLS", href: "/about-dhls" },
-    { label: "Campus & Labs", href: "/#facilities" },
-    { label: "Eligibility & Admission", href: "/eligibility-admission" },
-    { label: "Course Structure", href: "/course-structure" },
+    { label: "Campus & Labs", shortLabel: "Campus", href: "/#facilities" },
+    { label: "Eligibility & Admission", shortLabel: "Eligibility", href: "/eligibility-admission" },
+    { label: "Course Structure", shortLabel: "Curriculum", href: "/course-structure" },
     { label: "FAQs", href: "/faqs" },
-    { label: "Contact Us", href: "/contact-us" },
+    { label: "Contact Us", shortLabel: "Contact", href: "/contact-us" },
   ];
 
   return (
     <>
       <header
+        ref={headerRef}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
           isScrolled
             ? "bg-[#FFFCF6]/95 backdrop-blur-md shadow-xs border-b border-[#E8E2D8] py-2"
             : "bg-[#FFFCF6] border-b border-[#E8E2D8] py-2.5 sm:py-3"
         }`}
       >
-        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
-          <div className="flex items-center justify-between gap-3 xl:gap-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="flex items-center justify-between gap-2 xl:gap-4">
             {/* Logo and College Brand (Left) */}
             <Link
               href="/"
               className="flex items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#172A50] rounded-lg flex-shrink-0"
               aria-label="S.R COLLEGE OF EDUCATION Homepage"
             >
-              <CollegeLogo variant="navy" className="h-8 w-8 sm:h-9 sm:w-9 xl:h-10 xl:w-10" />
+              <CollegeLogo variant="navy" className="h-8 w-8 sm:h-9 sm:w-9" />
             </Link>
 
             {/* Desktop Navigation Links (Center) */}
             <nav
-              className="hidden lg:flex items-center justify-center gap-1 xl:gap-2 flex-1 mx-2"
+              className="hidden lg:flex items-center justify-center gap-0.5 xl:gap-1.5 flex-1 min-w-0 mx-1 xl:mx-2"
               aria-label="Main Navigation"
             >
               {navLinks.map((link) => {
@@ -76,23 +90,30 @@ export default function Navbar() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-sm font-semibold whitespace-nowrap transition-all duration-150 ${
+                    className={`px-2 xl:px-3 py-1.5 rounded-full text-xs xl:text-sm font-semibold whitespace-nowrap transition-all duration-150 ${
                       isActive
                         ? "text-white bg-[#172A50] shadow-sm"
                         : "text-[#263238] hover:text-[#8B1745] hover:bg-stone-100/70"
                     }`}
                   >
-                    {link.label}
+                    {link.shortLabel ? (
+                      <>
+                        <span className="hidden xl:inline">{link.label}</span>
+                        <span className="xl:hidden">{link.shortLabel}</span>
+                      </>
+                    ) : (
+                      link.label
+                    )}
                   </Link>
                 );
               })}
             </nav>
 
             {/* Actions: Direct Call & Enquire Now (Right) */}
-            <div className="hidden md:flex items-center gap-2.5 xl:gap-3 flex-shrink-0">
+            <div className="hidden lg:flex items-center gap-2 xl:gap-3 flex-shrink-0">
               <a
                 href="tel:9896302035"
-                className="flex items-center gap-1.5 text-xs xl:text-sm font-semibold text-[#172A50] hover:text-[#8B1745] px-3 xl:px-3.5 py-1.5 rounded-full bg-white border border-[#E8E2D8] hover:border-[#D9AD54] transition-all shadow-2xs whitespace-nowrap"
+                className="flex items-center gap-1.5 text-xs xl:text-sm font-semibold text-[#172A50] hover:text-[#8B1745] px-2.5 xl:px-3.5 py-1.5 rounded-full bg-white border border-[#E8E2D8] hover:border-[#D9AD54] transition-all shadow-2xs whitespace-nowrap"
                 title="Call S.R COLLEGE OF EDUCATION Admissions Desk"
               >
                 <Phone className="w-3.5 h-3.5 text-[#172A50]" />
@@ -101,7 +122,7 @@ export default function Navbar() {
 
               <Link
                 href="/eligibility-admission#enquiry"
-                className="inline-flex items-center gap-1.5 px-4 xl:px-5 py-2 rounded-full text-xs xl:text-sm font-bold text-white bg-[#172A50] hover:bg-[#26345B] shadow-sm transition-all duration-150 active:scale-95 whitespace-nowrap"
+                className="inline-flex items-center gap-1.5 px-3.5 xl:px-5 py-2 rounded-full text-xs xl:text-sm font-bold text-white bg-[#172A50] hover:bg-[#26345B] shadow-sm transition-all duration-150 active:scale-95 whitespace-nowrap"
               >
                 <span>Enquire Now</span>
                 <ArrowRight className="w-3.5 h-3.5 text-[#D9AD54]" />

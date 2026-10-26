@@ -85,10 +85,10 @@ export default function CollegeLogo({
 
       {showText && (
         <div className="flex flex-col">
-          <span className={`font-extrabold tracking-tight text-sm sm:text-base xl:text-lg leading-tight whitespace-nowrap ${textColor}`}>
+          <span className={`font-extrabold tracking-tight text-xs sm:text-sm xl:text-base leading-tight whitespace-nowrap ${textColor}`}>
             S.R COLLEGE OF EDUCATION
           </span>
-          <span className={`text-[10px] sm:text-[11px] xl:text-xs font-medium tracking-wide whitespace-nowrap ${subtextColor}`}>
+          <span className={`text-[9px] sm:text-[10px] xl:text-[11px] font-medium tracking-wide whitespace-nowrap ${subtextColor}`}>
             Rohtak, Haryana • Estd. Institution
           </span>
         </div>
