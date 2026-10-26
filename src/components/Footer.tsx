@@ -57,6 +57,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/gallery" className="hover:text-[#D9AD54] transition-colors">
+                  Photo Gallery
+                </Link>
+              </li>
+              <li>
                 <Link href="/eligibility-admission" className="hover:text-[#D9AD54] transition-colors">
                   Eligibility &amp; Admission
                 </Link>
