@@ -97,51 +97,159 @@ export default function Hero({ content, appearance }: HeroProps) {
 
   return (
     <>
-      {/* 1. Cinematic Scroll-Triggered Sticky Hero Track */}
+      {/* =========================================================================
+          MOBILE / TABLET VIEW (< lg): Matches user's reference website (JP International School)
+          - Full-width campus photograph on top in natural aspect ratio (zero zoom)
+          - Centered text content directly below on dark navy background
+          - Smooth natural page scroll
+         ========================================================================= */}
+      <section
+        id="hero-mobile"
+        className="block lg:hidden w-full bg-[#0B1528] text-white"
+        style={{
+          paddingTop: "var(--navbar-height, 64px)",
+        }}
+      >
+        {/* 1. Full-Width Campus Photo on Top (Zero Zoom, Natural 16:10 Ratio) */}
+        <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] overflow-hidden bg-black/40">
+          <Image
+            src={photoSrc}
+            alt="S.R. College of Education Campus Entrance Gate - Rohtak, Haryana"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[center_22%]"
+            onError={() => setPhotoSrc(HERO_PHOTO_LOCAL)}
+          />
+        </div>
+
+        {/* 2. Dark Navy Content Block (Directly below photo, matching reference layout) */}
+        <div className="px-4 py-7 sm:py-10 bg-[#0B1528] text-center">
+          <div className="max-w-3xl mx-auto flex flex-col items-center">
+            {/* Badges */}
+            <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 mb-3.5">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#172D55] border border-white/20 text-white text-[11px] sm:text-xs font-semibold shadow-sm">
+                <MapPin className="w-3.5 h-3.5 text-[#E1B34F]" />
+                <span>S.R COLLEGE OF EDUCATION • ROHTAK</span>
+              </div>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#981747] border border-white/20 text-white text-[11px] sm:text-xs font-semibold shadow-sm">
+                <Award className="w-3.5 h-3.5 text-[#E1B34F]" />
+                <span>Recognised by RCI</span>
+              </div>
+            </div>
+
+            {/* Main Headline (Bold White, Centered) */}
+            <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-snug mb-3">
+              Understand Hearing. Discover <span className="text-[#E1B34F]">Speech.</span>{" "}
+              <span className="text-[#FBBF24]">Empower</span> Communication.
+            </h1>
+
+            {/* Subtitle (Bold Yellow, Centered - matches reference layout) */}
+            <p className="text-sm sm:text-base font-bold text-[#E1B34F] mb-3 leading-snug max-w-xl">
+              {heroSupporting}
+            </p>
+
+            {/* Description (Light Gray, Centered - matches reference layout) */}
+            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-5 max-w-2xl font-normal">
+              {description}
+            </p>
+
+            {/* Action Pill Buttons */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3.5 w-full sm:w-auto mb-6">
+              <Link
+                href="/about-dhls"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 sm:py-3.5 rounded-full text-xs sm:text-sm font-bold text-white bg-[#172D55] hover:bg-[#0f1d38] border border-white/25 shadow-xl transition-all active:scale-95 text-center"
+              >
+                <span>{primaryCta}</span>
+                <ArrowRight className="w-4 h-4 text-[#E1B34F]" />
+              </Link>
+
+              <Link
+                href="/eligibility-admission#enquiry"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 sm:py-3.5 rounded-full text-xs sm:text-sm font-bold text-[#172D55] bg-[#E1B34F] hover:bg-[#d4a540] shadow-xl transition-all active:scale-95 text-center"
+              >
+                <span>{secondaryCta}</span>
+              </Link>
+            </div>
+
+            {/* Course Highlights (Duration, Eligibility, Mode) */}
+            <div className="w-full grid grid-cols-3 gap-1.5 sm:gap-3 pt-4 border-t border-white/15">
+              <div className="flex flex-col items-center p-2 sm:p-2.5 rounded-xl bg-white/5 border border-white/10 text-white">
+                <div className="p-1 sm:p-1.5 rounded-lg bg-[#981747]/60 text-[#E1B34F] mb-1">
+                  <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                </div>
+                <div className="text-[8px] sm:text-[10px] text-slate-400 font-semibold uppercase tracking-wider">
+                  Duration
+                </div>
+                <div className="text-[10px] sm:text-xs font-bold text-white truncate max-w-full">
+                  {duration}
+                </div>
+              </div>
+
+              <div className="flex flex-col items-center p-2 sm:p-2.5 rounded-xl bg-white/5 border border-white/10 text-white">
+                <div className="p-1 sm:p-1.5 rounded-lg bg-[#E1B34F]/35 text-[#E1B34F] mb-1">
+                  <GraduationCap className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                </div>
+                <div className="text-[8px] sm:text-[10px] text-slate-400 font-semibold uppercase tracking-wider">
+                  Eligibility
+                </div>
+                <div className="text-[10px] sm:text-xs font-bold text-white truncate max-w-full">
+                  {eligibility}
+                </div>
+              </div>
+
+              <div className="flex flex-col items-center p-2 sm:p-2.5 rounded-xl bg-white/5 border border-white/10 text-white">
+                <div className="p-1 sm:p-1.5 rounded-lg bg-white/20 text-[#E1B34F] mb-1">
+                  <Laptop className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                </div>
+                <div className="text-[8px] sm:text-[10px] text-slate-400 font-semibold uppercase tracking-wider">
+                  Mode
+                </div>
+                <div className="text-[10px] sm:text-xs font-bold text-white truncate max-w-full">
+                  {mode}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================================
+          DESKTOP / LAPTOP VIEW (>= lg): Cinematic Scroll-Triggered Sticky Hero Track
+          - Preserved exactly as requested: "on laptop its working good"
+         ========================================================================= */}
       <section
         ref={trackRef}
         id="hero"
-        className="relative w-full h-[240vh] sm:h-[270vh] lg:h-[290vh]"
+        className="hidden lg:block relative w-full h-[290vh] bg-[#0B1528]"
         style={{
           paddingTop: "var(--navbar-height, 64px)",
         }}
       >
         {/* Pinned Sticky Hero Viewport - Strictly Positioned Below Navbar */}
         <div
-          className="sticky z-20 w-full overflow-hidden flex items-center justify-center text-white bg-[#0F1A30]"
+          className="sticky z-20 w-full overflow-hidden flex items-center justify-center text-white bg-[#0B1528]"
           style={{
             top: "var(--navbar-height, 64px)",
             height: "calc(100dvh - var(--navbar-height, 64px))",
           }}
         >
-          {/* Mobile Ambient Blurred Campus Backdrop Layer: creates an immersive, seamless background on tall mobile screens */}
-          <div className="absolute inset-0 z-0 overflow-hidden select-none pointer-events-none lg:hidden">
-            <Image
-              src={photoSrc}
-              alt=""
-              fill
-              className="object-cover blur-2xl opacity-40 scale-110"
-              aria-hidden="true"
-            />
-            <div className="absolute inset-0 bg-black/45" />
-          </div>
-
-          {/* Full-bleed Campus Photo Background - Shows FULL on mobile (object-contain), widescreen cover on desktop (lg:object-cover) */}
-          <div className="absolute inset-0 z-0 select-none pointer-events-none flex items-center justify-center">
+          {/* Full-bleed Campus Photo Background on Desktop */}
+          <div className="absolute inset-0 z-0 select-none pointer-events-none">
             <Image
               src={photoSrc}
               alt="S.R. College of Education Campus Entrance Gate - Rohtak, Haryana"
               fill
               priority
               sizes="100vw"
-              className="object-contain lg:object-cover lg:object-[center_35%]"
+              className="object-cover object-[center_35%]"
               onError={() => setPhotoSrc(HERO_PHOTO_LOCAL)}
             />
 
-            {/* Dynamic Dark Gradient Overlay: starts subtle, deepens smoothly as user scrolls */}
+            {/* Dynamic Dark Gradient Overlay for Desktop */}
             <motion.div
               style={{ opacity: overlayOpacity }}
-              className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-black/40 lg:bg-gradient-to-r lg:from-black/15 lg:via-black/60 lg:to-black/90 pointer-events-none"
+              className="absolute inset-0 bg-gradient-to-r from-black/15 via-black/60 to-black/90 pointer-events-none"
             />
           </div>
 
@@ -152,51 +260,51 @@ export default function Hero({ content, appearance }: HeroProps) {
               y: promptY,
             }}
             onClick={handleScrollDown}
-            className="absolute bottom-5 sm:bottom-8 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-2 cursor-pointer group select-none pointer-events-auto"
+            className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-2 cursor-pointer group select-none pointer-events-auto"
             aria-label="Scroll to explore SR College campus and DHLS course"
           >
-            <span className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.22em] text-white/90 drop-shadow-md group-hover:text-[#E1B34F] transition-colors">
+            <span className="text-xs font-bold uppercase tracking-[0.22em] text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.85)] group-hover:text-[#E1B34F] transition-colors">
               Scroll to Explore
             </span>
-            <div className="w-5 h-8 sm:w-5 sm:h-9 rounded-full border-2 border-white/70 flex items-start justify-center p-1 backdrop-blur-xs bg-black/30 shadow-lg group-hover:border-[#E1B34F] transition-colors">
+            <div className="w-5 h-9 rounded-full border-2 border-white/80 flex items-start justify-center p-1 backdrop-blur-sm bg-black/40 shadow-lg group-hover:border-[#E1B34F] transition-colors">
               <div className="w-1.5 h-2.5 rounded-full bg-[#E1B34F] animate-bounce" />
             </div>
           </motion.div>
 
-          {/* Animated Hero Content Container */}
-          <div className="relative z-10 w-full max-h-full overflow-y-auto sm:overflow-visible py-4 sm:py-6">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center w-full">
+          {/* Animated Hero Content Container on Desktop */}
+          <div className="relative z-10 w-full py-6">
+            <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full">
+              <div className="grid grid-cols-12 gap-8 items-center w-full">
                 {/* Left Column Spacer (on desktop): Keeps campus entrance gate & students clear */}
-                <div className="hidden lg:block lg:col-span-5" />
+                <div className="col-span-5" />
 
                 {/* Right Column: Direct Text Overlay matching reference layout */}
-                <div className="col-span-12 lg:col-span-7 flex flex-col justify-center">
+                <div className="col-span-7 flex flex-col justify-center">
                   {/* 1. Badges Row */}
                   <motion.div
                     style={{ opacity: badgesOpacity, y: badgesY }}
-                    className="flex flex-wrap items-center gap-2 sm:gap-2.5 mb-3 sm:mb-5"
+                    className="flex flex-wrap items-center gap-2.5 mb-5"
                   >
-                    <div className="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-[#172D55]/90 backdrop-blur-md border border-white/20 text-white text-[11px] sm:text-xs font-semibold tracking-wide shadow-sm">
-                      <MapPin className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-[#E1B34F]" />
+                    <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#172D55]/90 backdrop-blur-md border border-white/20 text-white text-xs font-semibold tracking-wide shadow-sm">
+                      <MapPin className="w-3.5 h-3.5 text-[#E1B34F]" />
                       <span>S.R COLLEGE OF EDUCATION • ROHTAK</span>
                     </div>
 
-                    <div className="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-[#981747]/90 backdrop-blur-md border border-white/20 text-white text-[11px] sm:text-xs font-semibold shadow-sm">
-                      <Award className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-[#E1B34F]" />
+                    <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#981747]/90 backdrop-blur-md border border-white/20 text-white text-xs font-semibold shadow-sm">
+                      <Award className="w-3.5 h-3.5 text-[#E1B34F]" />
                       <span>Recognised by RCI</span>
                     </div>
 
-                    <div className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-xs font-semibold text-white shadow-xs">
+                    <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-xs font-semibold text-white shadow-xs">
                       <span className="w-2 h-2 rounded-full bg-emerald-400" />
                       <span>Regular 1-Year Diploma (Offline)</span>
                     </div>
                   </motion.div>
 
-                  {/* 2. Main Headline - Bold White with Gold Accents */}
+                  {/* 2. Main Headline */}
                   <motion.h1
                     style={{ opacity: headlineOpacity, y: headlineY }}
-                    className="text-2xl sm:text-4xl lg:text-[50px] xl:text-[54px] font-extrabold text-white tracking-tight leading-[1.14] sm:leading-[1.12] mb-3 sm:mb-5 drop-shadow-md"
+                    className="text-4xl lg:text-[50px] xl:text-[54px] font-extrabold text-white tracking-tight leading-[1.12] mb-5 drop-shadow-md"
                   >
                     {heroHeadline ===
                     "Understand Hearing. Discover Speech. Empower Communication." ? (
@@ -214,11 +322,11 @@ export default function Hero({ content, appearance }: HeroProps) {
 
                   {/* 3. Supporting Headline & Curriculum Description */}
                   <motion.div style={{ opacity: descOpacity, y: descY }}>
-                    <p className="text-sm sm:text-lg lg:text-xl font-semibold text-white/95 mb-2 sm:mb-3 leading-snug sm:leading-relaxed drop-shadow-sm">
+                    <p className="text-lg lg:text-xl font-semibold text-white/95 mb-3 leading-relaxed drop-shadow-sm">
                       {heroSupporting}
                     </p>
 
-                    <p className="text-[11px] sm:text-xs lg:text-sm text-slate-200 leading-relaxed mb-4 sm:mb-7 max-w-2xl drop-shadow-xs font-normal line-clamp-2 sm:line-clamp-none">
+                    <p className="text-xs lg:text-sm text-slate-200 leading-relaxed mb-7 max-w-2xl drop-shadow-xs font-normal">
                       {description}
                     </p>
                   </motion.div>
@@ -230,21 +338,19 @@ export default function Hero({ content, appearance }: HeroProps) {
                       y: ctaY,
                       pointerEvents: ctaPointerEvents,
                     }}
-                    className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3.5 mb-4 sm:mb-7"
+                    className="flex flex-row items-center gap-3.5 mb-7"
                   >
-                    {/* Blue/Navy Primary Pill Button */}
                     <Link
                       href="/about-dhls"
-                      className="inline-flex items-center justify-center gap-2 px-5 sm:px-7 py-2.5 sm:py-3.5 rounded-full text-xs sm:text-sm lg:text-base font-bold text-white bg-[#172D55] hover:bg-[#0f1d38] border border-white/25 shadow-xl hover:shadow-2xl transition-all duration-150 active:scale-95"
+                      className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-sm lg:text-base font-bold text-white bg-[#172D55] hover:bg-[#0f1d38] border border-white/25 shadow-xl hover:shadow-2xl transition-all duration-150 active:scale-95"
                     >
                       <span>{primaryCta}</span>
                       <ArrowRight className="w-4 h-4 text-[#E1B34F]" />
                     </Link>
 
-                    {/* Yellow/Gold Secondary Pill Button */}
                     <Link
                       href="/eligibility-admission#enquiry"
-                      className="inline-flex items-center justify-center gap-2 px-5 sm:px-7 py-2.5 sm:py-3.5 rounded-full text-xs sm:text-sm lg:text-base font-bold text-[#172D55] bg-[#E1B34F] hover:bg-[#d4a540] shadow-xl hover:shadow-2xl transition-all duration-150 active:scale-95"
+                      className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-sm lg:text-base font-bold text-[#172D55] bg-[#E1B34F] hover:bg-[#d4a540] shadow-xl hover:shadow-2xl transition-all duration-150 active:scale-95"
                     >
                       <span>{secondaryCta}</span>
                     </Link>
@@ -257,57 +363,53 @@ export default function Hero({ content, appearance }: HeroProps) {
                       y: highlightsY,
                       pointerEvents: highlightsPointerEvents,
                     }}
-                    className="pt-3 sm:pt-5 border-t border-white/20"
+                    className="pt-5 border-t border-white/20"
                   >
-                    <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-2 sm:mb-3">
-                      {/* Duration */}
-                      <div className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 rounded-xl sm:rounded-2xl bg-black/45 backdrop-blur-md border border-white/20 text-white shadow-xs">
-                        <div className="p-1.5 sm:p-2 rounded-lg sm:rounded-xl bg-[#981747]/50 text-[#E1B34F] border border-white/10 flex-shrink-0">
-                          <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                    <div className="grid grid-cols-3 gap-3 mb-3">
+                      <div className="flex items-center gap-3 p-3 rounded-2xl bg-black/45 backdrop-blur-md border border-white/20 text-white shadow-xs">
+                        <div className="p-2 rounded-xl bg-[#981747]/50 text-[#E1B34F] border border-white/10 flex-shrink-0">
+                          <Calendar className="w-4 h-4" />
                         </div>
                         <div className="min-w-0">
-                          <div className="text-[9px] sm:text-[10px] text-slate-300 font-semibold uppercase tracking-wider truncate">
+                          <div className="text-[10px] text-slate-300 font-semibold uppercase tracking-wider truncate">
                             Duration
                           </div>
-                          <div className="text-[11px] sm:text-xs font-bold text-white truncate">
+                          <div className="text-xs font-bold text-white truncate">
                             {duration}
                           </div>
                         </div>
                       </div>
 
-                      {/* Eligibility */}
-                      <div className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 rounded-xl sm:rounded-2xl bg-black/45 backdrop-blur-md border border-white/20 text-white shadow-xs">
-                        <div className="p-1.5 sm:p-2 rounded-lg sm:rounded-xl bg-[#E1B34F]/30 text-[#E1B34F] border border-white/10 flex-shrink-0">
-                          <GraduationCap className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                      <div className="flex items-center gap-3 p-3 rounded-2xl bg-black/45 backdrop-blur-md border border-white/20 text-white shadow-xs">
+                        <div className="p-2 rounded-xl bg-[#E1B34F]/30 text-[#E1B34F] border border-white/10 flex-shrink-0">
+                          <GraduationCap className="w-4 h-4" />
                         </div>
                         <div className="min-w-0">
-                          <div className="text-[9px] sm:text-[10px] text-slate-300 font-semibold uppercase tracking-wider truncate">
+                          <div className="text-[10px] text-slate-300 font-semibold uppercase tracking-wider truncate">
                             Eligibility
                           </div>
-                          <div className="text-[11px] sm:text-xs font-bold text-white truncate">
+                          <div className="text-xs font-bold text-white truncate">
                             {eligibility}
                           </div>
                         </div>
                       </div>
 
-                      {/* Mode */}
-                      <div className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 rounded-xl sm:rounded-2xl bg-black/45 backdrop-blur-md border border-white/20 text-white shadow-xs">
-                        <div className="p-1.5 sm:p-2 rounded-lg sm:rounded-xl bg-white/20 text-[#E1B34F] border border-white/10 flex-shrink-0">
-                          <Laptop className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                      <div className="flex items-center gap-3 p-3 rounded-2xl bg-black/45 backdrop-blur-md border border-white/20 text-white shadow-xs">
+                        <div className="p-2 rounded-xl bg-white/20 text-[#E1B34F] border border-white/10 flex-shrink-0">
+                          <Laptop className="w-4 h-4" />
                         </div>
                         <div className="min-w-0">
-                          <div className="text-[9px] sm:text-[10px] text-slate-300 font-semibold uppercase tracking-wider truncate">
+                          <div className="text-[10px] text-slate-300 font-semibold uppercase tracking-wider truncate">
                             Mode
                           </div>
-                          <div className="text-[11px] sm:text-xs font-bold text-white truncate">
+                          <div className="text-xs font-bold text-white truncate">
                             {mode}
                           </div>
                         </div>
                       </div>
                     </div>
 
-                    {/* Sub-chips row */}
-                    <div className="hidden sm:flex flex-wrap items-center justify-between gap-3 text-xs text-slate-300 pt-1">
+                    <div className="flex flex-wrap items-center justify-between gap-3 text-xs text-slate-300 pt-2.5">
                       <div className="flex flex-wrap items-center gap-2">
                         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/45 backdrop-blur-md border border-white/20 text-[11px] font-semibold text-white">
                           <Users className="w-3.5 h-3.5 text-[#E1B34F]" />
