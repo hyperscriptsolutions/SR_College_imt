@@ -24,7 +24,7 @@ interface HeroProps {
 }
 
 const HERO_PHOTO_CLOUD =
-  "https://res.cloudinary.com/ozrdoi7q/image/upload/v1792807565/Sunny_SR_College_Campus_Entrance.png";
+  "https://res.cloudinary.com/ozrdoi7q/image/upload/v1794218365/Updated_College_Entrance_Signage.png";
 const HERO_PHOTO_LOCAL = "/images/sunny_campus_entrance.png";
 
 export default function Hero({ content, appearance }: HeroProps) {
@@ -304,7 +304,7 @@ export default function Hero({ content, appearance }: HeroProps) {
                     className="text-3xl lg:text-[38px] xl:text-[46px] 2xl:text-[50px] font-extrabold text-white tracking-tight leading-[1.14] mb-3 xl:mb-4 drop-shadow-md"
                   >
                     {heroHeadline ===
-                    "Understand Hearing. Discover Speech. Empower Communication." ? (
+                      "Understand Hearing. Discover Speech. Empower Communication." ? (
                       <>
                         Understand Hearing.
                         <br />
