@@ -68,9 +68,9 @@ export const GALLERY_PHOTOS: GalleryPhoto[] = [
     category: "campus",
     categoryLabel: "Campus",
     description:
-      "The official main entrance gate of S.R. College of Education, Sector 30-B, IMT Rohtak, leading to the dedicated DHLS department and administrative buildings.",
+      "The official main entrance gate of S.R. College of Education, Sector 30-B, IMT Rohtak, with institutional courses signage and administrative buildings.",
     location: "Sector 30-B, IMT Rohtak, Haryana",
-    src: "/images/sunny_campus_entrance.png",
+    src: "https://res.cloudinary.com/ozrdoi7q/image/upload/v1794218365/Updated_College_Entrance_Signage.png",
     alt: "Main entrance gate of S.R. College of Education with college signage, landscaping, and clear sky",
     featured: true,
     aspectRatio: "landscape",

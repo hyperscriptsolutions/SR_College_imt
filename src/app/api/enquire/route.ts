@@ -6,6 +6,7 @@ export interface EnquiryPayload {
   fullName: string;
   mobile: string;
   email?: string;
+  course?: string;
   qualification: string;
   message?: string;
 }
@@ -17,6 +18,7 @@ export async function POST(request: NextRequest) {
     const fullName = (body.fullName || "").trim();
     const mobile = (body.mobile || "").trim();
     const email = (body.email || "").trim();
+    const course = (body.course || "DHLS(Diploma in Hearing Language and Speech)").trim();
     const qualification = (body.qualification || "").trim();
     const message = (body.message || "").trim();
 
@@ -67,8 +69,8 @@ export async function POST(request: NextRequest) {
       mobile: sanitizedMobile,
       email: email || null,
       qualification,
-      message: message || "General DHLS Course Enquiry",
-      course: "Diploma in Hearing Language and Speech (DHLS)",
+      message: message || "General Course Admission Enquiry",
+      course: course || "DHLS(Diploma in Hearing Language and Speech)",
       institution: "S.R College of Education, Rohtak",
       submittedAt: timestamp,
       status: "PENDING_COLLEGE_CONTACT",

@@ -13,13 +13,23 @@ import {
   User,
   GraduationCap,
   MessageSquare,
+  BookOpen,
 } from "lucide-react";
+
+export const ADMISSION_COURSES = [
+  "B.Ed (General)",
+  "BEd (Special Education)-SLD",
+  "M.Ed (Special Education)-SLD",
+  "P.G.D.R.P(Post Graduate Diploma in Rehabiliation Psychology)",
+  "DHLS(Diploma in Hearing Language and Speech)",
+];
 
 export default function AdmissionEnquiry() {
   const [formData, setFormData] = useState({
     fullName: "",
     mobile: "",
     email: "",
+    course: "DHLS(Diploma in Hearing Language and Speech)",
     qualification: "",
     message: "",
   });
@@ -56,6 +66,10 @@ export default function AdmissionEnquiry() {
       errs.qualification = "Please select your highest educational qualification.";
     }
 
+    if (!formData.course) {
+      errs.course = "Please select the course program you are interested in.";
+    }
+
     setErrors(errs);
     return Object.keys(errs).length === 0;
   };
@@ -80,6 +94,7 @@ export default function AdmissionEnquiry() {
           fullName: formData.fullName,
           mobile: formData.mobile,
           email: formData.email,
+          course: formData.course,
           qualification: formData.qualification,
           message: formData.message,
         }),
@@ -96,6 +111,7 @@ export default function AdmissionEnquiry() {
           fullName: "",
           mobile: "",
           email: "",
+          course: "DHLS(Diploma in Hearing Language and Speech)",
           qualification: "",
           message: "",
         });
@@ -371,6 +387,39 @@ export default function AdmissionEnquiry() {
                         )}
                       </div>
 
+                    </div>
+
+                    {/* Course Program Selection */}
+                    <div>
+                      <label htmlFor="course" className="block text-xs font-bold text-[#172A50] mb-1.5 uppercase tracking-wider">
+                        Select Course / Program <span className="text-rose-500">*</span>
+                      </label>
+                      <div className="relative">
+                        <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-stone-400">
+                          <BookOpen className="w-4 h-4" />
+                        </div>
+                        <select
+                          id="course"
+                          required
+                          value={formData.course}
+                          onChange={(e) => setFormData({ ...formData, course: e.target.value })}
+                          className={`w-full pl-10 pr-4 py-3 rounded-xl bg-[#FFFCF6] border text-sm text-[#263238] focus:outline-none focus:ring-2 transition-all appearance-none cursor-pointer ${
+                            errors.course
+                              ? "border-rose-400 focus:ring-rose-200"
+                              : "border-[#E8E2D8] focus:border-[#172A50] focus:ring-[#172A50]/20"
+                          }`}
+                        >
+                          <option value="">Select a course program...</option>
+                          {ADMISSION_COURSES.map((c) => (
+                            <option key={c} value={c}>
+                              {c}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                      {errors.course && (
+                        <p className="mt-1 text-[11px] text-rose-600 font-medium">{errors.course}</p>
+                      )}
                     </div>
 
                     {/* Highest Educational Qualification */}

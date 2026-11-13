@@ -1,23 +1,28 @@
 import React from "react";
 import PublicLayout from "@/components/PublicLayout";
 import Hero from "@/components/Hero";
+import CoursesOffered from "@/components/CoursesOffered";
 import AboutDHLS from "@/components/AboutDHLS";
 import WhatYouWillExplore from "@/components/WhatYouWillExplore";
 import CampusFacilitiesGallery from "@/components/CampusFacilitiesGallery";
 import PhotoGallery from "@/components/PhotoGallery";
 import HomeContactPreview from "@/components/HomeContactPreview";
-import { getCourseContent, getAppearanceSettings } from "@/lib/dataStore";
+import { getCourseContent, getAppearanceSettings, getCourseOfferings } from "@/lib/dataStore";
 
 export default function HomePage() {
   const content = getCourseContent();
   const appearance = getAppearanceSettings();
+  const courses = getCourseOfferings();
 
   return (
     <PublicLayout>
       {/* 1. Hero with Acoustic & Speech Frequency Wave & CTAs */}
       <Hero content={content} appearance={appearance} />
 
-      {/* 2. Introduction to the DHLS Course & 3 Core Pillars */}
+      {/* 2. Official Academic Programs / Courses Offered */}
+      <CoursesOffered courses={courses} />
+
+      {/* 3. Introduction to the DHLS Course & 3 Core Pillars */}
       <AboutDHLS />
 
       {/* 3. Real Campus Video Walkthrough & Clinical Infrastructure */}

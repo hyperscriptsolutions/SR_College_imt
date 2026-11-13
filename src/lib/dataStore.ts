@@ -85,6 +85,127 @@ export function updateCourseContent(updates: Partial<CourseContent>): CourseCont
 }
 
 // -------------------------------------------------------------
+// 1b. Official Courses Offered by S.R College of Education
+// -------------------------------------------------------------
+export interface CourseOffering {
+  id: string;
+  name: string;
+  shortCode: string;
+  category: string;
+  duration: string;
+  eligibility: string;
+  affiliation: string;
+  seats?: string;
+  description: string;
+  highlights: string[];
+}
+
+export const OFFICIAL_COURSES: CourseOffering[] = [
+  {
+    id: "bed-general",
+    name: "B.Ed (General)",
+    shortCode: "B.Ed",
+    category: "Teacher Education",
+    duration: "2 Years (Regular)",
+    eligibility: "Bachelor's / Master's Degree with minimum 50% marks (47.5% for SC/ST)",
+    affiliation: "Affiliated to MDU, Rohtak & Recognized by NCTE",
+    seats: "100 Seats",
+    description:
+      "Bachelor of Education (General) prepares educators with foundational pedagogic knowledge, curriculum planning, classroom methodologies, and educational psychology for secondary and senior secondary teaching.",
+    highlights: [
+      "NCTE Recognized Teacher Training Program",
+      "Affiliated to Maharshi Dayanand University (MDU), Rohtak",
+      "School Internship & Teaching Practicum in Recognized Schools",
+      "Comprehensive Pedagogical & ICT-Enabled Classrooms",
+    ],
+  },
+  {
+    id: "bed-special-sld",
+    name: "BEd (Special Education)-SLD",
+    shortCode: "B.Ed Spl Ed (SLD)",
+    category: "Special Education",
+    duration: "2 Years (Regular)",
+    eligibility: "Bachelor's / Master's Degree with minimum 50% marks from a recognized university",
+    affiliation: "Affiliated to MDU, Rohtak & Recognized by RCI",
+    seats: "30 Seats",
+    description:
+      "Bachelor of Education in Special Education with specialization in Specific Learning Disabilities (SLD), equipping educators with specialized intervention, remedial education, and inclusive teaching strategies.",
+    highlights: [
+      "Rehabilitation Council of India (RCI) Recognized",
+      "Specialized in Specific Learning Disabilities (SLD / Dyslexia)",
+      "Clinical Diagnosis, Screening & Remedial Learning Modules",
+      "Inclusive School Training & Rehabilitation Centers Attachment",
+    ],
+  },
+  {
+    id: "med-special-sld",
+    name: "M.Ed (Special Education)-SLD",
+    shortCode: "M.Ed Spl Ed (SLD)",
+    category: "Postgraduate Education",
+    duration: "2 Years (Regular)",
+    eligibility:
+      "B.Ed. Special Education (SLD) or B.Ed. with Diploma in Special Education (min 50% marks)",
+    affiliation: "Affiliated to MDU, Rohtak & Recognized by RCI",
+    seats: "15 Seats",
+    description:
+      "Master of Education in Special Education focusing on Specific Learning Disabilities (SLD), training advanced special educators, researchers, teacher-educators, and policy implementers.",
+    highlights: [
+      "Advanced Post-Graduate Program Recognized by RCI",
+      "Advanced Diagnostic Assessment & Psycho-Educational Research",
+      "Prepares Teacher Educators, Curriculum Developers & Supervisors",
+      "Dissertation, Advanced Practicum & Clinical Internship",
+    ],
+  },
+  {
+    id: "pgdrp",
+    name: "P.G.D.R.P(Post Graduate Diploma in Rehabiliation Psychology)",
+    shortCode: "P.G.D.R.P",
+    category: "Post Graduate Diploma",
+    duration: "1 Year (Regular)",
+    eligibility:
+      "Master's Degree in Psychology (Regular) with minimum 55% aggregate marks from a recognized university",
+    affiliation: "Recognized by Rehabilitation Council of India (RCI)",
+    seats: "20 Seats",
+    description:
+      "Post Graduate Diploma in Rehabilitation Psychology prepares trained rehabilitation psychologists and counselors to assess, support, and rehabilitate individuals with developmental, neurocognitive, and emotional challenges.",
+    highlights: [
+      "RCI Approved Clinical Rehabilitation Psychology Program",
+      "Qualifies Candidates as Registered Rehabilitation Counselors / Psychologists",
+      "Neurodevelopmental, Cognitive & Behavioral Intervention Training",
+      "Hospital & Clinical Rehabilitation Center Postings",
+    ],
+  },
+  {
+    id: "dhls",
+    name: "DHLS(Diploma in Hearing Language and Speech)",
+    shortCode: "DHLS",
+    category: "Diploma / Clinical Audiology",
+    duration: "1 Year (Regular)",
+    eligibility: "10+2 / Higher Secondary with PCM / PCB and Above",
+    affiliation: "Recognized by Rehabilitation Council of India (RCI)",
+    seats: "30 Seats (Central NBER-RCI Portal)",
+    description:
+      "Diploma in Hearing Language and Speech (DHLS) provides comprehensive training in human vocal apparatus, soundwave acoustics, clinical audiology, hearing evaluation, and speech therapy rehabilitation.",
+    highlights: [
+      "RCI Recognized 1-Year Regular Offline Diploma",
+      "Central Admission via NBER-RCI Portal (30 Intake Seats)",
+      "Sound-Treated Audiology Instrumentation & Diagnostic Lab",
+      "Clinical Speech-Language Pathology & Indian Sign Language",
+    ],
+  },
+];
+
+export function getCourseOfferings(): CourseOffering[] {
+  return readJsonFile<CourseOffering[]>("courses.json", OFFICIAL_COURSES);
+}
+
+export function updateCourseOfferings(courses: CourseOffering[]): CourseOffering[] {
+  writeJsonFile("courses.json", courses);
+  updateContentTimestamp();
+  return courses;
+}
+
+// -------------------------------------------------------------
 // 2. Curriculum & Subjects Management
 // -------------------------------------------------------------
 export interface SubjectItem {
@@ -501,6 +622,7 @@ export async function updateAdminAccount(updates: Partial<AdminUserRecord>): Pro
 // 7. Dashboard Aggregated Statistics
 // -------------------------------------------------------------
 export interface DashboardStats {
+  totalCourses: number;
   totalEnquiries: number;
   newEnquiries: number;
   contactedEnquiries: number;
@@ -515,10 +637,12 @@ export function getDashboardStats(): DashboardStats {
   const curriculum = getCurriculum();
   const faqs = getFAQs();
   const content = getCourseContent();
+  const courses = getCourseOfferings();
 
   const totalSubjects = curriculum.reduce((acc, sem) => acc + sem.subjects.length, 0);
 
   return {
+    totalCourses: courses.length,
     totalEnquiries: enquiries.length,
     newEnquiries: enquiries.filter((e) => e.status === "New").length,
     contactedEnquiries: enquiries.filter((e) => e.status === "Contacted").length,

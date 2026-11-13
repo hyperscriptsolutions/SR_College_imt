@@ -247,6 +247,7 @@ export default function AdminEnquiriesPage() {
                 <tr className="border-b border-slate-100 dark:border-white/10 text-[#536B8E] uppercase tracking-wider font-bold">
                   <th className="py-3 px-4">Ref ID</th>
                   <th className="py-3 px-4">Candidate Name</th>
+                  <th className="py-3 px-4">Course</th>
                   <th className="py-3 px-4">Mobile</th>
                   <th className="py-3 px-4">Qualification</th>
                   <th className="py-3 px-4">Submission Date</th>
@@ -266,6 +267,11 @@ export default function AdminEnquiriesPage() {
                     </td>
                     <td className="py-3.5 px-4 font-semibold text-[#13264A] dark:text-white">
                       {item.fullName}
+                    </td>
+                    <td className="py-3.5 px-4">
+                      <span className="inline-block px-2 py-0.5 rounded-full font-semibold text-[10px] bg-slate-100 dark:bg-white/10 text-[#13264A] dark:text-white border border-slate-200 dark:border-white/10 max-w-[140px] truncate" title={item.course || "DHLS"}>
+                        {item.course || "DHLS"}
+                      </span>
                     </td>
                     <td className="py-3.5 px-4" onClick={(e) => e.stopPropagation()}>
                       <a

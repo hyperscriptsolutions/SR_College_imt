@@ -14,9 +14,11 @@ import {
   Sparkles,
   RefreshCw,
   Eye,
+  GraduationCap,
 } from "lucide-react";
 
 interface StatsData {
+  totalCourses?: number;
   totalEnquiries: number;
   newEnquiries: number;
   contactedEnquiries: number;
@@ -162,7 +164,7 @@ export default function AdminDashboardPage() {
       </div>
 
       {/* Quick Action Navigation Buttons */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         
         <Link
           href="/admin/enquiries"
@@ -175,13 +177,35 @@ export default function AdminDashboardPage() {
               </span>
               <Inbox className="w-5 h-5 text-[#29D7FF]" />
             </div>
-            <h3 className="text-lg font-bold mb-1">Review Student Enquiries</h3>
+            <h3 className="text-lg font-bold mb-1">Review Enquiries</h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              View student submissions, mark as Contacted or Resolved, and export CSV logs.
+              View submissions, mark as Contacted or Resolved, and export CSV logs.
             </p>
           </div>
           <div className="mt-5 flex items-center gap-1.5 text-xs font-bold text-[#29D7FF] group-hover:translate-x-1 transition-transform">
-            <span>Open Enquiries Inbox</span>
+            <span>Open Enquiries</span>
+            <ArrowRight className="w-4 h-4" />
+          </div>
+        </Link>
+
+        <Link
+          href="/admin/courses"
+          className="p-6 rounded-3xl bg-white dark:bg-[#0A1E3D] border border-slate-200/80 dark:border-[#29D7FF]/15 shadow-sm hover:shadow-md transition-all group flex flex-col justify-between"
+        >
+          <div>
+            <div className="flex items-center justify-between mb-3">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#2684FF]">
+                Academic Programs
+              </span>
+              <GraduationCap className="w-5 h-5 text-[#2684FF]" />
+            </div>
+            <h3 className="text-lg font-bold mb-1">Courses Offered</h3>
+            <p className="text-xs text-[#536B8E] leading-relaxed">
+              Manage all 5 official courses: B.Ed, M.Ed, PGDRP, and DHLS details.
+            </p>
+          </div>
+          <div className="mt-5 flex items-center gap-1.5 text-xs font-bold text-[#2684FF] group-hover:translate-x-1 transition-transform">
+            <span>Manage Courses</span>
             <ArrowRight className="w-4 h-4" />
           </div>
         </Link>
@@ -197,13 +221,13 @@ export default function AdminDashboardPage() {
               </span>
               <Layers className="w-5 h-5 text-[#2684FF]" />
             </div>
-            <h3 className="text-lg font-bold mb-1">Manage Semesters & Subjects</h3>
+            <h3 className="text-lg font-bold mb-1">Semesters & Subjects</h3>
             <p className="text-xs text-[#536B8E] leading-relaxed">
               Add new subjects, edit codes/descriptions, reorder topics, or toggle visibility.
             </p>
           </div>
           <div className="mt-5 flex items-center gap-1.5 text-xs font-bold text-[#2684FF] group-hover:translate-x-1 transition-transform">
-            <span>Open Curriculum Editor</span>
+            <span>Curriculum Editor</span>
             <ArrowRight className="w-4 h-4" />
           </div>
         </Link>

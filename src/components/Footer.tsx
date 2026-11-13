@@ -22,20 +22,61 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 mb-12">
           
           {/* Column 1: College Emblem & Bio */}
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-3">
             <CollegeLogo variant="light" className="h-11 w-11 mb-4" />
             <p className="text-xs text-slate-300 leading-relaxed max-w-sm mb-5">
-              S.R COLLEGE OF EDUCATION is a recognized academic institution in Rohtak, Haryana. 
-              This premier destination for Diploma in Hearing, Language and Speech (DHLS).
+              S.R. COLLEGE OF EDUCATION is a premier academic institution in Rohtak, Haryana, offering recognized NCTE &amp; RCI professional programs.
             </p>
 
             <div className="flex items-center gap-2 text-xs text-[#D9AD54]">
               <Shield className="w-4 h-4 text-[#D9AD54]" />
-              <span className="font-medium text-slate-200">Official Institution | Information Portal</span>
+              <span className="font-medium text-slate-200">Affiliated to MDU &amp; RCI / NCTE</span>
             </div>
           </div>
 
-          {/* Column 2: Quick Navigation */}
+          {/* Column 2: Courses Offered */}
+          <div className="lg:col-span-3">
+            <h4 className="text-xs font-bold text-[#D9AD54] uppercase tracking-wider mb-4 pb-1 border-b border-[#26345B]">
+              Courses Offered
+            </h4>
+            <ul className="space-y-2 text-xs text-slate-300">
+              <li>
+                <Link href="/eligibility-admission" className="hover:text-[#D9AD54] transition-colors block">
+                  B.Ed (General)
+                </Link>
+              </li>
+              <li>
+                <Link href="/eligibility-admission" className="hover:text-[#D9AD54] transition-colors block">
+                  BEd (Special Education)-SLD
+                </Link>
+              </li>
+              <li>
+                <Link href="/eligibility-admission" className="hover:text-[#D9AD54] transition-colors block">
+                  M.Ed (Special Education)-SLD
+                </Link>
+              </li>
+              <li>
+                <Link href="/eligibility-admission" className="hover:text-[#D9AD54] transition-colors block">
+                  P.G.D.R.P (Rehabilitation Psychology)
+                </Link>
+              </li>
+              <li>
+                <Link href="/about-dhls" className="hover:text-[#D9AD54] transition-colors block">
+                  DHLS (Hearing Language &amp; Speech)
+                </Link>
+              </li>
+              <li className="pt-2">
+                <Link
+                  href="/eligibility-admission#enquiry"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#D9AD54] hover:text-white transition-colors"
+                >
+                  <span>Apply for Admission →</span>
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 3: Quick Navigation */}
           <div className="lg:col-span-3">
             <h4 className="text-xs font-bold text-[#D9AD54] uppercase tracking-wider mb-4 pb-1 border-b border-[#26345B]">
               Quick Navigation
@@ -44,6 +85,11 @@ export default function Footer() {
               <li>
                 <Link href="/" className="hover:text-[#D9AD54] transition-colors">
                   Home &amp; Overview
+                </Link>
+              </li>
+              <li>
+                <Link href="/#courses" className="hover:text-[#D9AD54] transition-colors">
+                  Academic Programs
                 </Link>
               </li>
               <li>
@@ -79,48 +125,6 @@ export default function Footer() {
               <li>
                 <Link href="/contact-us" className="hover:text-[#D9AD54] transition-colors">
                   Contact Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/eligibility-admission#enquiry"
-                  className="hover:text-white font-semibold text-[#D9AD54] transition-colors"
-                >
-                  Admission Enquiry Form
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 3: Useful Links */}
-          <div className="lg:col-span-2">
-            <h4 className="text-xs font-bold text-[#D9AD54] uppercase tracking-wider mb-4 pb-1 border-b border-[#26345B]">
-              Useful Links
-            </h4>
-            <ul className="space-y-2 text-xs text-slate-300">
-              <li>
-                <Link href="/eligibility-admission" className="hover:text-[#D9AD54] transition-colors">
-                  RTI
-                </Link>
-              </li>
-              <li>
-                <Link href="/about-dhls" className="hover:text-[#D9AD54] transition-colors">
-                  Student Corner
-                </Link>
-              </li>
-              <li>
-                <Link href="/course-structure" className="hover:text-[#D9AD54] transition-colors">
-                  Downloads
-                </Link>
-              </li>
-              <li>
-                <Link href="/faqs" className="hover:text-[#D9AD54] transition-colors">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact-us" className="hover:text-[#D9AD54] transition-colors">
-                  Sitemap
                 </Link>
               </li>
             </ul>

@@ -20,6 +20,7 @@ import {
   X,
   ShieldCheck,
   User,
+  GraduationCap,
 } from "lucide-react";
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
@@ -102,6 +103,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
   const navItems = [
     { label: "Dashboard", href: "/admin", icon: LayoutDashboard },
+    { label: "Courses Offered", href: "/admin/courses", icon: GraduationCap },
     { label: "Course Content", href: "/admin/content", icon: FileText },
     { label: "Semesters & Subjects", href: "/admin/curriculum", icon: Layers },
     { label: "FAQs Management", href: "/admin/faqs", icon: HelpCircle },

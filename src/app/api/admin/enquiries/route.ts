@@ -11,6 +11,7 @@ export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const search = (searchParams.get("search") || "").toLowerCase().trim();
   const statusFilter = searchParams.get("status") || "ALL";
+  const courseFilter = searchParams.get("course") || "ALL";
   const exportCsv = searchParams.get("export") === "csv";
 
   let enquiries = getEnquiries();
@@ -22,8 +23,14 @@ export async function GET(request: NextRequest) {
         e.fullName.toLowerCase().includes(search) ||
         e.mobile.includes(search) ||
         (e.email && e.email.toLowerCase().includes(search)) ||
+        (e.course && e.course.toLowerCase().includes(search)) ||
         e.enquiryId.toLowerCase().includes(search)
     );
+  }
+
+  // Course filter
+  if (courseFilter !== "ALL") {
+    enquiries = enquiries.filter((e) => (e.course || "DHLS(Diploma in Hearing Language and Speech)") === courseFilter);
   }
 
   // Status filter
@@ -38,10 +45,10 @@ export async function GET(request: NextRequest) {
 
   // CSV Export handler
   if (exportCsv) {
-    const csvHeader = "Enquiry ID,Full Name,Mobile,Email,Qualification,Status,Submitted At,Message\n";
+    const csvHeader = "Enquiry ID,Full Name,Course,Mobile,Email,Qualification,Status,Submitted At,Message\n";
     const csvRows = enquiries.map((e) => {
       const cleanMsg = (e.message || "").replace(/"/g, '""');
-      return `"${e.enquiryId}","${e.fullName}","${e.mobile}","${e.email || ""}","${e.qualification}","${e.status}","${e.submittedAt}","${cleanMsg}"`;
+      return `"${e.enquiryId}","${e.fullName}","${e.course || "DHLS"}","${e.mobile}","${e.email || ""}","${e.qualification}","${e.status}","${e.submittedAt}","${cleanMsg}"`;
     });
     const csvContent = csvHeader + csvRows.join("\n");
 

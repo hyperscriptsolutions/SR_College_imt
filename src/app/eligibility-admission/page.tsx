@@ -14,16 +14,17 @@ import {
 import Eligibility from "@/components/Eligibility";
 import AdmissionEnquiry from "@/components/AdmissionEnquiry";
 import PublicLayout from "@/components/PublicLayout";
-import { getCourseContent } from "@/lib/dataStore";
+import { getCourseContent, getCourseOfferings } from "@/lib/dataStore";
 
 export const metadata = {
   title: "Eligibility & Admission | S.R College of Education",
   description:
-    "Review eligibility criteria (12th PCM / PCB & Above) and submit an official admission enquiry for the Diploma in Hearing Language and Speech (DHLS) at S.R College of Education, Rohtak.",
+    "Review eligibility criteria and submit an official admission enquiry for B.Ed, M.Ed, PGDRP, and DHLS courses at S.R College of Education, Rohtak.",
 };
 
 export default function EligibilityAdmissionPage() {
   const content = getCourseContent();
+  const courses = getCourseOfferings();
 
   return (
     <PublicLayout>
@@ -85,6 +86,63 @@ export default function EligibilityAdmissionPage() {
 
       {/* Section 1: 3-Step Process (Eligibility Component) */}
       <Eligibility />
+
+      {/* Section 1b: Full 5-Course Eligibility Matrix */}
+      <section className="py-14 sm:py-18 bg-[#FFFCF6] border-t border-[#E8E2D8]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#172A50]/5 border border-[#172A50]/10 text-xs font-bold text-[#172A50] uppercase tracking-wider mb-3">
+              <GraduationCap className="w-3.5 h-3.5 text-[#D9AD54]" />
+              <span>Program Matrix</span>
+            </div>
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-[#172A50] tracking-tight mb-3">
+              Eligibility Criteria Across All 5 Programs
+            </h2>
+            <p className="text-sm sm:text-base text-[#718096]">
+              Detailed eligibility qualifications, affiliation bodies, and intake duration for courses offered at S.R. College of Education.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {courses.map((course) => (
+              <div
+                key={course.id}
+                className="academic-card p-6 rounded-2xl bg-white border border-[#E8E2D8] flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-[10px] uppercase font-bold text-[#172A50] bg-[#172A50]/5 px-2.5 py-1 rounded-full">
+                      {course.category}
+                    </span>
+                    <span className="text-xs font-bold text-[#8B1745] bg-[#8B1745]/5 px-2.5 py-1 rounded-full">
+                      {course.duration}
+                    </span>
+                  </div>
+
+                  <h3 className="text-lg font-bold text-[#172A50] mb-2">{course.name}</h3>
+                  <p className="text-xs text-[#718096] mb-4">{course.affiliation}</p>
+
+                  <div className="p-3.5 rounded-xl bg-[#FFFCF6] border border-[#E8E2D8] mb-4">
+                    <div className="text-[10px] font-extrabold uppercase text-[#172A50] tracking-wider mb-1">
+                      Minimum Qualification
+                    </div>
+                    <p className="text-xs text-[#263238] font-medium leading-relaxed">
+                      {course.eligibility}
+                    </p>
+                  </div>
+                </div>
+
+                <Link
+                  href={`#enquiry?course=${encodeURIComponent(course.name)}`}
+                  className="w-full py-2 px-3 rounded-xl text-center text-xs font-bold text-[#172A50] bg-[#FFFCF6] border border-[#E8E2D8] hover:bg-[#172A50] hover:text-white transition-all block mt-2"
+                >
+                  Enquire for {course.shortCode}
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Academic Assessment & Examination Infrastructure (img_14) */}
       <section className="py-14 sm:py-18 bg-white border-y border-[#E8E2D8]">
