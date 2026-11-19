@@ -23,9 +23,8 @@ interface HeroProps {
   appearance?: AppearanceSettings;
 }
 
-const HERO_PHOTO_CLOUD =
-  "https://res.cloudinary.com/ozrdoi7q/image/upload/v1794218365/Updated_College_Entrance_Signage.png";
-const HERO_PHOTO_LOCAL = "/images/sunny_campus_entrance.png";
+const HERO_PHOTO_CLOUD = "/images/college_entrance_signage_clean.png";
+const HERO_PHOTO_LOCAL = "/images/college_entrance_signage_clean.png";
 
 export default function Hero({ content, appearance }: HeroProps) {
   const duration = content?.duration || "1 Year (Regular)";

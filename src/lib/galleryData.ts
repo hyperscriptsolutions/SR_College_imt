@@ -70,7 +70,7 @@ export const GALLERY_PHOTOS: GalleryPhoto[] = [
     description:
       "The official main entrance gate of S.R. College of Education, Sector 30-B, IMT Rohtak, with institutional courses signage and administrative buildings.",
     location: "Sector 30-B, IMT Rohtak, Haryana",
-    src: "https://res.cloudinary.com/ozrdoi7q/image/upload/v1794218365/Updated_College_Entrance_Signage.png",
+    src: "/images/college_entrance_signage_clean.png",
     alt: "Main entrance gate of S.R. College of Education with college signage, landscaping, and clear sky",
     featured: true,
     aspectRatio: "landscape",
