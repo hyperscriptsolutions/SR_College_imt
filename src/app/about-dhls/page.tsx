@@ -38,6 +38,10 @@ export default function AboutDHLSPage() {
               Home
             </Link>
             <span className="text-[#D9AD54]">/</span>
+            <Link href="/courses" className="hover:text-white transition-colors">
+              Courses
+            </Link>
+            <span className="text-[#D9AD54]">/</span>
             <span className="text-white font-semibold">About DHLS</span>
           </nav>
 
@@ -71,6 +75,23 @@ export default function AboutDHLSPage() {
               <Users className="w-4 h-4 text-[#D9AD54]" />
               <span>Intake Capacity: <strong>30 Seats</strong></span>
             </div>
+          </div>
+
+          {/* Quick links to official course details & enquiry */}
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <Link
+              href="/courses/dhls"
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#D9AD54] text-[#172A50] hover:bg-[#c99d44] font-bold text-xs sm:text-sm shadow-md transition-all"
+            >
+              <span>View Official DHLS Course Page</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+            <Link
+              href="/courses/dhls#enquiry"
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white/10 hover:bg-white/15 border border-white/20 text-white font-bold text-xs sm:text-sm transition-all"
+            >
+              <span>Enquire Admission</span>
+            </Link>
           </div>
         </div>
       </section>

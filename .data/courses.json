@@ -8,13 +8,30 @@
     "eligibility": "Bachelor's / Master's Degree with minimum 50% marks (47.5% for SC/ST)",
     "affiliation": "Affiliated to MDU, Rohtak & Recognized by NCTE",
     "seats": "100 Seats",
-    "description": "Bachelor of Education (General) prepares educators with foundational pedagogic knowledge, curriculum planning, classroom methodologies, and educational psychology for secondary and senior secondary teaching.",
+    "description": "Bachelor of Education (General) prepares aspiring educators with foundational pedagogical knowledge, classroom methodologies, educational psychology, curriculum planning, and modern ICT-enabled teaching skills for secondary and senior secondary schools.",
     "highlights": [
       "NCTE Recognized Teacher Training Program",
       "Affiliated to Maharshi Dayanand University (MDU), Rohtak",
       "School Internship & Teaching Practicum in Recognized Schools",
-      "Comprehensive Pedagogical & ICT-Enabled Classrooms"
-    ]
+      "Comprehensive Pedagogical & ICT-Enabled Classrooms",
+      "Well-Equipped Educational Psychology and Science Labs"
+    ],
+    "careerOpportunities": [
+      "Secondary & Senior Secondary School Teacher (TGT / PGT)",
+      "Curriculum Developer & Instructional Designer",
+      "Academic Coordinator & School Administrator",
+      "Educational Consultant & Content Developer",
+      "Eligible for CTET, HTET, and State Teacher Eligibility Tests"
+    ],
+    "curriculumHighlights": [
+      "Childhood and Growing Up",
+      "Contemporary India and Education",
+      "Learning and Teaching Methodologies",
+      "Pedagogy of School Subjects (Sciences, Maths, Social Science, Languages)",
+      "Critical Understanding of ICT in Education",
+      "School Internship & Field Engagement"
+    ],
+    "admissionProcess": "Admissions are conducted through centralized MDU Rohtak online counseling based on merit in the qualifying graduation / post-graduation examination."
   },
   {
     "id": "bed-special-sld",
@@ -25,13 +42,30 @@
     "eligibility": "Bachelor's / Master's Degree with minimum 50% marks from a recognized university",
     "affiliation": "Affiliated to MDU, Rohtak & Recognized by RCI",
     "seats": "30 Seats",
-    "description": "Bachelor of Education in Special Education with specialization in Specific Learning Disabilities (SLD), equipping educators with specialized intervention, remedial education, and inclusive teaching strategies.",
+    "description": "Bachelor of Education in Special Education with specialization in Specific Learning Disabilities (SLD), equipping educators with specialized diagnostic assessment, remedial education, and inclusive teaching strategies for children with dyslexia, dysgraphia, and dyscalculia.",
     "highlights": [
       "Rehabilitation Council of India (RCI) Recognized",
       "Specialized in Specific Learning Disabilities (SLD / Dyslexia)",
       "Clinical Diagnosis, Screening & Remedial Learning Modules",
-      "Inclusive School Training & Rehabilitation Centers Attachment"
-    ]
+      "Inclusive School Training & Rehabilitation Centers Attachment",
+      "Direct Eligibility for RCI Professional CRR Registration"
+    ],
+    "careerOpportunities": [
+      "Special Educator in Inclusive & Mainstream Schools",
+      "Remedial Educator in Child Guidance Clinics",
+      "Specialized Tutor for Children with Dyslexia & Learning Challenges",
+      "Resource Teacher under Samagra Shiksha Abhiyan",
+      "Registered Rehabilitation Practitioner under RCI (CRR Number)"
+    ],
+    "curriculumHighlights": [
+      "Introduction to Disabilities & Inclusive Education",
+      "Identification & Psycho-Educational Assessment of SLD",
+      "Curriculum Designing, Adaptation & Accommodations for SLD",
+      "Remedial Teaching Methodologies for Reading, Writing & Math",
+      "Behavior Modification & Assistive Educational Technology",
+      "Clinical Practicum & Inclusive School Placement"
+    ],
+    "admissionProcess": "Admissions are conducted through university counseling based on graduation merit following Rehabilitation Council of India (RCI) and MDU Rohtak norms."
   },
   {
     "id": "med-special-sld",
@@ -41,14 +75,31 @@
     "duration": "2 Years (Regular)",
     "eligibility": "B.Ed. Special Education (SLD) or B.Ed. with Diploma in Special Education (min 50% marks)",
     "affiliation": "Affiliated to MDU, Rohtak & Recognized by RCI",
-    "seats": "15 Seats",
-    "description": "Master of Education in Special Education focusing on Specific Learning Disabilities (SLD), training advanced special educators, researchers, teacher-educators, and policy implementers.",
+    "seats": "10 Seats",
+    "description": "Master of Education in Special Education focusing on Specific Learning Disabilities (SLD), training advanced special educators, researchers, teacher-educators, policy implementers, and institutional supervisors in the field of inclusive education.",
     "highlights": [
       "Advanced Post-Graduate Program Recognized by RCI",
       "Advanced Diagnostic Assessment & Psycho-Educational Research",
       "Prepares Teacher Educators, Curriculum Developers & Supervisors",
-      "Dissertation, Advanced Practicum & Clinical Internship"
-    ]
+      "Master's Dissertation, Advanced Practicum & Clinical Internship",
+      "Direct Pathway to Doctoral (Ph.D.) Research in Education"
+    ],
+    "careerOpportunities": [
+      "Assistant Professor / Teacher Educator in Colleges of Education",
+      "Senior Special Education Consultant & Institutional Supervisor",
+      "Curriculum & Policy Specialist in State / National Educational Boards",
+      "Head of Inclusive Education Departments in Premier Institutions",
+      "Educational Researcher & Clinical Assessment Director"
+    ],
+    "curriculumHighlights": [
+      "Advanced Educational Psychology & Neurobiology of Learning",
+      "Research Methodology & Applied Statistics in Special Education",
+      "Advanced Diagnostic Testing & Clinical Interventions in SLD",
+      "Teacher Education & Curriculum Supervision",
+      "Master's Research Dissertation & Defense",
+      "Internship in Teacher Training Colleges & Special Centers"
+    ],
+    "admissionProcess": "Admissions are processed through university counseling based on merit in qualifying B.Ed Special Education examination."
   },
   {
     "id": "pgdrp",
@@ -58,14 +109,31 @@
     "duration": "1 Year (Regular)",
     "eligibility": "Master's Degree in Psychology (Regular) with minimum 55% aggregate marks from a recognized university",
     "affiliation": "Recognized by Rehabilitation Council of India (RCI)",
-    "seats": "20 Seats",
-    "description": "Post Graduate Diploma in Rehabilitation Psychology prepares trained rehabilitation psychologists and counselors to assess, support, and rehabilitate individuals with developmental, neurocognitive, and emotional challenges.",
+    "seats": "12 Seats",
+    "description": "Post Graduate Diploma in Rehabilitation Psychology prepares trained rehabilitation psychologists and counselors to assess, support, and rehabilitate individuals with developmental, neurocognitive, sensory, and psychological challenges.",
     "highlights": [
       "RCI Approved Clinical Rehabilitation Psychology Program",
       "Qualifies Candidates as Registered Rehabilitation Counselors / Psychologists",
       "Neurodevelopmental, Cognitive & Behavioral Intervention Training",
-      "Hospital & Clinical Rehabilitation Center Postings"
-    ]
+      "Hospital & Clinical Rehabilitation Center Postings",
+      "300+ Supervised Clinical Internship Hours"
+    ],
+    "careerOpportunities": [
+      "Registered Rehabilitation Psychologist (CRR Holder)",
+      "Clinical Counselor in Multi-Specialty Hospitals & Rehabilitation Centers",
+      "Child & Adolescent Neuropsychological Assessor",
+      "Consultant in NGOs, Social Welfare Departments & De-addiction Units",
+      "Private Clinical Practice & Rehabilitation Consultation"
+    ],
+    "curriculumHighlights": [
+      "Psychological Assessment & Psychometrics in Rehabilitation",
+      "Biological Bases of Behavior & Clinical Psychopathology",
+      "Counseling & Psychotherapeutic Interventions in Disability",
+      "Community-Based Rehabilitation & Family Guidance",
+      "Supervised Clinical Case Work & Diagnostic Reporting",
+      "Hospital Ward Postings & Practical Viva-Voce"
+    ],
+    "admissionProcess": "Admissions are administered based on post-graduate psychology merit and counseling in accordance with RCI statutory guidelines."
   },
   {
     "id": "dhls",
@@ -81,8 +149,24 @@
       "RCI Recognized 1-Year Regular Offline Diploma",
       "Central Admission via NBER-RCI Portal (30 Intake Seats)",
       "Sound-Treated Audiology Instrumentation & Diagnostic Lab",
-      "Clinical Speech-Language Pathology & Indian Sign Language"
-    ]
+      "Clinical Speech-Language Pathology & Indian Sign Language",
+      "Comprehensive Hospital & Clinical Field Training"
+    ],
+    "careerOpportunities": [
+      "Audiometric Assistant in ENT Hospitals & Diagnostic Clinics",
+      "Speech-Language Therapy Assistant in Rehabilitation Facilities",
+      "Hearing Aid Dispensing & Fitting Specialist",
+      "Community Hearing Healthcare & Screening Officer",
+      "Communication Instructor in Schools for the Hearing Impaired"
+    ],
+    "curriculumHighlights": [
+      "Anatomy & Physiology of Speech and Hearing Organs",
+      "Acoustics & Fundamentals of Sound Measurement",
+      "Basic Audiology & Hearing Loss Assessment",
+      "Speech Articulation, Fluency & Language Development",
+      "Indian Sign Language (ISL) Grammar & Manual Alphabet",
+      "Supervised Audiometric & Speech Therapy Clinical Postings"
+    ],
+    "admissionProcess": "Central registration on the NBER-RCI online portal during admissions cycle, followed by institutional document verification and seat confirmation."
   }
 ]
-

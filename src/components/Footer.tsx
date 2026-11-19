@@ -41,36 +41,36 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-xs text-slate-300">
               <li>
-                <Link href="/eligibility-admission" className="hover:text-[#D9AD54] transition-colors block">
+                <Link href="/courses/bed-general" className="hover:text-[#D9AD54] transition-colors block">
                   B.Ed (General)
                 </Link>
               </li>
               <li>
-                <Link href="/eligibility-admission" className="hover:text-[#D9AD54] transition-colors block">
+                <Link href="/courses/bed-special-sld" className="hover:text-[#D9AD54] transition-colors block">
                   BEd (Special Education)-SLD
                 </Link>
               </li>
               <li>
-                <Link href="/eligibility-admission" className="hover:text-[#D9AD54] transition-colors block">
+                <Link href="/courses/med-special-sld" className="hover:text-[#D9AD54] transition-colors block">
                   M.Ed (Special Education)-SLD
                 </Link>
               </li>
               <li>
-                <Link href="/eligibility-admission" className="hover:text-[#D9AD54] transition-colors block">
+                <Link href="/courses/pgdrp" className="hover:text-[#D9AD54] transition-colors block">
                   P.G.D.R.P (Rehabilitation Psychology)
                 </Link>
               </li>
               <li>
-                <Link href="/about-dhls" className="hover:text-[#D9AD54] transition-colors block">
+                <Link href="/courses/dhls" className="hover:text-[#D9AD54] transition-colors block">
                   DHLS (Hearing Language &amp; Speech)
                 </Link>
               </li>
               <li className="pt-2">
                 <Link
-                  href="/eligibility-admission#enquiry"
+                  href="/courses"
                   className="inline-flex items-center gap-1.5 text-xs font-bold text-[#D9AD54] hover:text-white transition-colors"
                 >
-                  <span>Apply for Admission →</span>
+                  <span>Explore All 5 Courses →</span>
                 </Link>
               </li>
             </ul>
@@ -88,13 +88,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/#courses" className="hover:text-[#D9AD54] transition-colors">
-                  Academic Programs
-                </Link>
-              </li>
-              <li>
-                <Link href="/about-dhls" className="hover:text-[#D9AD54] transition-colors">
-                  About DHLS Program
+                <Link href="/courses" className="hover:text-[#D9AD54] transition-colors">
+                  Academic Courses
                 </Link>
               </li>
               <li>

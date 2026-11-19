@@ -24,15 +24,34 @@ export const ADMISSION_COURSES = [
   "DHLS(Diploma in Hearing Language and Speech)",
 ];
 
-export default function AdmissionEnquiry() {
+interface AdmissionEnquiryProps {
+  initialCourse?: string;
+  title?: string;
+  subtitle?: string;
+  id?: string;
+}
+
+export default function AdmissionEnquiry({
+  initialCourse,
+  title,
+  subtitle,
+  id = "enquiry",
+}: AdmissionEnquiryProps = {}) {
   const [formData, setFormData] = useState({
     fullName: "",
     mobile: "",
     email: "",
-    course: "DHLS(Diploma in Hearing Language and Speech)",
+    course: initialCourse || ADMISSION_COURSES[0],
     qualification: "",
     message: "",
   });
+
+  // Sync if initialCourse changes
+  React.useEffect(() => {
+    if (initialCourse) {
+      setFormData((prev) => ({ ...prev, course: initialCourse }));
+    }
+  }, [initialCourse]);
 
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -111,7 +130,7 @@ export default function AdmissionEnquiry() {
           fullName: "",
           mobile: "",
           email: "",
-          course: "DHLS(Diploma in Hearing Language and Speech)",
+          course: initialCourse || ADMISSION_COURSES[0],
           qualification: "",
           message: "",
         });
@@ -128,20 +147,20 @@ export default function AdmissionEnquiry() {
   };
 
   return (
-    <section id="enquiry" className="py-20 sm:py-28 bg-[#FFFCF6] relative border-t border-[#E8E2D8]">
+    <section id={id} className="py-20 sm:py-28 bg-[#FFFCF6] relative border-t border-[#E8E2D8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#D9AD54]/10 border border-[#D9AD54]/30 text-xs font-bold text-[#B88B2E] uppercase tracking-wider mb-3">
             <Send className="w-3.5 h-3.5 text-[#D9AD54]" />
-            Admissions Desk
+            <span>Admissions Desk {initialCourse ? `• ${initialCourse}` : ""}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#172A50] tracking-tight mb-4">
-            Ready to Explore DHLS?
+            {title || (initialCourse ? `Enquire for ${initialCourse}` : "Course Admission Enquiry")}
           </h2>
           <p className="text-base sm:text-lg text-[#718096] leading-relaxed">
-            Have questions about eligibility, course details or admission availability? Get in touch with S.R College of Education.
+            {subtitle || "Have questions about eligibility, course structure or seat availability? Get in touch with S.R College of Education admissions desk."}
           </p>
         </div>
 

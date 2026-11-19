@@ -98,6 +98,9 @@ export interface CourseOffering {
   seats?: string;
   description: string;
   highlights: string[];
+  careerOpportunities?: string[];
+  curriculumHighlights?: string[];
+  admissionProcess?: string;
 }
 
 export const OFFICIAL_COURSES: CourseOffering[] = [
@@ -146,7 +149,7 @@ export const OFFICIAL_COURSES: CourseOffering[] = [
     eligibility:
       "B.Ed. Special Education (SLD) or B.Ed. with Diploma in Special Education (min 50% marks)",
     affiliation: "Affiliated to MDU, Rohtak & Recognized by RCI",
-    seats: "15 Seats",
+    seats: "10 Seats",
     description:
       "Master of Education in Special Education focusing on Specific Learning Disabilities (SLD), training advanced special educators, researchers, teacher-educators, and policy implementers.",
     highlights: [
@@ -165,7 +168,7 @@ export const OFFICIAL_COURSES: CourseOffering[] = [
     eligibility:
       "Master's Degree in Psychology (Regular) with minimum 55% aggregate marks from a recognized university",
     affiliation: "Recognized by Rehabilitation Council of India (RCI)",
-    seats: "20 Seats",
+    seats: "12 Seats",
     description:
       "Post Graduate Diploma in Rehabilitation Psychology prepares trained rehabilitation psychologists and counselors to assess, support, and rehabilitate individuals with developmental, neurocognitive, and emotional challenges.",
     highlights: [
@@ -197,6 +200,11 @@ export const OFFICIAL_COURSES: CourseOffering[] = [
 
 export function getCourseOfferings(): CourseOffering[] {
   return readJsonFile<CourseOffering[]>("courses.json", OFFICIAL_COURSES);
+}
+
+export function getCourseById(id: string): CourseOffering | undefined {
+  const courses = getCourseOfferings();
+  return courses.find((c) => c.id === id);
 }
 
 export function updateCourseOfferings(courses: CourseOffering[]): CourseOffering[] {

@@ -11,6 +11,8 @@ import {
   ArrowRight,
   ShieldCheck,
   ChevronRight,
+  ChevronDown,
+  GraduationCap,
   Sparkles,
 } from "lucide-react";
 
@@ -21,11 +23,57 @@ interface NavLinkItem {
   href: string;
 }
 
+const COURSES_NAV_ITEMS = [
+  {
+    id: "bed-general",
+    name: "B.Ed (General)",
+    href: "/courses/bed-general",
+  },
+  {
+    id: "bed-special-sld",
+    name: "BEd (Special Education)-SLD",
+    href: "/courses/bed-special-sld",
+  },
+  {
+    id: "med-special-sld",
+    name: "M.Ed (Special Education)-SLD",
+    href: "/courses/med-special-sld",
+  },
+  {
+    id: "pgdrp",
+    name: "P.G.D.R.P(Post Graduate Diploma in Rehabiliation Psychology)",
+    href: "/courses/pgdrp",
+  },
+  {
+    id: "dhls",
+    name: "DHLS(Diploma in Hearing Language and Speech)",
+    href: "/about-dhls",
+  },
+];
+
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [coursesDropdownOpen, setCoursesDropdownOpen] = useState(false);
+  const [mobileCoursesOpen, setMobileCoursesOpen] = useState(false);
   const pathname = usePathname();
   const headerRef = useRef<HTMLElement>(null);
+  const coursesDropdownRef = useRef<HTMLDivElement>(null);
+  const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Close courses dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        coursesDropdownRef.current &&
+        !coursesDropdownRef.current.contains(e.target as Node)
+      ) {
+        setCoursesDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   // Dynamic header shadow & measurement on scroll/resize
   useEffect(() => {
@@ -49,9 +97,11 @@ export default function Navbar() {
     };
   }, []);
 
-  // Close mobile drawer on route change
+  // Close mobile drawer & dropdowns on route change
   useEffect(() => {
     setMobileMenuOpen(false);
+    setCoursesDropdownOpen(false);
+    setMobileCoursesOpen(false);
   }, [pathname]);
 
   // Handle ESC key to close mobile drawer
@@ -79,7 +129,7 @@ export default function Navbar() {
   // Desktop navigation links with responsive label tiers for small desktops (xl) and compact screens (lg)
   const desktopNavLinks: NavLinkItem[] = [
     { label: "Home", href: "/" },
-    { label: "About DHLS", shortLabel: "About", href: "/about-dhls" },
+    { label: "Courses", href: "/courses" },
     { label: "Campus & Labs", shortLabel: "Campus", href: "/#facilities" },
     { label: "Eligibility & Admission", shortLabel: "Eligibility", href: "/eligibility-admission" },
     { label: "Course Structure", mediumLabel: "Curriculum", shortLabel: "Structure", href: "/course-structure" },
@@ -97,11 +147,10 @@ export default function Navbar() {
     <>
       <header
         ref={headerRef}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 border-b ${
-          isScrolled
-            ? "bg-[#FFFCF6]/95 backdrop-blur-md shadow-xs border-[#E8E2D8] py-2"
-            : "bg-[#FFFCF6] border-[#E8E2D8] py-2.5 sm:py-3"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 border-b ${isScrolled
+          ? "bg-[#FFFCF6]/95 backdrop-blur-md shadow-xs border-[#E8E2D8] py-2"
+          : "bg-[#FFFCF6] border-[#E8E2D8] py-2.5 sm:py-3"
+          }`}
         role="banner"
       >
         {/* Full-width container with responsive edge padding — prevents edge overflow on small desktop */}
@@ -113,7 +162,7 @@ export default function Navbar() {
             3. Right: Contact Phone + Enquire CTA - strictly shrink-0
           */}
           <div className="flex items-center justify-between gap-2 xl:gap-3 2xl:gap-6 w-full">
-            
+
             {/* AREA 1: Branding (Far Left) */}
             <div className="flex items-center shrink-0 z-10">
               <Link
@@ -143,17 +192,75 @@ export default function Navbar() {
               aria-label="Main Navigation"
             >
               {desktopNavLinks.map((link) => {
-                const isActive = pathname === link.href;
+                const isActive = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
+
+                if (link.href === "/courses") {
+                  return (
+                    <div
+                      key={link.href}
+                      ref={coursesDropdownRef}
+                      className="relative shrink-0"
+                      onMouseEnter={() => {
+                        if (dropdownTimeoutRef.current) clearTimeout(dropdownTimeoutRef.current);
+                        setCoursesDropdownOpen(true);
+                      }}
+                      onMouseLeave={() => {
+                        dropdownTimeoutRef.current = setTimeout(() => {
+                          setCoursesDropdownOpen(false);
+                        }, 250);
+                      }}
+                    >
+                      <button
+                        type="button"
+                        onClick={() => setCoursesDropdownOpen((prev) => !prev)}
+                        className={`inline-flex items-center gap-1 px-2 py-1 xl:px-2.5 xl:py-1.5 2xl:px-3 rounded-full text-xs 2xl:text-sm font-semibold whitespace-nowrap transition-all duration-150 cursor-pointer ${isActive || coursesDropdownOpen
+                          ? "text-white bg-[#172A50] shadow-2xs font-bold"
+                          : "text-[#172A50]/90 hover:text-[#8B1745] hover:bg-[#172A50]/5"
+                          }`}
+                        aria-expanded={coursesDropdownOpen}
+                        aria-haspopup="true"
+                      >
+                        <span className="hidden 2xl:inline">{link.label}</span>
+                        <span className="hidden xl:inline 2xl:hidden">
+                          {link.mediumLabel || link.shortLabel || link.label}
+                        </span>
+                        <span className="inline xl:hidden">{link.shortLabel || link.label}</span>
+                        <ChevronDown
+                          className={`w-3.5 h-3.5 transition-transform duration-200 ${coursesDropdownOpen ? "rotate-180 text-[#D9AD54]" : "text-stone-400"
+                            }`}
+                        />
+                      </button>
+
+                      {/* Dropdown Menu */}
+                      {coursesDropdownOpen && (
+                        <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-72 sm:w-80 rounded-2xl bg-white border border-[#E8E2D8] shadow-2xl p-2 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
+                          <div className="flex flex-col gap-0.5">
+                            {COURSES_NAV_ITEMS.map((item) => (
+                              <Link
+                                key={item.id}
+                                href={item.href}
+                                onClick={() => setCoursesDropdownOpen(false)}
+                                className="px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-[#172A50] hover:text-[#8B1745] hover:bg-[#FFFCF6] border border-transparent hover:border-[#E8E2D8] transition-colors block text-left"
+                              >
+                                {item.name}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  );
+                }
+
                 return (
                   <Link
                     key={link.href}
                     href={link.href}
                     title={link.label}
-                    className={`px-2 py-1 xl:px-2.5 xl:py-1.5 2xl:px-3 rounded-full text-xs 2xl:text-sm font-semibold whitespace-nowrap transition-all duration-150 shrink-0 ${
-                      isActive
-                        ? "text-white bg-[#172A50] shadow-2xs font-bold"
-                        : "text-[#172A50]/90 hover:text-[#8B1745] hover:bg-[#172A50]/5"
-                    }`}
+                    className={`px-2 py-1 xl:px-2.5 xl:py-1.5 2xl:px-3 rounded-full text-xs 2xl:text-sm font-semibold whitespace-nowrap transition-all duration-150 shrink-0 ${isActive
+                      ? "text-white bg-[#172A50] shadow-2xs font-bold"
+                      : "text-[#172A50]/90 hover:text-[#8B1745] hover:bg-[#172A50]/5"
+                      }`}
                   >
                     <span className="hidden 2xl:inline">{link.label}</span>
                     <span className="hidden xl:inline 2xl:hidden">
@@ -264,17 +371,55 @@ export default function Navbar() {
 
               <nav className="flex flex-col gap-1.5">
                 {mobileNavLinks.map((link) => {
-                  const isActive = pathname === link.href;
+                  const isActive = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
+
+                  if (link.href === "/courses") {
+                    return (
+                      <div key={link.href} className="rounded-xl overflow-hidden border border-transparent">
+                        <div
+                          onClick={() => setMobileCoursesOpen((prev) => !prev)}
+                          className={`flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold transition-all cursor-pointer ${isActive
+                            ? "bg-[#172A50] text-white shadow-xs font-bold"
+                            : "text-[#263238] hover:bg-white hover:text-[#8B1745]"
+                            }`}
+                        >
+                          <div className="flex items-center gap-2.5">
+                            <GraduationCap className="w-4 h-4 text-[#D9AD54] flex-shrink-0" />
+                            <span>Courses</span>
+                          </div>
+                          <ChevronDown
+                            className={`w-4 h-4 transition-transform duration-200 flex-shrink-0 ${mobileCoursesOpen ? "rotate-180 text-[#D9AD54]" : "text-stone-400"
+                              }`}
+                          />
+                        </div>
+
+                        {mobileCoursesOpen && (
+                          <div className="pl-3 pr-2 py-1.5 space-y-1 bg-[#172A50]/5 rounded-b-xl mt-1">
+                            {COURSES_NAV_ITEMS.map((item) => (
+                              <Link
+                                key={item.id}
+                                href={item.href}
+                                onClick={() => setMobileMenuOpen(false)}
+                                className="block px-3 py-2 rounded-lg text-xs font-semibold text-[#172A50] hover:bg-white hover:text-[#8B1745] transition-colors"
+                              >
+                                {item.name}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  }
+
                   return (
                     <Link
                       key={link.href}
                       href={link.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className={`flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold transition-all ${
-                        isActive
-                          ? "bg-[#172A50] text-white shadow-xs font-bold"
-                          : "text-[#263238] hover:bg-white hover:text-[#8B1745]"
-                      }`}
+                      className={`flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold transition-all ${isActive
+                        ? "bg-[#172A50] text-white shadow-xs font-bold"
+                        : "text-[#263238] hover:bg-white hover:text-[#8B1745]"
+                        }`}
                     >
                       <div className="flex items-center gap-2.5">
                         {link.href === "/gallery" && (
@@ -283,9 +428,8 @@ export default function Navbar() {
                         <span>{link.label}</span>
                       </div>
                       <ChevronRight
-                        className={`w-4 h-4 flex-shrink-0 ${
-                          isActive ? "text-[#D9AD54]" : "text-stone-400"
-                        }`}
+                        className={`w-4 h-4 flex-shrink-0 ${isActive ? "text-[#D9AD54]" : "text-stone-400"
+                          }`}
                       />
                     </Link>
                   );
@@ -300,7 +444,7 @@ export default function Navbar() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="w-full text-center py-3 rounded-full font-bold text-sm text-white bg-[#172A50] hover:bg-[#26345B] shadow-sm transition-all flex items-center justify-center gap-2 group"
               >
-                <span>Enquire About DHLS</span>
+                <span>Enquire Admission</span>
                 <span className="w-4 h-4 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
                   <ArrowRight className="w-2.5 h-2.5 text-[#D9AD54]" />
                 </span>

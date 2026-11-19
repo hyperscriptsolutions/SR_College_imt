@@ -88,7 +88,9 @@ export default function CoursesOffered({ courses = [] }: CoursesOfferedProps) {
 
                 {/* Course Name */}
                 <h3 className="text-xl sm:text-2xl font-bold text-[#172A50] mb-2 group-hover:text-[#8B1745] transition-colors">
-                  {course.name}
+                  <Link href={`/courses/${course.id}`} className="hover:underline">
+                    {course.name}
+                  </Link>
                 </h3>
 
                 {/* Duration & Affiliation Pills */}
@@ -133,13 +135,19 @@ export default function CoursesOffered({ courses = [] }: CoursesOfferedProps) {
               </div>
 
               {/* Card Footer: Action Buttons */}
-              <div className="pt-4 border-t border-[#E8E2D8] flex items-center justify-between gap-3 mt-auto">
+              <div className="pt-4 border-t border-[#E8E2D8] flex flex-col sm:flex-row items-center gap-2 mt-auto">
                 <Link
-                  href={`/eligibility-admission#enquiry?course=${encodeURIComponent(course.name)}`}
-                  className="w-full py-2.5 px-4 rounded-xl text-center text-xs font-bold text-white bg-[#172A50] hover:bg-[#26345B] shadow-xs transition-all flex items-center justify-center gap-2 group-hover:shadow-md"
+                  href={`/courses/${course.id}#enquiry`}
+                  className="w-full sm:flex-1 py-2.5 px-4 rounded-xl text-center text-xs font-bold text-white bg-[#172A50] hover:bg-[#26345B] shadow-xs transition-all flex items-center justify-center gap-2 group-hover:shadow-md cursor-pointer"
                 >
                   <span>Enquire Admission</span>
                   <ArrowRight className="w-3.5 h-3.5 text-[#D9AD54] transition-transform group-hover:translate-x-0.5" />
+                </Link>
+                <Link
+                  href={`/courses/${course.id}`}
+                  className="w-full sm:w-auto py-2.5 px-3.5 rounded-xl text-center text-xs font-semibold text-[#172A50] bg-stone-100 hover:bg-stone-200 border border-[#E8E2D8] transition-all flex items-center justify-center gap-1 shrink-0 cursor-pointer"
+                >
+                  <span>Details</span>
                 </Link>
               </div>
             </div>
@@ -161,9 +169,16 @@ export default function CoursesOffered({ courses = [] }: CoursesOfferedProps) {
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-3 shrink-0">
+            <Link
+              href="/courses"
+              className="px-5 py-2.5 rounded-full bg-white text-[#172A50] hover:bg-stone-100 text-xs sm:text-sm font-bold shadow-xs transition-all flex items-center gap-1.5"
+            >
+              <span>View All Courses</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
             <a
               href="tel:9896302035"
-              className="px-5 py-2.5 rounded-full bg-white text-[#172A50] hover:bg-stone-100 text-xs sm:text-sm font-bold shadow-xs transition-all"
+              className="px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 text-xs sm:text-sm font-bold shadow-xs transition-all"
             >
               Call 9896302035
             </a>
@@ -171,7 +186,7 @@ export default function CoursesOffered({ courses = [] }: CoursesOfferedProps) {
               href="/eligibility-admission#enquiry"
               className="px-5 py-2.5 rounded-full bg-[#D9AD54] text-[#172A50] hover:bg-[#c99d44] text-xs sm:text-sm font-bold shadow-xs transition-all flex items-center gap-1.5"
             >
-              <span>Submit Online Form</span>
+              <span>Submit Enquiry</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
